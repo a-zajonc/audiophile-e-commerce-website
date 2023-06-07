@@ -13,6 +13,7 @@ export function NavBar() {
         </div>
         <img src={cart} alt="Cart" className={styles.cartIcon} />
       </div>
+      <div className={styles.divider} />
     </div>
   );
 }
