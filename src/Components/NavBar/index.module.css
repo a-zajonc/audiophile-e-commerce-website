@@ -1,0 +1,38 @@
+.box {
+  background-color: #141414;
+  color: #ffffff;
+  height: 95px;
+}
+
+.content {
+  position: absolute;
+  top: 32px;
+  left: calc((100% - 1110px) / 2);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 28px;
+  width: 1110px;
+}
+
+.logo {
+  width: 143px;
+  height: 25px;
+}
+
+.categories {
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: row;
+  width: 429px;
+  justify-content: space-around;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 25px;
+  letter-spacing: 2px;
+}
+
+.cartIcon {
+  width: 23.3px;
+  height: 20px;
+}
