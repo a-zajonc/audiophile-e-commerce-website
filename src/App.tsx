@@ -1,5 +1,11 @@
 import "./App.css";
-import { Categories, Header, NavBar, ProductComponent } from "./Components/";
+import {
+  Categories,
+  Header,
+  NavBar,
+  ProductComponent,
+  About,
+} from "./Components/";
 
 function App() {
   return (
@@ -8,6 +14,7 @@ function App() {
       <Header />
       <Categories />
       <ProductComponent />
+      <About />
     </div>
   );
 }
