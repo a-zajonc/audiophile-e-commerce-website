@@ -1,5 +1,5 @@
 import "./App.css";
-import { Categories, Header, NavBar } from "./Components/";
+import { Categories, Header, NavBar, ProductComponent } from "./Components/";
 
 function App() {
   return (
@@ -7,6 +7,7 @@ function App() {
       <NavBar />
       <Header />
       <Categories />
+      <ProductComponent />
     </div>
   );
 }

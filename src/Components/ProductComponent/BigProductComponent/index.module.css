@@ -1,0 +1,75 @@
+.box {
+  width: 100%;
+  height: 560px;
+  margin-top: 168px;
+}
+
+.contentBox {
+  position: absolute;
+  flex-direction: row;
+  left: calc((100% - 1110px) / 2);
+  width: 1110px;
+  height: 560px;
+  background-color: #d87d4a;
+  border-radius: 8px;
+  background-image: url(../../../images/home/desktop/pattern-circles.svg);
+  background-repeat: no-repeat;
+  background-position: -149px -36px;
+}
+
+.img {
+  position: absolute;
+  background-image: url(../../../images/home/desktop/image-speaker-zx9.png);
+  width: 410.23px;
+  height: 493px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 0 30px;
+  left: 117px;
+  bottom: 0px;
+}
+
+.box .text {
+  position: absolute;
+  width: 349px;
+  height: 303px;
+  right: 95px;
+  top: 135px;
+  text-align: left;
+}
+
+.box .text .header {
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 58px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0;
+}
+
+.box .text .description {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 25px;
+  color: #ffffff;
+  mix-blend-mode: normal;
+  opacity: 0.75;
+  height: 75px;
+  width: 349px;
+}
+
+.button {
+  margin-top: 34px;
+  height: 48px;
+  width: 160px;
+  border-radius: 0px;
+  border: none;
+  background: #000000;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
