@@ -1,5 +1,6 @@
+export { Footer } from "./Footer";
 export { NavBar } from "./NavBar/";
 export { Header } from "./Header/";
 export { Categories } from "./Categories/";
 export { ProductComponent } from "./ProductComponent";
-export { About } from "./About/";
+export { About } from "./About";

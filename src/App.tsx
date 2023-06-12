@@ -5,6 +5,7 @@ import {
   NavBar,
   ProductComponent,
   About,
+  Footer,
 } from "./Components/";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Categories />
       <ProductComponent />
       <About />
+      <Footer />
     </div>
   );
 }
