@@ -1,0 +1,10 @@
+.box {
+  margin-top: 120px;
+  width: 100%;
+}
+
+.categoriesBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

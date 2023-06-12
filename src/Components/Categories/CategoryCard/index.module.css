@@ -1,0 +1,65 @@
+.box {
+  width: 350px;
+  height: 284px;
+  margin-right: 30px;
+}
+
+.box:last-of-type {
+  margin-right: 0px;
+}
+
+.background {
+  position: relative;
+  background: #f1f1f1;
+  height: 204px;
+  width: 350px;
+  top: 80px;
+  border-radius: 8px;
+}
+.content {
+  position: relative;
+  top: -80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.img {
+  width: 184px;
+  height: 160px;
+}
+
+.heading {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  letter-spacing: 1.28571px;
+  text-transform: uppercase;
+  color: #000000;
+  margin: 26px 0 0 0;
+}
+
+.shopBox {
+  height: 18px;
+  width: 57.3px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 15px;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #000000;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+}
+
+.arrow {
+  height: 10px;
+  width: 5px;
+}
