@@ -11,7 +11,7 @@ export function CategoryCard({ category, img }: CategoryCardProps) {
     <div className={styles.box}>
       <div className={styles.background}>
         <div className={styles.content}>
-          <img src={img} alt="Headphones" className={styles.img} />
+          <img src={img} alt={category} className={styles.img} />
           <h3 className={styles.heading}>{category}</h3>
           <div className={styles.shopBox}>
             <p>Shop</p>

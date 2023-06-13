@@ -1,4 +1,4 @@
-export { Footer } from "./Footer";
+export { Footer } from "./Footer/";
 export { NavBar } from "./NavBar/";
 export { Header } from "./Header/";
 export { Categories } from "./Categories/";

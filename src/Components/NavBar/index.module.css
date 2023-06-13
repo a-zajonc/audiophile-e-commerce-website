@@ -34,9 +34,21 @@
   letter-spacing: 2px;
 }
 
+.category:hover {
+  color: #d87d4a;
+  cursor: pointer;
+}
+
 .cartIcon {
+  padding: 2px;
   width: 23.3px;
   height: 20px;
+  fill: #ffffff;
+}
+
+.cartIcon:hover {
+  cursor: pointer;
+  fill: #d87d4a;
 }
 
 .divider {

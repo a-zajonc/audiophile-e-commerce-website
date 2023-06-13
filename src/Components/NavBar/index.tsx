@@ -1,6 +1,6 @@
 import styles from "./index.module.css";
 import logo from "../../images/shared/desktop/logo.svg";
-import cart from "../../images/shared/desktop/icon-cart.svg";
+import { ReactComponent as Cart } from "../../images/shared/desktop/icon-cart.svg";
 
 export function NavBar() {
   return (
@@ -8,10 +8,12 @@ export function NavBar() {
       <div className={styles.content}>
         <img src={logo} alt="Shop Logo" className={styles.logo} />
         <div className={styles.categories}>
-          <div>Home</div> <div>Headphones</div> <div>Speakers</div>
-          <div>Earphones</div>
+          <div className={styles.category}>Home</div>
+          <div className={styles.category}>Headphones</div>
+          <div className={styles.category}>Speakers</div>
+          <div className={styles.category}>Earphones</div>
         </div>
-        <img src={cart} alt="Cart" className={styles.cartIcon} />
+        <Cart className={styles.cartIcon} />
       </div>
       <div className={styles.divider} />
     </div>

@@ -16,6 +16,16 @@
   top: 80px;
   border-radius: 8px;
 }
+
+.background:hover .shopBox {
+  color: #d87d4a;
+  opacity: 1;
+}
+
+.background:hover {
+  cursor: pointer;
+}
+
 .content {
   position: relative;
   top: -80px;
