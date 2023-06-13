@@ -73,3 +73,8 @@
   text-transform: uppercase;
   color: #ffffff;
 }
+
+.button:hover {
+  cursor: pointer;
+  background: #4c4c4c;
+}

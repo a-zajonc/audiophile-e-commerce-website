@@ -61,3 +61,9 @@
   border: 1px solid #000000;
   background-color: transparent;
 }
+
+.button:hover {
+  cursor: pointer;
+  background: #000000;
+  color: #ffffff;
+}

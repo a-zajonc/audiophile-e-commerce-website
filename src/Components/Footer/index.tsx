@@ -1,17 +1,20 @@
 import styles from "./index.module.css";
 import logo from "../../images/shared/desktop/logo.svg";
-import twitterIcon from "../../images/shared/desktop/icon-twitter.svg";
-import instagramIcon from "../../images/shared/desktop/icon-instagram.svg";
-import facebookIcon from "../../images/shared/desktop/icon-facebook.svg";
+import { ReactComponent as TwitterIcon } from "../../images/shared/desktop/icon-twitter.svg";
+import { ReactComponent as InstagramIcon } from "../../images/shared/desktop/icon-instagram.svg";
+import { ReactComponent as FacebookIcon } from "../../images/shared/desktop/icon-facebook.svg";
 
 export function Footer() {
   return (
     <div className={styles.box}>
+      <div className={styles.divider} />
       <div className={styles.navigation}>
         <img src={logo} alt="Shop Logo" className={styles.logo} />
         <div className={styles.categories}>
-          <div>Home</div> <div>Headphones</div> <div>Speakers</div>
-          <div>Earphones</div>
+          <div className={styles.category}>Home</div>
+          <div className={styles.category}>Headphones</div>
+          <div className={styles.category}>Speakers</div>
+          <div className={styles.category}>Earphones</div>
         </div>
       </div>
       <p className={styles.description}>
@@ -21,9 +24,9 @@ export function Footer() {
         facility - we’re open 7 days a week.
       </p>
       <div className={styles.socialMediaBox}>
-        <img src={facebookIcon} alt="Facebook Icon" />
-        <img src={twitterIcon} alt="Twitter Icon" />
-        <img src={instagramIcon} alt="Instagram Icon" />
+        <FacebookIcon className={styles.icon} />
+        <TwitterIcon className={styles.icon} />
+        <InstagramIcon className={styles.icon} />
       </div>
       <p className={styles.copyrightBox}>Copyright 2021. All Rights Reserved</p>
     </div>
