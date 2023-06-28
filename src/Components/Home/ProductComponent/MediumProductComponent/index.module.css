@@ -9,7 +9,7 @@
   left: calc((100% - 1110px) / 2);
   width: 1110px;
   height: 320px;
-  background-image: url(../../../images/home/desktop/image-speaker-zx7.jpg);
+  background-image: url(../../../../images/home/desktop/image-speaker-zx7.jpg);
   background-repeat: no-repeat;
   border-radius: 8px;
 }

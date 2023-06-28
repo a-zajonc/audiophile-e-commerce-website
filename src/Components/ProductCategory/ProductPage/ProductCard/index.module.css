@@ -1,0 +1,71 @@
+.box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 1440px;
+  margin-left: calc((100% - 1440px) / 2);
+  margin-bottom: 160px;
+}
+
+.box:nth-child(2n) {
+  flex-direction: row-reverse;
+  margin-right: calc((100% - 1440px) / 2);
+}
+
+.productImg {
+  width: 549.238px;
+  height: 586px;
+  padding: 23px 33px 44px 33px;
+  border-radius: 8px;
+  background: #f1f1f1;
+}
+
+.textBox {
+  display: flex;
+  flex-direction: column;
+  width: 445px;
+  height: 343px;
+  text-align: left;
+}
+
+.textNewProduct {
+  color: #d87d4a;
+  font-size: 14px;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+}
+
+.productHeader {
+  width: 350px;
+  color: #000;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 44px;
+  letter-spacing: 1.429px;
+  text-transform: uppercase;
+  margin: 16px 0 0 0;
+}
+
+.content {
+  width: 445px;
+  color: #000;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 25px;
+  opacity: 0.5;
+  margin-top: 32px;
+}
+
+.buttonProduct {
+  width: 160px;
+  height: 48px;
+  background: #d87d4a;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+}

@@ -4,7 +4,7 @@ import { ReactComponent as Cart } from "../../images/shared/desktop/icon-cart.sv
 
 export function NavBar() {
   return (
-    <div className={styles.box}>
+    <div className={styles.boxProduct}>
       <div className={styles.content}>
         <img src={logo} alt="Shop Logo" className={styles.logo} />
         <div className={styles.categories}>
