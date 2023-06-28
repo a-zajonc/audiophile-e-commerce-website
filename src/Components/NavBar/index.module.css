@@ -1,9 +1,18 @@
-.box {
-  position: absolute;
+.boxHome {
+  background-image: url(../../images/home/desktop/image-hero.jpg);
+  background-position: right 0px;
+  background-size: cover;
   color: #ffffff;
   height: 95px;
   width: 100%;
-  top: 0px;
+  background-color: #000000;
+}
+
+.boxProduct {
+  color: #ffffff;
+  height: 95px;
+  width: 100%;
+  background-color: #000000;
 }
 
 .content {

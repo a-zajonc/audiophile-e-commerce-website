@@ -1,5 +1,5 @@
 import styles from "./index.module.css";
-import arrow from "../../../images/shared/desktop/icon-arrow-right.svg";
+import arrow from "../../../../images/shared/desktop/icon-arrow-right.svg";
 
 type CategoryCardProps = {
   category: string;

@@ -1,20 +1,18 @@
 import "./App.css";
-import {
-  Categories,
-  Header,
-  NavBar,
-  ProductComponent,
-  About,
-  Footer,
-} from "./Components/";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { NavBar, About, Footer, Home, ProductCategory } from "./Components/";
 
 function App() {
   return (
     <div className="App">
       <NavBar />
-      <Header />
-      <Categories />
-      <ProductComponent />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/category" element={<ProductCategory />} />
+        </Routes>
+      </BrowserRouter>
+
       <About />
       <Footer />
     </div>
