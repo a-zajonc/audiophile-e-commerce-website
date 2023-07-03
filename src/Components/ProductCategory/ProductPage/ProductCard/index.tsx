@@ -1,11 +1,11 @@
 import styles from "./index.module.css";
-import headphones from "../../../../images/shared/desktop/image-xx99-mark-two-headphones.jpg";
 
 type ProductCardProps = {
   productName: string;
   productDescription: string;
   productImg: string;
   isProductNew: boolean;
+  mode: string;
 };
 
 export function ProductCard({
@@ -13,23 +13,36 @@ export function ProductCard({
   productDescription,
   productImg,
   isProductNew,
+  mode,
 }: ProductCardProps) {
   return (
     <div className={styles.box}>
-      <div className={styles.imgBackground}>
-        <img
-          className={styles.productImg}
-          src={require(`../../../../images/${productImg}`)}
-          alt="Headphones"
-        />
-      </div>
+      <img
+        className={styles.productImg}
+        src={require(`../../../../images/${productImg}`)}
+        alt="Headphones"
+      />
       <div className={styles.textBox}>
         <p className={styles.textNewProduct}>
           {isProductNew === true ? "New Product" : null}
         </p>
         <h2 className={styles.productHeader}>{productName}</h2>
         <p className={styles.content}>{productDescription}</p>
-        <button className={styles.buttonProduct}>See Product</button>
+        {mode === "buy" ? (
+          <div>
+            <p className={styles.textPrice}>$ 2,999</p>
+            <div className={styles.shoppingBox}>
+              <div className={styles.boxNumber}>
+                <p className={styles.mathSign}>-</p>
+                <p>1</p>
+                <p className={styles.mathSign}>+</p>
+              </div>
+              <button className={styles.buttonProduct}>Add to cart</button>
+            </div>
+          </div>
+        ) : (
+          <button className={styles.buttonProduct}>See Product</button>
+        )}
       </div>
     </div>
   );

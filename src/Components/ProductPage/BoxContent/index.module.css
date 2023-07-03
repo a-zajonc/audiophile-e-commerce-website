@@ -1,0 +1,41 @@
+.box {
+  width: 635px;
+  height: 318px;
+}
+
+.header {
+  color: #000;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: 1.143px;
+  text-transform: uppercase;
+  margin: 0 0 32px 0;
+}
+
+.list {
+  padding: 0;
+}
+
+.listElement {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 8px;
+}
+
+.quantityText {
+  color: #d87d4a;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 25px;
+  margin: 0px 24px 0px 0px;
+}
+
+.text {
+  color: #000;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 25px;
+  opacity: 0.5;
+  margin: 0px;
+}

@@ -13,6 +13,7 @@ export function ProductPage() {
             productDescription={product.description}
             productImg={product.img}
             isProductNew={product.new}
+            mode={"see"}
           />
         );
       })}

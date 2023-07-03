@@ -1,3 +1,4 @@
 .box {
   margin-top: 160px;
+  margin-left: calc((100% - 1110px) / 2);
 }
