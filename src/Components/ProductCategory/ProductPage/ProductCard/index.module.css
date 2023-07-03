@@ -1,21 +1,19 @@
 .box {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  width: 1440px;
-  margin-left: calc((100% - 1440px) / 2);
+  justify-content: space-between;
+  width: 1110px;
   margin-bottom: 160px;
 }
 
-.box:nth-child(2n) {
+.box:nth-of-type(2n) {
   flex-direction: row-reverse;
   margin-right: calc((100% - 1440px) / 2);
 }
 
 .productImg {
-  width: 549.238px;
-  height: 586px;
+  width: 449.238px;
+  height: 486px;
   padding: 23px 33px 44px 33px;
   border-radius: 8px;
   background: #f1f1f1;
@@ -27,6 +25,7 @@
   width: 445px;
   height: 343px;
   text-align: left;
+  margin-top: 47px;
 }
 
 .textNewProduct {
@@ -68,4 +67,41 @@
   text-transform: uppercase;
   border: none;
   cursor: pointer;
+}
+
+.textPrice {
+  color: #000;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1.286px;
+  text-transform: uppercase;
+}
+
+.boxNumber {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 120px;
+  height: 48px;
+  background: #f1f1f1;
+  margin-right: 16px;
+}
+
+.shoppingBox {
+  display: flex;
+  flex-direction: row;
+  margin-top: 62px;
+}
+
+.mathSign {
+  padding: 10px;
+  cursor: pointer;
+  color: #000;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.25;
 }
