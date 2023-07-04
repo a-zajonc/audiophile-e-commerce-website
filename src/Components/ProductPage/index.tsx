@@ -4,6 +4,8 @@ import data from "../../data.json";
 import { Features } from "./Features";
 import { BoxContent } from "./BoxContent";
 import { Categories } from "../Home/Categories";
+import { ProductGallery } from "./ProductGallery";
+import { OtherProducts } from "./OtherProducts";
 
 export function ProductPage() {
   return (
@@ -26,6 +28,8 @@ export function ProductPage() {
             <BoxContent content={data.products.headphones[0].boxContent} />
           </div>
         </div>
+        <ProductGallery />
+        <OtherProducts />
       </div>
       <Categories />
     </div>
