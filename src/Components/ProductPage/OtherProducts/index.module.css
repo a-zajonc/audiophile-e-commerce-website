@@ -1,0 +1,23 @@
+.box {
+  width: 1110px;
+  height: 571px;
+  margin-top: 180px;
+  margin-bottom: 40px;
+}
+
+.header {
+  color: #000;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: 1.143px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.productCardBox {
+  margin-top: 64px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
