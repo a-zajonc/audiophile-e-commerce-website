@@ -1,3 +1,4 @@
+export { Checkout } from "./Checkout";
 export { ProductCategory } from "./ProductCategory";
 export { Home } from "./Home";
 export { Footer } from "./Footer/";

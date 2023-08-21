@@ -6,12 +6,13 @@ import { BoxContent } from "./BoxContent";
 import { Categories } from "../Home/Categories";
 import { ProductGallery } from "./ProductGallery";
 import { OtherProducts } from "./OtherProducts";
+import { GoBackButton } from "../GoBackButton";
 
 export function ProductPage() {
   return (
     <div>
       <div className={styles.box}>
-        <div className={styles.goBackBox}>Go Back</div>
+        <GoBackButton />
         <div>
           <ProductCard
             productName={data.products.headphones[0].name}
