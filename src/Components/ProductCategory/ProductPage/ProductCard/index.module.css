@@ -15,7 +15,7 @@
   width: 449.238px;
   height: 486px;
   padding: 23px 33px 44px 33px;
-  border-radius: 8px;
+  border-radius: var(--border-radius-small);
   background: #f1f1f1;
 }
 
@@ -29,16 +29,16 @@
 }
 
 .textNewProduct {
-  color: #d87d4a;
-  font-size: 14px;
+  color: var(--color-brand);
+  font-size: var(--font-size-xs);
   letter-spacing: 10px;
   text-transform: uppercase;
 }
 
 .productHeader {
   width: 350px;
-  color: #000;
-  font-size: 40px;
+  color: var(--color-primary);
+  font-size: var(--font-size-xxl);
   font-weight: 700;
   line-height: 44px;
   letter-spacing: 1.429px;
@@ -48,8 +48,8 @@
 
 .content {
   width: 445px;
-  color: #000;
-  font-size: 15px;
+  color: var(--color-primary);
+  font-size: var(--font-size-s);
   font-weight: 500;
   line-height: 25px;
   opacity: 0.5;
@@ -59,9 +59,9 @@
 .buttonProduct {
   width: 160px;
   height: 48px;
-  background: #d87d4a;
+  background: var(--color-brand);
   color: #fff;
-  font-size: 13px;
+  font-size: var(--font-size-xxs);
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -70,8 +70,8 @@
 }
 
 .textPrice {
-  color: #000;
-  font-size: 18px;
+  color: var(--color-primary);
+  font-size: var(--font-size-m);
   font-weight: 700;
   letter-spacing: 1.286px;
   text-transform: uppercase;
@@ -97,9 +97,9 @@
 .mathSign {
   padding: 10px;
   cursor: pointer;
-  color: #000;
+  color: var(--color-primary);
   text-align: center;
-  font-size: 13px;
+  font-size: var(--font-size-xxs);
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;

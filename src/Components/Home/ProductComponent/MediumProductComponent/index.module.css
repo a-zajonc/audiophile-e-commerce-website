@@ -11,7 +11,7 @@
   height: 320px;
   background-image: url(../../../../images/home/desktop/image-speaker-zx7.jpg);
   background-repeat: no-repeat;
-  border-radius: 8px;
+  border-radius: var(--border-radius-small);
 }
 
 .text {
@@ -26,11 +26,11 @@
 .header {
   font-style: normal;
   font-weight: 700;
-  font-size: 28px;
+  font-size: var(--font-size-xl);
   line-height: 38px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #000000;
+  color: var(--color-primary);
   margin: 0px;
 }
 
@@ -40,11 +40,11 @@
   margin-top: 32px;
   font-style: normal;
   font-weight: 700;
-  font-size: 13px;
+  font-size: var(--font-size-xxs);
   line-height: 18px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #000000;
+  color: var(--color-primary);
   border: 1px solid #000000;
   background-color: transparent;
 }
@@ -52,5 +52,5 @@
 .button:hover {
   cursor: pointer;
   background: #000000;
-  color: #ffffff;
+  color: var(--color-secondary);
 }

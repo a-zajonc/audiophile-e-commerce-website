@@ -6,9 +6,9 @@
 }
 
 .header {
-  color: #000;
+  color: var(--color-primary);
   text-align: center;
-  font-size: 24px;
+  font-size: var(--font-size-m);
   font-weight: 700;
   letter-spacing: 1.714px;
   text-transform: uppercase;
@@ -18,9 +18,9 @@
 .button {
   width: 160px;
   height: 48px;
-  background: #d87d4a;
+  background: var(--color-brand);
   color: #fff;
-  font-size: 13px;
+  font-size: var(--font-size-xxs);
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;

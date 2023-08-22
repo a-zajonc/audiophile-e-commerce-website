@@ -1,6 +1,6 @@
 .goBackBox {
-  color: #000;
-  font-size: 15px;
+  color: var(--color-primary);
+  font-size: var(--font-size-s);
   font-weight: 500;
   line-height: 25px;
   opacity: 0.5;

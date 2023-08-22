@@ -6,8 +6,8 @@
 }
 
 .header {
-  color: #000;
-  font-size: 32px;
+  color: var(--color-primary);
+  font-size: var(--font-size-xxl);
   font-weight: 700;
   line-height: 36px;
   letter-spacing: 1.143px;

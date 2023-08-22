@@ -27,11 +27,11 @@
   height: 88px;
   width: 445px;
   font-weight: 700;
-  font-size: 40px;
+  font-size: var(--font-size-xxl);
   line-height: 44px;
   letter-spacing: 1.42857px;
   text-transform: uppercase;
-  color: #000000;
+  color: var(--color-primary);
   margin: 0px;
 }
 
@@ -40,9 +40,9 @@
   height: 175px;
   width: 445px;
   font-weight: 500;
-  font-size: 15px;
+  font-size: var(--font-size-s);
   line-height: 25px;
-  color: #000000;
+  color: var(--color-primary);
   mix-blend-mode: normal;
   opacity: 0.5;
 }
@@ -50,10 +50,10 @@
 .img {
   width: 540px;
   height: 588px;
-  border-radius: 8px;
+  border-radius: var(--border-radius-small);
 }
 
 .mark {
-  background: none;
-  color: #d87d4a;
+  background: var(--color-transparent);
+  color: var(--color-brand);
 }
