@@ -1,6 +1,6 @@
 .box {
   height: 239px;
-  background-color: #000000;
+  background-color: var(--color-primary);
 }
 
 .header {
@@ -8,7 +8,7 @@
   top: 100px;
   color: #fff;
   text-align: center;
-  font-size: 40px;
+  font-size: var(--font-size-xxl);
   font-weight: 700;
   line-height: 44px;
   letter-spacing: 1.429px;

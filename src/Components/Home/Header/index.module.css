@@ -20,10 +20,10 @@
 }
 
 .title {
-  font-size: 56px;
+  font-size: var(--font-size-3xl);
   line-height: 58px;
   letter-spacing: 2px;
-  color: #ffffff;
+  color: var(--color-secondary);
   font-weight: 700;
   text-transform: uppercase;
   margin: 0 0 27px 0;
@@ -31,11 +31,11 @@
 
 .text {
   font-weight: 400;
-  font-size: 14px;
+  font-size: var(--font-size-xs);
   line-height: 19px;
   letter-spacing: 10px;
   text-transform: uppercase;
-  color: #ffffff;
+  color: var(--color-secondary);
   mix-blend-mode: normal;
   opacity: 0.5;
   margin: 0 0 23px 0;
@@ -43,29 +43,29 @@
 
 .description {
   font-weight: 500;
-  font-size: 15px;
+  font-size: var(--font-size-s);
   line-height: 25px;
-  color: #ffffff;
+  color: var(--color-secondary);
   mix-blend-mode: normal;
   opacity: 0.75;
   margin-bottom: 55px;
 }
 
 .button {
-  background-color: #d87d4a;
+  background-color: var(--color-brand);
   height: 48px;
   width: 160px;
   border-radius: 0px;
   border: none;
   font-weight: 700;
-  font-size: 13px;
+  font-size: var(--font-size-xxs);
   line-height: 18px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #ffffff;
+  color: var(--color-secondary);
 }
 
 .button:hover {
-  background-color: #fbaf85;
+  background-color: var(--color-brand);
   cursor: pointer;
 }

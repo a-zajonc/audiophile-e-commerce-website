@@ -1,7 +1,7 @@
 .box {
   width: 100%;
   height: 365px;
-  background-color: #101010;
+  background-color: var(--color-footer);
 }
 
 .divider {
@@ -10,7 +10,7 @@
   left: calc((100% - 1110px) / 2);
   width: 101px;
   height: 4px;
-  background-color: #d87d4a;
+  background-color: var(--color-brand);
 }
 
 .navigation {
@@ -30,15 +30,15 @@
   justify-content: space-between;
   margin-left: 538px;
   font-weight: 700;
-  font-size: 13px;
+  font-size: var(--font-size-xxs);
   line-height: 25px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #ffffff;
+  color: var(--color-secondary);
 }
 
 .category:hover {
-  color: #d87d4a;
+  color: var(--color-brand);
   cursor: pointer;
 }
 
@@ -55,9 +55,9 @@
   height: 100px;
   width: 540px;
   font-weight: 500;
-  font-size: 15px;
+  font-size: var(--font-size-s);
   line-height: 25px;
-  color: #ffffff;
+  color: var(--color-secondary);
   mix-blend-mode: normal;
   opacity: 0.5;
 }
@@ -69,9 +69,9 @@
   height: 25px;
   width: 540px;
   font-weight: 700;
-  font-size: 15px;
+  font-size: var(--font-size-s);
   line-height: 25px;
-  color: #ffffff;
+  color: var(--color-secondary);
   mix-blend-mode: normal;
   opacity: 0.5;
 }
@@ -88,10 +88,10 @@
 }
 
 .icon {
-  fill: #ffffff;
+  fill: var(--color-secondary);
 }
 
 .icon:hover {
   cursor: pointer;
-  fill: #d87d4a;
+  fill: var(--color-brand);
 }

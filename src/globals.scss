@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  font-family: "Manrope";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Manrope", monospace;
+}
+
+:root {
+  --color-primary: #000;
+  --color-secondary: #fff;
+  --color-brand: #d87d4a;
+  --color-background: #f1f1f1;
+  --color-transparent: transparent;
+  --color-footer: #101010;
+
+  --font-size-xxs: 13px;
+  --font-size-xs: 14px;
+  --font-size-s: 15px;
+  --font-size-m: 18px;
+  --font-size-l: 28px;
+  --font-size-xl: 32px;
+  --font-size-xxl: 40px;
+  --font-size-3xl: 56px;
+
+  --border-radius-small: 8px;
+}

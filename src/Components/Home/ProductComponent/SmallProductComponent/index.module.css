@@ -17,7 +17,7 @@
   background-image: url(../../../../images/home/desktop/image-earphones-yx1.jpg);
   width: 540px;
   height: 320px;
-  border-radius: 8px;
+  border-radius: var(--border-radius-small);
 }
 
 .container {
@@ -25,7 +25,7 @@
   height: 320px;
   margin-left: 30px;
   background: #f1f1f1;
-  border-radius: 8px;
+  border-radius: var(--border-radius-small);
 }
 
 .text {
@@ -39,12 +39,12 @@
 
 .header {
   font-weight: 700;
-  font-size: 28px;
+  font-size: var(--font-size-xl);
   line-height: 38px;
   letter-spacing: 2px;
   text-transform: uppercase;
   margin: 0px;
-  color: #000000;
+  color: var(--color-primary);
 }
 
 .button {
@@ -53,17 +53,17 @@
   margin-top: 32px;
   font-style: normal;
   font-weight: 700;
-  font-size: 13px;
+  font-size: var(--font-size-xxs);
   line-height: 18px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #000000;
-  border: 1px solid #000000;
-  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  background-color: var(--color-transparent);
 }
 
 .button:hover {
   cursor: pointer;
-  background: #000000;
-  color: #ffffff;
+  background: var(--color-primary);
+  color: var(--color-secondary);
 }

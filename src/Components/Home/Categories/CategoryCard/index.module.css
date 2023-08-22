@@ -14,11 +14,11 @@
   height: 204px;
   width: 350px;
   top: 80px;
-  border-radius: 8px;
+  border-radius: var(--border-radius-small);
 }
 
 .background:hover .shopBox {
-  color: #d87d4a;
+  color: var(--color-brand);
   opacity: 1;
 }
 
@@ -42,12 +42,12 @@
 
 .heading {
   font-weight: 700;
-  font-size: 18px;
+  font-size: var(--font-size-m);
   line-height: 25px;
   text-align: center;
   letter-spacing: 1.28571px;
   text-transform: uppercase;
-  color: #000000;
+  color: var(--color-primary);
   margin: 26px 0 0 0;
 }
 
@@ -60,11 +60,11 @@
   justify-content: space-around;
   margin-top: 15px;
   font-weight: 700;
-  font-size: 13px;
+  font-size: var(--font-size-xxs);
   line-height: 18px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #000000;
+  color: var(--color-primary);
   mix-blend-mode: normal;
   opacity: 0.5;
 }
