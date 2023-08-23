@@ -1,7 +1,6 @@
 .button {
   height: 48px;
   width: 160px;
-  margin-top: 32px;
   font-style: normal;
   font-weight: 700;
   font-size: var(--font-size-xxs);
@@ -44,4 +43,8 @@
     transition: all 0.5s ease-in-out;
     background: var(--color-brand-opacity);
   }
+}
+
+.margin {
+  margin-top: 32px;
 }

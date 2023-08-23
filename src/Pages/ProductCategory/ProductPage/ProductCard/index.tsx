@@ -38,11 +38,15 @@ export function ProductCard({
                 <p>1</p>
                 <p className={styles.mathSign}>+</p>
               </div>
-              <Button colorScheme="brand">Add to cart</Button>
+              <Button colorScheme="brand" margin={false}>
+                Add to cart
+              </Button>
             </div>
           </div>
         ) : (
-          <Button colorScheme="brand">See Product</Button>
+          <Button colorScheme="brand" margin={true}>
+            See Product
+          </Button>
         )}
       </div>
     </div>
