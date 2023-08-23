@@ -8,7 +8,7 @@ import {
   ProductCategory,
   ProductPage,
   Checkout,
-} from "./Components/";
+} from "./Pages";
 
 function App() {
   return (

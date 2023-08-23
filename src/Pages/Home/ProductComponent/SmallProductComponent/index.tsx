@@ -1,3 +1,4 @@
+import { Button } from "../../../../Components/button/button";
 import styles from "./index.module.css";
 
 export function SmallProductComponent() {
@@ -8,7 +9,7 @@ export function SmallProductComponent() {
         <div className={styles.container}>
           <div className={styles.text}>
             <h3 className={styles.header}>YX1 EARPHONES</h3>
-            <button className={styles.button}>See product</button>
+            <Button colorScheme="primary">See Product</Button>
           </div>
         </div>
       </div>

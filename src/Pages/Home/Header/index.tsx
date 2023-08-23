@@ -1,3 +1,4 @@
+import { Button } from "../../../Components/button/button";
 import styles from "./index.module.css";
 
 export function Header() {
@@ -10,7 +11,7 @@ export function Header() {
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </p>
-        <button className={styles.button}>See Product</button>
+        <Button colorScheme="brand">See Product</Button>
       </div>
     </div>
   );

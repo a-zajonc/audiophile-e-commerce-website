@@ -1,3 +1,4 @@
+import { Button } from "../../../../Components/button/button";
 import styles from "./index.module.css";
 
 export function BigProductComponent() {
@@ -11,7 +12,7 @@ export function BigProductComponent() {
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.
           </p>
-          <button className={styles.button}>See product</button>
+          <Button colorScheme="secondary">See Product</Button>
         </div>
       </div>
     </div>
