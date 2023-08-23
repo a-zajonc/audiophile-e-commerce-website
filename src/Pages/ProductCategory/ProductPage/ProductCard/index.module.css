@@ -56,19 +56,6 @@
   margin-top: 32px;
 }
 
-.buttonProduct {
-  width: 160px;
-  height: 48px;
-  background: var(--color-brand);
-  color: #fff;
-  font-size: var(--font-size-xxs);
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  border: none;
-  cursor: pointer;
-}
-
 .textPrice {
   color: var(--color-primary);
   font-size: var(--font-size-m);
