@@ -1,3 +1,4 @@
+import { Button } from "../../../../Components/button/button";
 import styles from "./index.module.css";
 
 type ProductCardProps = {
@@ -37,11 +38,11 @@ export function ProductCard({
                 <p>1</p>
                 <p className={styles.mathSign}>+</p>
               </div>
-              <button className={styles.buttonProduct}>Add to cart</button>
+              <Button colorScheme="brand">Add to cart</Button>
             </div>
           </div>
         ) : (
-          <button className={styles.buttonProduct}>See Product</button>
+          <Button colorScheme="brand">See Product</Button>
         )}
       </div>
     </div>
