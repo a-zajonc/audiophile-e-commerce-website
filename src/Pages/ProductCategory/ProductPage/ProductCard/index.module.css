@@ -16,7 +16,7 @@
   height: 486px;
   padding: 23px 33px 44px 33px;
   border-radius: var(--border-radius-small);
-  background: #f1f1f1;
+  background: var(--color-background);
 }
 
 .textBox {
@@ -70,7 +70,7 @@
   align-items: center;
   width: 120px;
   height: 48px;
-  background: #f1f1f1;
+  background: var(--color-background);
   margin-right: 16px;
 }
 

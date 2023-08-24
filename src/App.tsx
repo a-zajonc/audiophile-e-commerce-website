@@ -1,4 +1,3 @@
-import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
   NavBar,
@@ -9,10 +8,17 @@ import {
   ProductPage,
   Checkout,
 } from "./Pages";
+import "./globals.scss";
 
 function App() {
   return (
-    <div className="App">
+    <div
+      className={
+        window.location.pathname === "/checkout"
+          ? "background-checkout"
+          : "background-page"
+      }
+    >
       <NavBar />
       <BrowserRouter>
         <Routes>

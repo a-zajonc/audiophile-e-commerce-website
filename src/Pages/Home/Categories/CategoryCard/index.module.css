@@ -10,7 +10,7 @@
 
 .background {
   position: relative;
-  background: #f1f1f1;
+  background: var(--color-background);
   height: 204px;
   width: 350px;
   top: 80px;
