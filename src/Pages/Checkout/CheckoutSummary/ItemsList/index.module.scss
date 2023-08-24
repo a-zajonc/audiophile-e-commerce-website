@@ -1,0 +1,44 @@
+.itemBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.itemBox:last-child {
+  margin-bottom: 0px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.textContainer {
+  margin-left: 16px;
+}
+
+.img {
+  width: 64px;
+  height: 64px;
+  background-color: var(--color-background);
+  padding: 10px;
+}
+
+.itemName {
+  line-height: 25px;
+  font-weight: 700;
+  color: var(--color-primary);
+  font-size: var(--font-size-s);
+}
+
+.itemPrice {
+  font-size: var(--font-size-xs);
+  color: var(--color-primary-opacity);
+}
+
+.itemQuanity {
+  font-size: var(--font-size-s);
+  color: var(--color-primary-opacity);
+  text-align: right;
+}

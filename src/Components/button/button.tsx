@@ -5,8 +5,8 @@ import { forwardRef } from "react";
 type Props = ComponentPropsWithoutRef<"button"> & {
   colorScheme: "primary" | "secondary" | "brand";
   margin?: true | false;
+  fullWidth?: true | false;
   children?: ReactNode;
-  // onClick: () => void;
 };
 
 export const Button = forwardRef<HTMLButtonElement, Props>(
@@ -15,6 +15,7 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
       type = "button",
       colorScheme = "primary",
       margin = true,
+      fullWidth = false,
       children,
       ...buttonProps
     }: Props,
@@ -25,7 +26,7 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
       type={type}
       className={`${styles.button}  ${
         colorScheme && styles[`color-scheme-${colorScheme}`]
-      }       ${margin && styles.margin}`}
+      }       ${margin && styles.margin} ${fullWidth && styles.fullWidth}`}
     >
       {children}
     </button>

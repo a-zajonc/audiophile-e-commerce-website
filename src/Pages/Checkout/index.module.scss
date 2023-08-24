@@ -1,0 +1,13 @@
+.box {
+  width: 1240px;
+  margin-left: calc((100% - 1240px) / 2);
+  margin-top: 79px;
+  background: var(--color-background);
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: left;
+}

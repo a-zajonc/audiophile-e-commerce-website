@@ -5,6 +5,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.background {
+  &-page {
+    background-color: var(--color-secondary);
+  }
+  &-checkout {
+    background-color: #f1f1f1;
+  }
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Manrope", monospace;
 }

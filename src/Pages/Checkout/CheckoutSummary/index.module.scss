@@ -1,0 +1,52 @@
+.box {
+  width: 350px;
+  height: 100%;
+  background-color: var(--color-secondary);
+  border-radius: var(--border-radius-small);
+  padding: 30px;
+}
+
+.header {
+  text-transform: uppercase;
+  letter-spacing: 1.286px;
+  color: var(--color-primary);
+  font-size: var(--font-size-m);
+}
+
+.container {
+  margin-top: 32px;
+}
+
+.textBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.text {
+  margin: 0;
+  font-weight: 500;
+  line-height: 25px;
+  color: var(--color-primary-opacity);
+  font-size: var(--font-size-s);
+}
+
+.price {
+  margin: 0;
+  font-weight: 700;
+  color: var(--color-primary);
+  font-size: var(--font-size-m);
+}
+
+.total {
+  margin: 0;
+  color: var(--color-brand);
+  font-weight: 700;
+  font-size: var(--font-size-m);
+}
+
+.costsBox {
+  margin-bottom: 34px;
+}
