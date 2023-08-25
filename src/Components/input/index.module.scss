@@ -1,0 +1,34 @@
+.box {
+  display: flex;
+  flex-direction: column;
+  margin-right: 16px;
+  width: 100%;
+}
+
+.halfwidth {
+  width: calc(50% - 8px);
+}
+
+.box:last-child {
+  margin-right: 0px;
+}
+
+.input {
+  height: 56px;
+  border: 1px solid var(--color-input-border);
+  background-color: var(--color-secondary);
+  border-radius: var(--border-radius-small);
+  color: var(--color-primary-opacity);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  letter-spacing: -0.25px;
+  padding-inline: 24px;
+}
+
+.title {
+  color: var(--color-primary);
+  font-size: var(--font-size-xxs);
+  font-weight: 700;
+  letter-spacing: -0.214px;
+  margin-bottom: 9px;
+}
