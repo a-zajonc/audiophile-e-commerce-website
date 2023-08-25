@@ -6,3 +6,28 @@
   border-radius: var(--border-radius-small);
   padding: 30px;
 }
+
+.header {
+  color: var(--color-primary);
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: 1.143px;
+  text-transform: uppercase;
+}
+
+.formTitle {
+  color: var(--color-brand);
+  font-size: var(--font-size-xxs);
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: 0.929px;
+  text-transform: uppercase;
+}
+
+.inputsBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 24px;
+}
