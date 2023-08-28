@@ -1,7 +1,8 @@
 .box {
   width: 1240px;
   margin-left: calc((100% - 1240px) / 2);
-  margin-top: 79px;
+  padding-top: 79px;
+  padding-bottom: 141px;
   background: var(--color-background);
 }
 
