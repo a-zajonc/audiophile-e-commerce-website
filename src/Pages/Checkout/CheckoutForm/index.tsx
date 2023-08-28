@@ -44,7 +44,7 @@ export function CheckoutForm() {
         </div>
       </div>
       {option.length < 1 ? null : option === "e-Money" ? (
-        <div className={styles.inputsBox}>
+        <div className={styles.radioInputsBox}>
           <Input title="e-Money Number" />
           <Input title="e-Money PIN" />
         </div>
