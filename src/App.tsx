@@ -19,11 +19,11 @@ function App() {
           : "background-page"
       }
     >
-      <NavBar />
       <BrowserRouter>
+        <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/category" element={<ProductCategory />} />
+          <Route path="/category/:categoryName" element={<ProductCategory />} />
           <Route path="/product" element={<ProductPage />} />
           <Route path="/checkout" element={<Checkout />} />
         </Routes>

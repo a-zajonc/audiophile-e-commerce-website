@@ -1,9 +1,13 @@
 import styles from "./index.module.css";
 
-export function CategoryHeader() {
+type Prop = {
+  category: string | any;
+};
+
+export function CategoryHeader({ category }: Prop) {
   return (
     <div className={styles.box}>
-      <h2 className={styles.header}>HEADPHONES</h2>
+      <h2 className={styles.header}>{category}</h2>
     </div>
   );
 }

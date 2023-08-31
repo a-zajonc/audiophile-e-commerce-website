@@ -18,6 +18,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Manrope", monospace;
 }
 
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
 :root {
   --color-primary: #000;
   --color-secondary: #fff;
