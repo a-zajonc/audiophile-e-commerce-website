@@ -3,6 +3,7 @@ import logo from "../../images/shared/desktop/logo.svg";
 import { ReactComponent as TwitterIcon } from "../../images/shared/desktop/icon-twitter.svg";
 import { ReactComponent as InstagramIcon } from "../../images/shared/desktop/icon-instagram.svg";
 import { ReactComponent as FacebookIcon } from "../../images/shared/desktop/icon-facebook.svg";
+import { Link } from "react-router-dom";
 
 export function Footer() {
   return (
@@ -11,10 +12,18 @@ export function Footer() {
       <div className={styles.navigation}>
         <img src={logo} alt="Shop Logo" className={styles.logo} />
         <div className={styles.categories}>
-          <div className={styles.category}>Home</div>
-          <div className={styles.category}>Headphones</div>
-          <div className={styles.category}>Speakers</div>
-          <div className={styles.category}>Earphones</div>
+          <Link to="/">
+            <div className={styles.category}>Home</div>
+          </Link>
+          <Link to="/category/headphones">
+            <div className={styles.category}>Headphones</div>
+          </Link>
+          <Link to="/category/speakers">
+            <div className={styles.category}>Speakers</div>
+          </Link>
+          <Link to="/category/earphones">
+            <div className={styles.category}>Earphones</div>
+          </Link>
         </div>
       </div>
       <p className={styles.description}>

@@ -10,7 +10,7 @@ export function ProductCategory() {
   return (
     <div className={styles.box}>
       <CategoryHeader category={categoryName} />
-      <ProductPage category={categoryName} />
+      <ProductPage />
       <Categories />
     </div>
   );

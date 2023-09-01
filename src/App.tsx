@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import {
   NavBar,
   About,
@@ -9,6 +9,7 @@ import {
   Checkout,
 } from "./Pages";
 import "./globals.scss";
+import ScrollToTop from "./Components/ScrolltoTop";
 
 function App() {
   return (
@@ -19,15 +20,14 @@ function App() {
           : "background-page"
       }
     >
-      <BrowserRouter>
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/category/:categoryName" element={<ProductCategory />} />
-          <Route path="/product" element={<ProductPage />} />
-          <Route path="/checkout" element={<Checkout />} />
-        </Routes>
-      </BrowserRouter>
+      <ScrollToTop />
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/category/:categoryName" element={<ProductCategory />} />
+        <Route path="/product" element={<ProductPage />} />
+        <Route path="/checkout" element={<Checkout />} />
+      </Routes>
       {window.location.pathname === "/checkout" ? null : <About />}
       <Footer />
     </div>
