@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.text {
+  color: var(--color-primary-opacity);
+  font-size: var(--font-size-s);
+  font-weight: 500;
+  line-height: 25px;
+}
+
+.price {
+  color: var(--color-primary);
+  font-size: var(--font-size-m);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.cartHeader {
+  color: var(--color-primary);
+  font-size: var(--font-size-m);
+  font-weight: 700;
+  letter-spacing: 1.286px;
+  text-transform: uppercase;
+}
