@@ -1,4 +1,5 @@
-import { Routes, Route } from "react-router-dom";
+import * as React from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 import {
   NavBar,
   About,
@@ -12,10 +13,12 @@ import "./globals.scss";
 import ScrollToTop from "./Components/ScrolltoTop";
 
 function App() {
+  let location = useLocation();
+
   return (
     <div
       className={
-        window.location.pathname === "/checkout"
+        location.pathname === "/checkout"
           ? "background-checkout"
           : "background-page"
       }

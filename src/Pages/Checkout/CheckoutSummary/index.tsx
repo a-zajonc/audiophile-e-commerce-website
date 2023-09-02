@@ -1,8 +1,8 @@
+import * as React from "react";
 import { Button } from "../../../Components/button/button";
 import { OrderConfirmation } from "../OrderConfirmation";
 import { ItemsList } from "./ItemsList";
 import styles from "./index.module.scss";
-import * as React from "react";
 import Modal from "react-modal";
 
 const customStyles = {
@@ -22,17 +22,16 @@ const customStyles = {
 Modal.setAppElement(document.getElementById("root") as HTMLElement);
 
 export function CheckoutSummary() {
-  let subtitle: any;
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
   function openModal() {
     setIsOpen(true);
   }
 
-  function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    subtitle.style.color = "#f00";
-  }
+  // function afterOpenModal() {
+  //   // references are now sync'd and can be accessed.
+  //   subtitle.style.color = "#f00";
+  // }
 
   function closeModal() {
     setIsOpen(false);
@@ -65,14 +64,7 @@ export function CheckoutSummary() {
       <Button colorScheme="brand" fullWidth={true} onClick={openModal}>
         CONTINUE & PAY
       </Button>
-      <Modal
-        style={customStyles}
-        isOpen={modalIsOpen}
-        aria={{
-          labelledby: "heading",
-          describedby: "full_description",
-        }}
-      >
+      <Modal style={customStyles} isOpen={modalIsOpen}>
         <OrderConfirmation handleClick={closeModal} />
       </Modal>
     </div>
