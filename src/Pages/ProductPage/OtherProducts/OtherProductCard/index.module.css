@@ -18,4 +18,5 @@
 .img {
   width: 350px;
   height: 318px;
+  border-radius: var(--border-radius-small);
 }
