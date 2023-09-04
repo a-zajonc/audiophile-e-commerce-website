@@ -11,7 +11,7 @@ export function BoxContent({ content }: BoxContentProps) {
       <ul className={styles.list}>
         {content.map((element: any) => {
           return (
-            <li className={styles.listElement}>
+            <li className={styles.listElement} key={element.name}>
               <p className={styles.quantityText}>{element.quantity}x</p>
               <p className={styles.text}>{element.name}</p>
             </li>

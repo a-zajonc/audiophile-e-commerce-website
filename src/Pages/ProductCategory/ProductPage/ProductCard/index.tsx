@@ -1,12 +1,14 @@
+import styles from "./index.module.css";
+import { Link } from "react-router-dom";
 import { Counter } from "../../../../Components/Counter";
 import { Button } from "../../../../Components/button/button";
-import styles from "./index.module.css";
 
 type ProductCardProps = {
   productName: string;
   productDescription: string;
   productImg: string;
   isProductNew: boolean;
+  productPrice?: string;
   mode: string;
 };
 
@@ -15,6 +17,7 @@ export function ProductCard({
   productDescription,
   productImg,
   isProductNew,
+  productPrice,
   mode,
 }: ProductCardProps) {
   return (
@@ -32,7 +35,7 @@ export function ProductCard({
         <p className={styles.content}>{productDescription}</p>
         {mode === "buy" ? (
           <div>
-            <p className={styles.textPrice}>$ 2,999</p>
+            <p className={styles.textPrice}>{productPrice}</p>
             <div className={styles.container}>
               <Counter size="big" margin={true} />
               <Button colorScheme="brand" margin={false}>
@@ -41,9 +44,13 @@ export function ProductCard({
             </div>
           </div>
         ) : (
-          <Button colorScheme="brand" margin={true}>
-            See Product
-          </Button>
+          <Link
+            to={`/product/${productName.split(" ").join("-").toLowerCase()}`}
+          >
+            <Button colorScheme="brand" margin={true}>
+              See Product
+            </Button>
+          </Link>
         )}
       </div>
     </div>

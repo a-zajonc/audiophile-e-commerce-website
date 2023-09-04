@@ -28,7 +28,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/category/:categoryName" element={<ProductCategory />} />
-        <Route path="/product" element={<ProductPage />} />
+        <Route path="/product/:productName" element={<ProductPage />} />
         <Route path="/checkout" element={<Checkout />} />
       </Routes>
       {window.location.pathname === "/checkout" ? null : <About />}

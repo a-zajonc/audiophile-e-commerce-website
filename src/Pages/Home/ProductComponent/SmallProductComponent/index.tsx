@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "../../../../Components/button/button";
 import styles from "./index.module.css";
 
@@ -9,7 +10,9 @@ export function SmallProductComponent() {
         <div className={styles.container}>
           <div className={styles.text}>
             <h3 className={styles.header}>YX1 EARPHONES</h3>
-            <Button colorScheme="primary">See Product</Button>
+            <Link to="/product/yx1">
+              <Button colorScheme="primary">See Product</Button>
+            </Link>
           </div>
         </div>
       </div>
