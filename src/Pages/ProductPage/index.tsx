@@ -51,7 +51,7 @@ export function ProductPage() {
             <BoxContent content={matchingProducts[0].boxContent} />
           </div>
         </div>
-        <ProductGallery />
+        <ProductGallery img={matchingProducts[0].productGallery} />
         <OtherProducts />
       </div>
       <Categories />
