@@ -17,7 +17,7 @@ export function Categories() {
       <div className={styles.categoriesBox}>
         {categoriesData.map((category) => {
           return (
-            <div className={styles.container}>
+            <div className={styles.container} key={category.name}>
               <Link to={`/category/${category.name}`}>
                 <CategoryCard
                   category={category.name}

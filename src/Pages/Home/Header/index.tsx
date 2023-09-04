@@ -1,5 +1,6 @@
-import { Button } from "../../../Components/button/button";
 import styles from "./index.module.css";
+import { Link } from "react-router-dom";
+import { Button } from "../../../Components/button/button";
 
 export function Header() {
   return (
@@ -11,7 +12,9 @@ export function Header() {
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </p>
-        <Button colorScheme="brand">See Product</Button>
+        <Link to="/product/xx99-mark-ii-headphones">
+          <Button colorScheme="brand">See Product</Button>
+        </Link>
       </div>
     </div>
   );

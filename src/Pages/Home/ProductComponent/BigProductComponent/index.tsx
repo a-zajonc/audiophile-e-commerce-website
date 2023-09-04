@@ -1,5 +1,6 @@
-import { Button } from "../../../../Components/button/button";
 import styles from "./index.module.css";
+import { Button } from "../../../../Components/button/button";
+import { Link } from "react-router-dom";
 
 export function BigProductComponent() {
   return (
@@ -12,7 +13,9 @@ export function BigProductComponent() {
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.
           </p>
-          <Button colorScheme="secondary">See Product</Button>
+          <Link to="product/zx9">
+            <Button colorScheme="secondary">See Product</Button>
+          </Link>
         </div>
       </div>
     </div>
