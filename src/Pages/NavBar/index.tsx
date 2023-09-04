@@ -9,8 +9,9 @@ import { CartModal } from "../CartModal";
 
 const customStyles = {
   content: {
+    overflow: "hidden",
     width: "377px",
-    top: "20%",
+    top: "30%",
     left: "71%",
     right: "auto",
     bottom: "auto",
@@ -54,7 +55,11 @@ export function NavBar() {
           </Link>
         </div>
         <Cart className={styles.cartIcon} onClick={openModal} />
-        <Modal style={customStyles} isOpen={modalIsOpen}>
+        <Modal
+          isOpen={modalIsOpen}
+          style={customStyles}
+          onRequestClose={closeModal}
+        >
           <CartModal handleClick={closeModal} />
         </Modal>
       </div>

@@ -1,3 +1,4 @@
+import { Counter } from "../../../../Components/Counter";
 import { Button } from "../../../../Components/button/button";
 import styles from "./index.module.css";
 
@@ -32,12 +33,8 @@ export function ProductCard({
         {mode === "buy" ? (
           <div>
             <p className={styles.textPrice}>$ 2,999</p>
-            <div className={styles.shoppingBox}>
-              <div className={styles.boxNumber}>
-                <p className={styles.mathSign}>-</p>
-                <p>1</p>
-                <p className={styles.mathSign}>+</p>
-              </div>
+            <div className={styles.container}>
+              <Counter size="big" margin={true} />
               <Button colorScheme="brand" margin={false}>
                 Add to cart
               </Button>
