@@ -1,5 +1,6 @@
-import { Button } from "../../../../Components/button/button";
 import styles from "./index.module.css";
+import { Link } from "react-router-dom";
+import { Button } from "../../../../Components/button/button";
 
 type OtherProductCardProps = {
   img: string;
@@ -13,7 +14,9 @@ export function OtherProductCard({ img, name }: OtherProductCardProps) {
       <h4 className={styles.header}>
         {name.split(" ").slice(0, -1).join(" ")}
       </h4>
-      <Button colorScheme="brand">See Product</Button>
+      <Link to={`/product/${name.toLowerCase().split(" ").join("-")}`}>
+        <Button colorScheme="brand">See Product</Button>
+      </Link>
     </div>
   );
 }
