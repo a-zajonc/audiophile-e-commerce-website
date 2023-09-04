@@ -8,15 +8,15 @@
 .header {
   color: var(--color-primary);
   text-align: center;
-  font-size: var(--font-size-m);
+  font-size: var(--font-size-l);
   font-weight: 700;
   letter-spacing: 1.714px;
   text-transform: uppercase;
-  margin: 40px 0 32px 0;
+  margin: 40px 0 0 0;
 }
 
 .img {
-  width: 350px;
+  width: 320px;
   height: 318px;
   border-radius: var(--border-radius-small);
 }
