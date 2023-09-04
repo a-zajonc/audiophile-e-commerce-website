@@ -1,3 +1,4 @@
+import { Button } from "../../../../Components/button/button";
 import styles from "./index.module.css";
 
 type OtherProductCardProps = {
@@ -10,7 +11,7 @@ export function OtherProductCard({ img, name }: OtherProductCardProps) {
     <div className={styles.box}>
       <img src={img} alt="device" className={styles.img} />
       <h4 className={styles.header}>{name}</h4>
-      <button className={styles.button}>See Product</button>
+      <Button colorScheme="brand">See Product</Button>
     </div>
   );
 }

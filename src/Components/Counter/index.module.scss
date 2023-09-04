@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background: var(--color-background);
+  &-margin {
+    margin-right: 30px;
+  }
+}
+
+.mathSign {
+  padding: 10px;
+  cursor: pointer;
+  color: var(--color-primary);
+  text-align: center;
+  font-size: var(--font-size-xxs);
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.25;
+  &:hover {
+    color: var(--color-brand);
+    opacity: 1;
+  }
+}
+
+.size {
+  &-big {
+    width: 120px;
+    height: 48px;
+  }
+  &-small {
+    width: 96px;
+    height: 32px;
+  }
+}
