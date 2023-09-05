@@ -9,7 +9,7 @@ import { CartModal } from "../CartModal";
 
 const customStyles = {
   content: {
-    overflow: "hidden",
+    padding: "31px",
     width: "377px",
     top: "30%",
     left: "71%",

@@ -2,11 +2,15 @@ import styles from "./index.module.css";
 import { Link } from "react-router-dom";
 import { Counter } from "../../../../Components/Counter";
 import { Button } from "../../../../Components/button/button";
+import { useContext } from "react";
+import { BasketContext } from "../../../../context";
+import { useAddToBasket } from "../../../../Components/hooks/useAddToBasket";
 
-type ProductCardProps = {
+type Props = {
   productName: string;
   productDescription: string;
   productImg: string;
+  productCartImg?: string;
   isProductNew: boolean;
   productPrice?: string;
   mode: string;
@@ -16,10 +20,13 @@ export function ProductCard({
   productName,
   productDescription,
   productImg,
+  productCartImg,
   isProductNew,
   productPrice,
   mode,
-}: ProductCardProps) {
+}: Props) {
+  const { basket } = useContext(BasketContext);
+  const addToBasket = useAddToBasket();
   return (
     <div className={styles.box}>
       <img
@@ -38,7 +45,13 @@ export function ProductCard({
             <p className={styles.textPrice}>{productPrice}</p>
             <div className={styles.container}>
               <Counter size="big" margin={true} />
-              <Button colorScheme="brand" margin={false}>
+              <Button
+                colorScheme="brand"
+                margin={false}
+                onClick={() => {
+                  addToBasket(productName, productCartImg, productPrice);
+                }}
+              >
                 Add to cart
               </Button>
             </div>
