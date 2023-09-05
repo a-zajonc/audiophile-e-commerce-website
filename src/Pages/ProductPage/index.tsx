@@ -40,6 +40,7 @@ export function ProductPage() {
             productDescription={matchingProducts[0].description}
             isProductNew={matchingProducts[0].new}
             productImg={matchingProducts[0].img}
+            productCartImg={matchingProducts[0].imgCart}
             productPrice={matchingProducts[0].price}
             mode={"buy"}
           />

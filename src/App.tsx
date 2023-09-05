@@ -10,10 +10,11 @@ import {
   Checkout,
 } from "./Pages";
 import "./globals.scss";
-import ScrollToTop from "./Components/ScrolltoTop";
+import { BasketContext } from "./context";
 
 function App() {
   let location = useLocation();
+  const [basket, setBasket] = React.useState();
 
   return (
     <div
@@ -23,16 +24,17 @@ function App() {
           : "background-page"
       }
     >
-      <ScrollToTop />
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/category/:categoryName" element={<ProductCategory />} />
-        <Route path="/product/:productName" element={<ProductPage />} />
-        <Route path="/checkout" element={<Checkout />} />
-      </Routes>
-      {window.location.pathname === "/checkout" ? null : <About />}
-      <Footer />
+      <BasketContext.Provider value={{ basket, setBasket }}>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/category/:categoryName" element={<ProductCategory />} />
+          <Route path="/product/:productName" element={<ProductPage />} />
+          <Route path="/checkout" element={<Checkout />} />
+        </Routes>
+        {window.location.pathname === "/checkout" ? null : <About />}
+        <Footer />
+      </BasketContext.Provider>
     </div>
   );
 }
