@@ -4,6 +4,12 @@ import { OrderConfirmation } from "../OrderConfirmation";
 import { ItemsList } from "./ItemsList";
 import styles from "./index.module.scss";
 import Modal from "react-modal";
+import { BasketContext } from "../../../context";
+import {
+  sumGrandTotal,
+  sumPrices,
+  sumWithTax,
+} from "../../../Components/hooks and functions/sumPrices";
 
 const customStyles = {
   content: {
@@ -22,6 +28,7 @@ const customStyles = {
 Modal.setAppElement(document.getElementById("root") as HTMLElement);
 
 export function CheckoutSummary() {
+  const { basket } = React.useContext(BasketContext);
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
   function openModal() {
@@ -40,25 +47,44 @@ export function CheckoutSummary() {
   return (
     <div className={styles.box}>
       <h2 className={styles.header}>Summary</h2>
-      <ItemsList />
+      {basket &&
+        basket.map((item: any) => {
+          return (
+            <ItemsList
+              name={item.name}
+              price={item.price}
+              img={item.img}
+              quantity={1}
+              key={item.name}
+            />
+          );
+        })}
       <div className={styles.container}>
         <div className={styles.costsBox}>
           <div className={styles.textBox}>
             <p className={styles.text}>Total</p>
-            <p className={styles.price}>$ 5,396</p>
+            <p className={styles.price}>
+              {basket && basket.length ? `$ ${sumPrices(basket)}` : "$ 0"}
+            </p>
           </div>
           <div className={styles.textBox}>
             <p className={styles.text}>SHIPPING</p>
-            <p className={styles.price}>$ 50</p>
+            <p className={styles.price}>
+              {basket && basket.length ? "$ 50" : "$ 0"}
+            </p>
           </div>
           <div className={styles.textBox}>
             <p className={styles.text}>VAT (INCLUDED)</p>
-            <p className={styles.price}>$ 1,079</p>
+            <p className={styles.price}>
+              {basket && basket.length ? `$ ${sumWithTax(basket, 0.2)}` : "$ 0"}
+            </p>
           </div>
         </div>
         <div className={styles.textBox}>
           <p className={styles.text}>GRAND TOTAL</p>
-          <p className={styles.total}>$ 5,446</p>
+          <p className={styles.total}>
+            {basket && basket.length ? `$ ${sumGrandTotal(basket, 50)}` : "$ 0"}
+          </p>
         </div>
       </div>
       <Button colorScheme="brand" fullWidth={true} onClick={openModal}>

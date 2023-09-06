@@ -4,7 +4,25 @@ import { Counter } from "../../../../Components/Counter";
 import { Button } from "../../../../Components/button/button";
 import { useContext } from "react";
 import { BasketContext } from "../../../../context";
-import { useAddToBasket } from "../../../../Components/hooks/useAddToBasket";
+import { useAddToBasket } from "../../../../Components/hooks and functions/useAddToBasket";
+
+function removeTypeFromName(name: string): string {
+  const words = name.split(" ");
+
+  const wordsToRemove = ["Earphones", "Wireless", "Headphones", "Speaker"];
+
+  while (words.length > 0) {
+    const lastWord = words[words.length - 1];
+    if (wordsToRemove.includes(lastWord)) {
+      words.pop();
+    } else {
+      break;
+    }
+  }
+  const result = words.join(" ");
+
+  return result;
+}
 
 type Props = {
   productName: string;
@@ -27,6 +45,7 @@ export function ProductCard({
 }: Props) {
   const { basket } = useContext(BasketContext);
   const addToBasket = useAddToBasket();
+
   return (
     <div className={styles.box}>
       <img
@@ -49,7 +68,11 @@ export function ProductCard({
                 colorScheme="brand"
                 margin={false}
                 onClick={() => {
-                  addToBasket(productName, productCartImg, productPrice);
+                  addToBasket(
+                    removeTypeFromName(productName),
+                    productCartImg,
+                    productPrice
+                  );
                 }}
               >
                 Add to cart
