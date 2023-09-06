@@ -2,26 +2,12 @@ import styles from "./index.module.css";
 import { Link } from "react-router-dom";
 import { Counter } from "../../../../Components/Counter";
 import { Button } from "../../../../Components/button/button";
-import { useContext } from "react";
-import { BasketContext } from "../../../../context";
 import { useAddToBasket } from "../../../../Components/hooks and functions/useAddToBasket";
+import { removeTypeFromName } from "../../../../Components/hooks and functions/removeTypeFromName";
 
-function removeTypeFromName(name: string): string {
-  const words = name.split(" ");
-
-  const wordsToRemove = ["Earphones", "Wireless", "Headphones", "Speaker"];
-
-  while (words.length > 0) {
-    const lastWord = words[words.length - 1];
-    if (wordsToRemove.includes(lastWord)) {
-      words.pop();
-    } else {
-      break;
-    }
-  }
-  const result = words.join(" ");
-
-  return result;
+function displayAsPrice(price: any) {
+  const addComma = Number(price).toLocaleString("en-US");
+  return `$ ${addComma}`;
 }
 
 type Props = {
@@ -43,7 +29,6 @@ export function ProductCard({
   productPrice,
   mode,
 }: Props) {
-  const { basket } = useContext(BasketContext);
   const addToBasket = useAddToBasket();
 
   return (
@@ -61,7 +46,7 @@ export function ProductCard({
         <p className={styles.content}>{productDescription}</p>
         {mode === "buy" ? (
           <div>
-            <p className={styles.textPrice}>{productPrice}</p>
+            <p className={styles.textPrice}>{displayAsPrice(productPrice)}</p>
             <div className={styles.container}>
               <Counter size="big" margin={true} />
               <Button
