@@ -2,6 +2,7 @@ import styles from "./index.module.css";
 import { OtherProductCard } from "./OtherProductCard";
 import { useLocation } from "react-router-dom";
 import data from "../../../data.json";
+import { removeTypeFromName } from "../../../Components/hooks and functions/removeTypeFromName";
 
 function getProducts(data: any, productName: string) {
   const productCategories = Object.values(data.products);
@@ -35,7 +36,7 @@ export function OtherProducts() {
           return (
             <OtherProductCard
               img={require(`../../../images/${product.img}`)}
-              name={product.name}
+              name={removeTypeFromName(product.name)}
               key={product.id}
             />
           );
