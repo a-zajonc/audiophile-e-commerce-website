@@ -9,7 +9,15 @@
   border: none;
   letter-spacing: 1px;
   text-transform: uppercase;
+  transition: all 0.5s ease-in-out;
   cursor: pointer;
+  &:disabled {
+    background-color: var(--color-primary-opacity);
+
+    &:hover {
+      background-color: var(--color-primary-opacity);
+    }
+  }
 }
 
 .color-scheme {

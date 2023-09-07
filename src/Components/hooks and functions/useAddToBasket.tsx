@@ -9,16 +9,33 @@ export function useAddToBasket() {
     productCartImg: any,
     productPrice: any
   ) => {
-    const productToAddToBasket = {
-      name: productName,
-      img: productCartImg,
-      price: productPrice,
-    };
-
     setBasket((prevBasket: any) => {
-      const updatedBasket = Array.isArray(prevBasket) ? [...prevBasket] : [];
-      updatedBasket.push(productToAddToBasket);
-      return updatedBasket;
+      const index = prevBasket.findIndex(
+        (item: any) => item.name === productName
+      );
+
+      if (index !== -1) {
+        const updatedBasket = prevBasket.map((item: any, i: number) => {
+          if (i === index) {
+            return {
+              ...item,
+              quantity: (item.quantity || 1) + 1,
+            };
+          }
+          return item;
+        });
+        return updatedBasket;
+      } else {
+        return [
+          ...prevBasket,
+          {
+            name: productName,
+            img: productCartImg,
+            price: productPrice,
+            quantity: 1,
+          },
+        ];
+      }
     });
   };
 

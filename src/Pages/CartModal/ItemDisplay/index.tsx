@@ -5,9 +5,10 @@ type Props = {
   name: string;
   img: string;
   price: string;
+  quantity: number;
 };
 
-export function ItemDisplay({ name, img, price }: Props) {
+export function ItemDisplay({ name, img, price, quantity }: Props) {
   return (
     <div className={styles.box}>
       <img
@@ -20,7 +21,7 @@ export function ItemDisplay({ name, img, price }: Props) {
           <p className={styles.name}>{name}</p>
           <p className={styles.priceText}>{price}</p>
         </div>
-        <Counter size="small" />
+        <Counter size="small" quantity={quantity} />
       </div>
     </div>
   );

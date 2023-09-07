@@ -18,7 +18,7 @@ export function ItemsList({ img, name, price, quantity }: Props) {
         />
         <div className={styles.textContainer}>
           <p className={styles.itemName}>{name}</p>
-          <p className={styles.itemPrice}> {price}</p>
+          <p className={styles.itemPrice}>{`$ ${price}`}</p>
         </div>
       </div>
       <p className={styles.itemQuanity}>x{quantity}</p>
