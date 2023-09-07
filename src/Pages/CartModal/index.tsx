@@ -27,6 +27,7 @@ export function CartModal({ handleClick }: any) {
                   name={item.name}
                   img={item.img}
                   price={item.price}
+                  quantity={item.quantity}
                   key={item.name}
                 />
               );

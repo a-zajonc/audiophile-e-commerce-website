@@ -1,4 +1,5 @@
 import styles from "./index.module.css";
+import * as React from "react";
 import { Link } from "react-router-dom";
 import { Counter } from "../../../../Components/Counter";
 import { Button } from "../../../../Components/button/button";
@@ -30,6 +31,16 @@ export function ProductCard({
   mode,
 }: Props) {
   const addToBasket = useAddToBasket();
+  const [buttonText, setButtonText] = React.useState("Add to cart");
+
+  const handleAddToCartClick = () => {
+    addToBasket(removeTypeFromName(productName), productCartImg, productPrice);
+
+    setButtonText("Added!");
+    setTimeout(() => {
+      setButtonText("Add to cart");
+    }, 2000);
+  };
 
   return (
     <div className={styles.box}>
@@ -48,19 +59,14 @@ export function ProductCard({
           <div>
             <p className={styles.textPrice}>{displayAsPrice(productPrice)}</p>
             <div className={styles.container}>
-              <Counter size="big" margin={true} />
+              <Counter size="big" margin={true} quantity={1} />
               <Button
                 colorScheme="brand"
                 margin={false}
-                onClick={() => {
-                  addToBasket(
-                    removeTypeFromName(productName),
-                    productCartImg,
-                    productPrice
-                  );
-                }}
+                onClick={handleAddToCartClick}
+                disabled={buttonText === "Added!"}
               >
-                Add to cart
+                {buttonText}
               </Button>
             </div>
           </div>

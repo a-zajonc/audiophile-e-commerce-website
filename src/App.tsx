@@ -14,7 +14,7 @@ import { BasketContext } from "./context";
 
 function App() {
   let location = useLocation();
-  const [basket, setBasket] = React.useState();
+  const [basket, setBasket] = React.useState([]);
 
   return (
     <div

@@ -54,7 +54,7 @@ export function CheckoutSummary() {
               name={item.name}
               price={item.price}
               img={item.img}
-              quantity={1}
+              quantity={item.quantity}
               key={item.name}
             />
           );
