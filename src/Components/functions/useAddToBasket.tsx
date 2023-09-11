@@ -7,9 +7,20 @@ export function useAddToBasket() {
   const addToBasket = (
     productName: any,
     productCartImg: any,
-    productPrice: any
+    productPrice: any,
+    quantity: any
   ) => {
     setBasket((prevBasket: any) => {
+      if (!prevBasket) {
+        return [
+          {
+            name: productName,
+            img: productCartImg,
+            price: productPrice,
+            quantity: quantity,
+          },
+        ];
+      }
       const index = prevBasket.findIndex(
         (item: any) => item.name === productName
       );
@@ -32,7 +43,7 @@ export function useAddToBasket() {
             name: productName,
             img: productCartImg,
             price: productPrice,
-            quantity: 1,
+            quantity: quantity,
           },
         ];
       }

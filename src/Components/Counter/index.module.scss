@@ -10,7 +10,7 @@
 }
 
 .mathSign {
-  padding: 10px;
+  padding: 8px;
   cursor: pointer;
   color: var(--color-primary);
   text-align: center;
@@ -19,6 +19,7 @@
   letter-spacing: 1px;
   text-transform: uppercase;
   opacity: 0.25;
+  border: none;
   &:hover {
     color: var(--color-brand);
     opacity: 1;

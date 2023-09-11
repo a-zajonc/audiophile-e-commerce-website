@@ -6,10 +6,10 @@ import styles from "./index.module.scss";
 import Modal from "react-modal";
 import { BasketContext } from "../../../context";
 import {
-  sumGrandTotal,
-  sumPrices,
-  sumWithTax,
-} from "../../../Components/hooks and functions/sumPrices";
+  useSumGrandTotal,
+  useSumPrices,
+  useSumWithTax,
+} from "../../../Components/functions/sumPrices";
 
 const customStyles = {
   content: {
@@ -30,6 +30,7 @@ Modal.setAppElement(document.getElementById("root") as HTMLElement);
 export function CheckoutSummary() {
   const { basket } = React.useContext(BasketContext);
   const [modalIsOpen, setIsOpen] = React.useState(false);
+  const total = useSumPrices(basket);
 
   function openModal() {
     setIsOpen(true);
@@ -63,9 +64,7 @@ export function CheckoutSummary() {
         <div className={styles.costsBox}>
           <div className={styles.textBox}>
             <p className={styles.text}>Total</p>
-            <p className={styles.price}>
-              {basket && basket.length ? `$ ${sumPrices(basket)}` : "$ 0"}
-            </p>
+            <p className={styles.price}>{`$ ${total}`}</p>
           </div>
           <div className={styles.textBox}>
             <p className={styles.text}>SHIPPING</p>
@@ -75,16 +74,12 @@ export function CheckoutSummary() {
           </div>
           <div className={styles.textBox}>
             <p className={styles.text}>VAT (INCLUDED)</p>
-            <p className={styles.price}>
-              {basket && basket.length ? `$ ${sumWithTax(basket, 0.2)}` : "$ 0"}
-            </p>
+            <p className={styles.price}>{`$ ${useSumWithTax(total, 0.2)}`}</p>
           </div>
         </div>
         <div className={styles.textBox}>
           <p className={styles.text}>GRAND TOTAL</p>
-          <p className={styles.total}>
-            {basket && basket.length ? `$ ${sumGrandTotal(basket, 50)}` : "$ 0"}
-          </p>
+          <p className={styles.total}>{`$ ${useSumGrandTotal(total, 50)}`}</p>
         </div>
       </div>
       <Button colorScheme="brand" fullWidth={true} onClick={openModal}>
