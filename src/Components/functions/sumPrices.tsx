@@ -25,11 +25,17 @@ export function useSumPrices(shoppingBasket: any) {
 }
 
 export function useSumWithTax(total: any, tax: number) {
+  if (total === "0") {
+    return "0";
+  }
   const result = Number(total.replace(",", "") * tax);
   return Math.ceil(result).toLocaleString("en-US");
 }
 
 export function useSumGrandTotal(total: any, shippingCost: number) {
+  if (total === "0") {
+    return "0";
+  }
   const result = Number(total.replace(",", "")) + shippingCost;
   return result.toLocaleString("en-US");
 }
