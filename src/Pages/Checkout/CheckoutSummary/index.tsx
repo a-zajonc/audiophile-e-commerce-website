@@ -14,7 +14,6 @@ import {
 const customStyles = {
   content: {
     width: "540px",
-    height: "581px",
     top: "50%",
     left: "50%",
     right: "auto",
@@ -82,7 +81,12 @@ export function CheckoutSummary() {
           <p className={styles.total}>{`$ ${useSumGrandTotal(total, 50)}`}</p>
         </div>
       </div>
-      <Button colorScheme="brand" fullWidth={true} onClick={openModal}>
+      <Button
+        colorScheme="brand"
+        fullWidth={true}
+        onClick={openModal}
+        disabled={basket.length < 1}
+      >
         CONTINUE & PAY
       </Button>
       <Modal style={customStyles} isOpen={modalIsOpen}>
