@@ -4,10 +4,11 @@ import { Button } from "../../Components/button/button";
 import { Link } from "react-router-dom";
 import { ItemDisplay } from "./ItemDisplay";
 import { BasketContext } from "../../context";
-import { sumPrices } from "../../Components/hooks and functions/sumPrices";
+import { useSumPrices } from "../../Components/functions/sumPrices";
 
 export function CartModal({ handleClick }: any) {
   const { basket, setBasket } = React.useContext(BasketContext);
+  const total = useSumPrices(basket);
 
   return (
     <div>
@@ -36,9 +37,7 @@ export function CartModal({ handleClick }: any) {
       </div>
       <div className={styles.container}>
         <p className={styles.text}>TOTAL</p>
-        <p className={styles.price}>
-          {basket && basket.length ? `$ ${sumPrices(basket)}` : "0"}
-        </p>
+        <p className={styles.price}>{`$ ${total}`}</p>
       </div>
       <Link to="/checkout">
         <Button fullWidth={true} colorScheme="brand" onClick={handleClick}>

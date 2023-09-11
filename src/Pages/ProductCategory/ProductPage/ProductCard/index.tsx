@@ -3,8 +3,8 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 import { Counter } from "../../../../Components/Counter";
 import { Button } from "../../../../Components/button/button";
-import { useAddToBasket } from "../../../../Components/hooks and functions/useAddToBasket";
-import { removeTypeFromName } from "../../../../Components/hooks and functions/removeTypeFromName";
+import { useAddToBasket } from "../../../../Components/functions/useAddToBasket";
+import { removeTypeFromName } from "../../../../Components/functions/removeTypeFromName";
 
 function displayAsPrice(price: any) {
   const addComma = Number(price).toLocaleString("en-US");
@@ -32,9 +32,15 @@ export function ProductCard({
 }: Props) {
   const addToBasket = useAddToBasket();
   const [buttonText, setButtonText] = React.useState("Add to cart");
+  const [quantity, setQuantity] = React.useState(1);
 
   const handleAddToCartClick = () => {
-    addToBasket(removeTypeFromName(productName), productCartImg, productPrice);
+    addToBasket(
+      removeTypeFromName(productName),
+      productCartImg,
+      productPrice,
+      quantity
+    );
 
     setButtonText("Added!");
     setTimeout(() => {
@@ -59,7 +65,12 @@ export function ProductCard({
           <div>
             <p className={styles.textPrice}>{displayAsPrice(productPrice)}</p>
             <div className={styles.container}>
-              <Counter size="big" margin={true} quantity={1} />
+              <Counter
+                size="big"
+                margin={true}
+                quantity={quantity}
+                setQuantity={setQuantity}
+              />
               <Button
                 colorScheme="brand"
                 margin={false}
