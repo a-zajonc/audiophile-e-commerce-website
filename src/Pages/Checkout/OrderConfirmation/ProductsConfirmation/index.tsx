@@ -9,15 +9,19 @@ export function ProductsConfirmation({ basket }: any) {
   };
 
   return (
-    <div className={styles.itemsBox}>
-      {isActive === true ? (
-        basket.map((item: any) => {
+    <div className={styles.box}>
+      <div
+        className={`${
+          isActive === false ? styles.itemsBox : styles.itemsBoxActive
+        }`}
+      >
+        {basket.map((item: any) => {
           return <ProductDisplay product={item} key={item.id} />;
-        })
-      ) : (
-        <ProductDisplay product={basket[0]} />
-      )}
-      <div className={styles.line} />
+        })}
+      </div>
+      <div className={styles.greyBackground}>
+        <div className={styles.line} />
+      </div>
       {basket.length > 1 ? (
         <button className={styles.buttonText} onClick={handleClick}>
           {isActive
