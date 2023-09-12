@@ -1,4 +1,4 @@
-.itemsBox {
+.box {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -9,11 +9,20 @@
   border-radius: var(--border-radius-small) 0 0 var(--border-radius-small);
 }
 
-.productsBox {
-  margin-bottom: 16px;
-  &:last-of-type {
-    margin-bottom: 0px;
-  }
+.itemsBox {
+  max-height: 55px;
+  overflow: hidden;
+  transition: max-height 1000ms ease-in-out;
+}
+
+.itemsBoxActive {
+  max-height: 1000px;
+  transition: max-height 1000ms ease-in-out;
+}
+
+.greyBackground {
+  background-color: var(--color-background);
+  padding-block: 10px;
 }
 
 .line {
