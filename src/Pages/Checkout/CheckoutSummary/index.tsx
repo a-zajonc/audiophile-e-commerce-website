@@ -85,7 +85,7 @@ export function CheckoutSummary() {
         colorScheme="brand"
         fullWidth={true}
         onClick={openModal}
-        disabled={basket.length < 1}
+        disabled={!basket || basket.length < 1}
       >
         CONTINUE & PAY
       </Button>

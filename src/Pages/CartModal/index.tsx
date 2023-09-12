@@ -16,7 +16,7 @@ export function CartModal({ handleClick }: any) {
         <p className={styles.cartHeader}>
           cart {`(${basket ? basket.length : "0"})`}
         </p>
-        <button className={styles.button} onClick={() => setBasket()}>
+        <button className={styles.button} onClick={() => setBasket([])}>
           Remove all
         </button>
       </div>
