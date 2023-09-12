@@ -1,8 +1,12 @@
-import { useContext } from "react";
+import * as React from "react";
 import { BasketContext } from "../../context";
 
 export function useAddToBasket() {
-  const { setBasket } = useContext(BasketContext);
+  const { basket, setBasket } = React.useContext(BasketContext);
+
+  React.useEffect(() => {
+    localStorage.setItem("basket", JSON.stringify(basket));
+  }, [basket]);
 
   const addToBasket = (
     productName: any,

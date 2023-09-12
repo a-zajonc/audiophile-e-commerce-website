@@ -14,7 +14,10 @@ import { BasketContext } from "./context";
 
 function App() {
   let location = useLocation();
-  const [basket, setBasket] = React.useState([]);
+  const storedBasket = localStorage.getItem("basket");
+  const [basket, setBasket] = React.useState(
+    storedBasket ? JSON.parse(storedBasket) : []
+  );
 
   return (
     <div
