@@ -3,7 +3,6 @@ import styles from "./index.module.css";
 import { Link } from "react-router-dom";
 import logo from "../../images/shared/desktop/logo.svg";
 import { ReactComponent as Cart } from "../../images/shared/desktop/icon-cart.svg";
-
 import Modal from "react-modal";
 import { CartModal } from "../CartModal";
 
@@ -11,14 +10,14 @@ const customStyles = {
   content: {
     padding: "31px",
     width: "377px",
-    top: "30%",
-    left: "71%",
+    top: "15%",
+    left: "55%",
     right: "auto",
     bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
   },
-  overlay: { background: "rgba(0, 0, 0, 0.4)" },
+  overlay: {
+    background: "rgba(0, 0, 0, 0.4)",
+  },
 };
 
 Modal.setAppElement(document.getElementById("root") as HTMLElement);
