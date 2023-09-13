@@ -8,7 +8,7 @@ type Props = ComponentPropsWithoutRef<"input"> & {
 };
 
 export const Input = forwardRef<HTMLInputElement, Props>(
-  ({ title, halfWidth = false }: Props, ref) => (
+  ({ title, halfWidth = false, ...inputProps }: Props, ref) => (
     <div
       className={
         halfWidth === true
@@ -17,7 +17,7 @@ export const Input = forwardRef<HTMLInputElement, Props>(
       }
     >
       <label className={styles.title}>{title}</label>
-      <input ref={ref} className={styles.input}></input>
+      <input ref={ref} className={styles.input} {...inputProps} />
     </div>
   )
 );
