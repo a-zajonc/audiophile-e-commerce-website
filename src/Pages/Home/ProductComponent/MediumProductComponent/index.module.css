@@ -33,24 +33,3 @@
   color: var(--color-primary);
   margin: 0px;
 }
-
-.button {
-  height: 48px;
-  width: 160px;
-  margin-top: 32px;
-  font-style: normal;
-  font-weight: 700;
-  font-size: var(--font-size-xxs);
-  line-height: 18px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--color-primary);
-  border: 1px solid #000000;
-  background-color: transparent;
-}
-
-.button:hover {
-  cursor: pointer;
-  background: #000000;
-  color: var(--color-secondary);
-}

@@ -1,4 +1,4 @@
-import styles from "./index.module.css";
+import styles from "./index.module.scss";
 import logo from "../../images/shared/desktop/logo.svg";
 import { ReactComponent as TwitterIcon } from "../../images/shared/desktop/icon-twitter.svg";
 import { ReactComponent as InstagramIcon } from "../../images/shared/desktop/icon-instagram.svg";
