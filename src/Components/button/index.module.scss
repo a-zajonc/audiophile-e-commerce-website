@@ -9,14 +9,13 @@
   border: none;
   letter-spacing: 1px;
   text-transform: uppercase;
-  transition: all 0.5s ease-in-out;
+  transition: ease-out 0.5s;
   cursor: pointer;
   &:disabled {
-    background-color: var(--color-primary-opacity);
-
-    &:hover {
-      background-color: var(--color-primary-opacity);
-    }
+    box-shadow: inset 400px 0 0 0 var(--color-primary-opacity);
+  }
+  &:hover {
+    box-shadow: inset 400px 0 0 0 var(--color-primary-opacity);
   }
 }
 
@@ -27,29 +26,22 @@
     background-color: var(--color-transparent);
   }
   &-primary:hover {
-    background: var(--color-primary);
+    box-shadow: inset 400px 0 0 0 var(--color-primary);
     color: var(--color-secondary);
-    transition: all 0.5s ease-in-out;
   }
   &-secondary {
-    color: var(--color-secondary);
-    border: none;
     background-color: var(--color-primary);
+    color: var(--color-secondary);
   }
   &-secondary:hover {
-    transition: all 0.5s ease-in-out;
-    background: var(--color-primary-opacity);
-    color: var(--color-secondary);
-    border: none;
+    box-shadow: inset 400px 0 0 0 var(--color-primary-opacity);
   }
   &-brand {
     color: var(--color-secondary);
-    border: none;
     background-color: var(--color-brand);
   }
   &-brand:hover {
-    transition: all 0.5s ease-in-out;
-    background: var(--color-brand-opacity);
+    box-shadow: inset 400px 0 0 0 var(--color-brand-opacity);
   }
 }
 

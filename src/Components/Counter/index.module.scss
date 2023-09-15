@@ -20,6 +20,7 @@
   text-transform: uppercase;
   opacity: 0.25;
   border: none;
+  transition: all 0.2s ease-in;
   &:hover {
     color: var(--color-brand);
     opacity: 1;

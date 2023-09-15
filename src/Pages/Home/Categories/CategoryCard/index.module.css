@@ -10,6 +10,7 @@
   width: 350px;
   top: 80px;
   border-radius: var(--border-radius-small);
+  transition: all 0.2s ease-in;
 }
 
 .background:hover .shopBox {

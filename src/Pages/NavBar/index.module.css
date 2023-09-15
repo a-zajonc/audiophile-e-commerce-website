@@ -41,11 +41,16 @@
   font-size: var(--font-size-xxs);
   line-height: 25px;
   letter-spacing: 2px;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
 }
 
+.category {
+  transition: all 0.2s ease-in;
+}
 .category:hover {
   color: var(--color-brand);
-  cursor: pointer;
+  transition: all 0.2s ease-in;
 }
 
 .cartIcon {
@@ -53,10 +58,11 @@
   width: 23.3px;
   height: 20px;
   fill: var(--color-secondary);
+  transition: all 0.2s ease-in;
+  cursor: pointer;
 }
 
 .cartIcon:hover {
-  cursor: pointer;
   fill: var(--color-brand);
 }
 

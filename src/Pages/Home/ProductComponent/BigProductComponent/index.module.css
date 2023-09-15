@@ -58,23 +58,3 @@
   height: 75px;
   width: 349px;
 }
-
-.button {
-  margin-top: 34px;
-  height: 48px;
-  width: 160px;
-  border-radius: 0px;
-  border: none;
-  background: #000000;
-  font-weight: 700;
-  font-size: var(--font-size-xxs);
-  line-height: 18px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--color-secondary);
-}
-
-.button:hover {
-  cursor: pointer;
-  background: #4c4c4c;
-}

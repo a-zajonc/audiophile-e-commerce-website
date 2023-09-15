@@ -1,4 +1,4 @@
-import styles from "./index.module.css";
+import styles from "./index.module.scss";
 import { ProductCard } from "./ProductCard";
 import data from "../../../data.json";
 import { useParams } from "react-router-dom";
@@ -18,7 +18,6 @@ export function ProductPage() {
       {dataCategory.map((product: any) => {
         return (
           <ProductCard
-            key={product.id}
             productName={product.name}
             productDescription={product.description}
             productImg={product.img}
