@@ -16,6 +16,7 @@
 .input {
   height: 56px;
   border: 1px solid var(--color-input-border);
+  outline-color: var(--color-input-border);
   background-color: var(--color-secondary);
   border-radius: var(--border-radius-small);
   color: var(--color-primary-opacity);
@@ -28,10 +29,31 @@
   }
 }
 
+.inputError {
+  @extend .input;
+  border: 1px solid var(--color-error);
+  outline-color: var(--color-error);
+}
+
 .title {
   color: var(--color-primary);
   font-size: var(--font-size-xxs);
   font-weight: 700;
   letter-spacing: -0.214px;
   margin-bottom: 9px;
+}
+
+.horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.errorMessage {
+  color: var(--color-error);
+  font-size: var(--font-size-xxs);
+  font-weight: 500;
+  letter-spacing: -0.214px;
+  margin: 0;
 }

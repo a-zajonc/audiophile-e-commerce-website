@@ -16,7 +16,7 @@ export function ProductsConfirmation({ basket }: any) {
         }`}
       >
         {basket.map((item: any) => {
-          return <ProductDisplay product={item} key={item.id} />;
+          return <ProductDisplay product={item} key={item.name} />;
         })}
       </div>
       <div className={styles.greyBackground}>

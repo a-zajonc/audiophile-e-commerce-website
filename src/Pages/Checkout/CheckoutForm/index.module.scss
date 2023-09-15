@@ -76,3 +76,10 @@
   height: 48px;
   margin-right: 32px;
 }
+
+.errorMessage {
+  color: var(--color-error);
+  font-size: var(--font-size-xxs);
+  font-weight: 500;
+  letter-spacing: -0.214px;
+}

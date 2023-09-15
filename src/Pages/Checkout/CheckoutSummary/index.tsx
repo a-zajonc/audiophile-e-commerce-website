@@ -26,7 +26,7 @@ const customStyles = {
 
 Modal.setAppElement(document.getElementById("root") as HTMLElement);
 
-export function CheckoutSummary() {
+export function CheckoutSummary({ errors, option }: any) {
   const { basket } = React.useContext(BasketContext);
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const total = useSumPrices(basket);
@@ -82,12 +82,17 @@ export function CheckoutSummary() {
         </div>
       </div>
       <Button
+        type="submit"
         colorScheme="brand"
         fullWidth={true}
-        onClick={openModal}
-        disabled={!basket || basket.length < 1}
+        // onClick={openModal}
+        disabled={
+          !basket ||
+          basket.length < 1 ||
+          (errors && Object.keys(errors).length > 0)
+        }
       >
-        CONTINUE & PAY
+        {option === "Cash on Delivery" ? "CONTINUE" : "CONTINUE & PAY"}
       </Button>
       <Modal style={customStyles} isOpen={modalIsOpen}>
         <OrderConfirmation handleClick={closeModal} />
