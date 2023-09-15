@@ -49,7 +49,7 @@ export function ProductPage() {
               descriptionFirst={matchingProducts[0].features?.[0]}
               descriptionSecond={matchingProducts[0].features?.[1]}
             />
-            <BoxContent content={matchingProducts[0].boxContent} />
+            <BoxContent insideBox={matchingProducts[0].boxContent} />
           </div>
         </div>
         <ProductGallery img={matchingProducts[0].productGallery} />

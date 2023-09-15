@@ -23,26 +23,32 @@ const customStyles = {
   },
   overlay: { background: "rgba(0, 0, 0, 0.4)" },
 };
+Modal.setAppElement("#root");
 
-Modal.setAppElement(document.getElementById("root") as HTMLElement);
-
-export function CheckoutSummary({ errors, option }: any) {
-  const { basket } = React.useContext(BasketContext);
+export function CheckoutSummary({ errors, option, order }: any) {
+  const { basket, setBasket } = React.useContext(BasketContext);
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const total = useSumPrices(basket);
+
+  React.useEffect(() => {
+    if (order) {
+      openModal();
+    }
+  }, [order]);
 
   function openModal() {
     setIsOpen(true);
   }
 
-  // function afterOpenModal() {
-  //   // references are now sync'd and can be accessed.
-  //   subtitle.style.color = "#f00";
-  // }
-
   function closeModal() {
     setIsOpen(false);
   }
+
+  const handleClick = () => {
+    setBasket([]);
+    closeModal();
+    window.sessionStorage.removeItem("form");
+  };
 
   return (
     <div className={styles.box}>
@@ -85,7 +91,6 @@ export function CheckoutSummary({ errors, option }: any) {
         type="submit"
         colorScheme="brand"
         fullWidth={true}
-        // onClick={openModal}
         disabled={
           !basket ||
           basket.length < 1 ||
@@ -95,7 +100,7 @@ export function CheckoutSummary({ errors, option }: any) {
         {option === "Cash on Delivery" ? "CONTINUE" : "CONTINUE & PAY"}
       </Button>
       <Modal style={customStyles} isOpen={modalIsOpen}>
-        <OrderConfirmation handleClick={closeModal} />
+        <OrderConfirmation handleClick={handleClick} />
       </Modal>
     </div>
   );

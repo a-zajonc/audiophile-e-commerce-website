@@ -8,6 +8,7 @@ import {
 } from "../../../Components/functions/sumPrices";
 import { BasketContext } from "../../../context";
 import { ProductsConfirmation } from "./ProductsConfirmation";
+import { Link } from "react-router-dom";
 
 export function OrderConfirmation({ handleClick }: any) {
   const { basket } = React.useContext(BasketContext);
@@ -28,9 +29,11 @@ export function OrderConfirmation({ handleClick }: any) {
           <p className={styles.priceText}>{`$ ${grandTotal}`}</p>
         </div>
       </div>
-      <Button colorScheme="brand" fullWidth={true} onClick={handleClick}>
-        BACK TO HOME
-      </Button>
+      <Link to="/">
+        <Button colorScheme="brand" fullWidth={true} onClick={handleClick}>
+          BACK TO HOME
+        </Button>
+      </Link>
     </div>
   );
 }
