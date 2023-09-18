@@ -4,11 +4,9 @@
   justify-content: space-between;
   width: 1110px;
   margin-bottom: 160px;
-}
-
-.box:nth-of-type(2n) {
-  flex-direction: row-reverse;
-  margin-right: calc((100% - 1440px) / 2);
+  &_reversed {
+    flex-direction: row-reverse;
+  }
 }
 
 .productImg {

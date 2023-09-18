@@ -1,5 +1,5 @@
-import styles from "./index.module.css";
 import * as React from "react";
+import styles from "./index.module.scss";
 import { Link } from "react-router-dom";
 import { Counter } from "../../../../Components/Counter";
 import { Button } from "../../../../Components/button/button";
@@ -19,6 +19,7 @@ type Props = {
   isProductNew: boolean;
   productPrice?: string;
   mode: string;
+  isReversed?: boolean;
 };
 
 export function ProductCard({
@@ -29,6 +30,7 @@ export function ProductCard({
   isProductNew,
   productPrice,
   mode,
+  isReversed,
 }: Props) {
   const addToBasket = useAddToBasket();
   const [buttonText, setButtonText] = React.useState("Add to cart");
@@ -49,7 +51,7 @@ export function ProductCard({
   };
 
   return (
-    <div className={styles.box}>
+    <div className={`${styles.box} ${isReversed ? styles.box_reversed : ""}`}>
       <img
         className={styles.productImg}
         src={require(`../../../../images/${productImg}`)}
