@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import {
   NavBar,
   About,
@@ -11,6 +11,8 @@ import {
 } from "./Pages";
 import "./globals.scss";
 import { BasketContext } from "./context";
+import { PageNotFound } from "./Pages/PageNotFound";
+import { Categories } from "./Pages/Home/Categories";
 
 function App() {
   let location = useLocation();
@@ -32,10 +34,16 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/category/:categoryName" element={<ProductCategory />} />
+          <Route path="/category/" element={<Categories />} />
           <Route path="/product/:productName" element={<ProductPage />} />
+          <Route path="/product/" element={<Categories />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
-        {window.location.pathname === "/checkout" ? null : <About />}
+        {window.location.pathname === "/checkout" ||
+        location.pathname === "*" ? null : (
+          <About />
+        )}
         <Footer />
       </BasketContext.Provider>
     </div>

@@ -1,0 +1,21 @@
+.box {
+  width: 1110px;
+  margin-left: calc((100% - 1110px) / 2);
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: var(--color-primary-opacity);
+  font-size: var(--font-size-m);
+}
+
+.img {
+  height: 150px;
+  height: 150px;
+  margin-bottom: 36px;
+}
+
+.a {
+  color: var(--color-brand);
+}
