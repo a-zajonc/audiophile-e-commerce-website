@@ -1,0 +1,39 @@
+.color {
+  &-primary-opacity {
+    color: var(--color-primary-opacity);
+  }
+  &-brand {
+    color: var(--color-brand);
+  }
+  &-secondary {
+    color: var(--color-secondary);
+  }
+}
+
+.font-size {
+  &-xs {
+    font-size: var(--font-size-xs);
+  }
+  &-s {
+    font-size: var(--font-size-s);
+  }
+}
+
+.line-height {
+  &-xs {
+    line-height: var(--line-height-xs);
+  }
+  &-s {
+    line-height: var(--line-height-s);
+  }
+  &-m {
+    line-height: var(--line-height-m);
+  }
+  &-l {
+    line-height: var(--line-height-l);
+  }
+}
+
+.opacity {
+  opacity: 0.75;
+}
