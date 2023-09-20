@@ -2,9 +2,13 @@
   margin: 0;
 }
 
+.hover:hover {
+  color: var(--color-brand);
+}
+
 .color {
-  &-primary-opacity {
-    color: var(--color-primary-opacity);
+  &-primary {
+    color: var(--color-primary);
   }
   &-brand {
     color: var(--color-brand);
@@ -15,11 +19,23 @@
 }
 
 .font-size {
+  &-xxs {
+    font-size: var(--font-size-xxs);
+  }
   &-xs {
     font-size: var(--font-size-xs);
   }
   &-s {
     font-size: var(--font-size-s);
+  }
+  &-m {
+    font-size: var(--font-size-m);
+  }
+  &-l {
+    font-size: var(--font-size-l);
+  }
+  &-xl {
+    font-size: var(--font-size-l);
   }
 }
 

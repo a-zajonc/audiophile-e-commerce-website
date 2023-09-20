@@ -1,0 +1,8 @@
+.text {
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  &-opacity {
+    opacity: 0.5;
+  }
+}

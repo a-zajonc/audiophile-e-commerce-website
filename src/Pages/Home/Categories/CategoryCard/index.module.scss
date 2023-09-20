@@ -11,24 +11,14 @@
   top: 80px;
   border-radius: var(--border-radius-small);
   transition: all 0.2s ease-in;
-}
-
-.background:hover .shopBox {
-  color: var(--color-brand);
-  opacity: 1;
-}
-
-.background:hover {
-  cursor: pointer;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .content {
   position: relative;
   top: -80px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .img {
@@ -47,25 +37,16 @@
   margin: 26px 0 0 0;
 }
 
-.shopBox {
+.container {
   height: 18px;
   width: 57.3px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
   margin-top: 15px;
-  font-weight: 700;
-  font-size: var(--font-size-xxs);
-  line-height: 18px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: var(--color-primary);
-  mix-blend-mode: normal;
-  opacity: 0.5;
 }
 
 .arrow {
   height: 10px;
   width: 5px;
+  margin-left: 10px;
 }

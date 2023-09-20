@@ -9,6 +9,7 @@ type TextProps = ComponentPropsWithoutRef<"p"> & {
   fontWeight?: number;
   opacity?: string;
   className?: string;
+  marginTop?: string;
   children?: ReactNode;
 };
 
@@ -22,21 +23,29 @@ export const Text = forwardRef<HTMLParagraphElement, TextProps>(
       children,
       opacity,
       className,
+      marginTop,
       ...textProps
     }: TextProps,
     ref
-  ) => (
-    <p
-      ref={ref}
-      className={`${styles.text} ${color && styles[`color-${color}`]} ${
-        fontSize && styles[`font-size-${fontSize}`]
-      } ${fontWeight && styles[`font-weight-${fontWeight}`]} ${
-        lineHeight && styles[`line-height-${lineHeight}`]
-      } =
-        ${opacity && styles[`opacity-${opacity}`]}     ${className}`}
-      {...textProps}
-    >
-      {children}
-    </p>
-  )
+  ) => {
+    const customStyle = marginTop ? { marginTop } : {};
+
+    return (
+      <p
+        ref={ref}
+        className={`${styles.text} ${color && styles[`color-${color}`]} ${
+          fontSize && styles[`font-size-${fontSize}`]
+        } ${fontWeight && styles[`font-weight-${fontWeight}`]} ${
+          lineHeight && styles[`line-height-${lineHeight}`]
+        } =
+        ${opacity && styles[`opacity-${opacity}`]}     ${className}
+    
+       `}
+        style={customStyle}
+        {...textProps}
+      >
+        {children}
+      </p>
+    );
+  }
 );

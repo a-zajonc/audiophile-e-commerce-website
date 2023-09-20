@@ -11,10 +11,10 @@
   text-transform: uppercase;
   transition: ease-out 0.5s;
   cursor: pointer;
-  &:disabled {
+  &:hover {
     box-shadow: inset 400px 0 0 0 var(--color-primary-opacity);
   }
-  &:hover {
+  &:disabled {
     box-shadow: inset 400px 0 0 0 var(--color-primary-opacity);
   }
 }
@@ -26,7 +26,7 @@
     background-color: var(--color-transparent);
   }
   &-primary:hover {
-    box-shadow: inset 400px 0 0 0 var(--color-primary);
+    box-shadow: inset 400px 0 0 0 var(--color-primary-opacity);
     color: var(--color-secondary);
   }
   &-secondary {
@@ -40,7 +40,7 @@
     color: var(--color-secondary);
     background-color: var(--color-brand);
   }
-  &-brand:hover {
+  &-brand:hover(:not(:disabled)) {
     box-shadow: inset 400px 0 0 0 var(--color-brand-opacity);
   }
 }
