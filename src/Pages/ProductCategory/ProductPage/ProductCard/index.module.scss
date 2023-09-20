@@ -1,10 +1,7 @@
 .box {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   width: 1110px;
   margin-bottom: 160px;
-  &_reversed {
+  &-reversed {
     flex-direction: row-reverse;
   }
 }
@@ -18,18 +15,11 @@
 }
 
 .textBox {
-  display: flex;
-  flex-direction: column;
   width: 445px;
-  text-align: left;
-  margin-top: 47px;
 }
 
 .textNewProduct {
-  color: var(--color-brand);
-  font-size: var(--font-size-xs);
   letter-spacing: 10px;
-  text-transform: uppercase;
 }
 
 .productHeader {
@@ -54,21 +44,9 @@
 }
 
 .textPrice {
-  color: var(--color-primary);
-  font-size: var(--font-size-m);
-  font-weight: 700;
   letter-spacing: 1.286px;
-  text-transform: uppercase;
 }
 
-.container {
-  display: flex;
-  flex-direction: row;
+.marginTop {
   margin-top: 62px;
-  &.Counter {
-    margin-right: 16px;
-  }
-}
-.container > .container {
-  background-color: yellow;
 }

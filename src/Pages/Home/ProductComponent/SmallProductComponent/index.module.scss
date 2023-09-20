@@ -9,8 +9,6 @@
   left: calc((100% - 1110px) / 2);
   width: 1110px;
   height: 320px;
-  display: flex;
-  flex-direction: row;
 }
 
 .img {
@@ -29,12 +27,7 @@
 }
 
 .text {
-  position: absolute;
-  top: 101px;
-  right: 198px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  padding: 101px;
 }
 
 .header {

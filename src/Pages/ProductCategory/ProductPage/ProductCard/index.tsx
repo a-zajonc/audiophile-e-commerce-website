@@ -5,6 +5,9 @@ import { Counter } from "../../../../Components/Counter";
 import { Button } from "../../../../Components/button/button";
 import { useAddToBasket } from "../../../../Components/functions/useAddToBasket";
 import { removeTypeFromName } from "../../../../Components/functions/removeTypeFromName";
+import { Text } from "../../../../Components/Text";
+import { Stack } from "../../../../Components/Stack";
+import { NewProduct } from "../../../../Components/NewProduct";
 
 function displayAsPrice(price: any) {
   const addComma = Number(price).toLocaleString("en-US");
@@ -51,22 +54,42 @@ export function ProductCard({
   };
 
   return (
-    <div className={`${styles.box} ${isReversed ? styles.box_reversed : ""}`}>
+    <Stack
+      orientation="horizontal"
+      spacing="between"
+      className={`${styles.box} ${
+        isReversed ? `${styles["box-reversed"]}` : ""
+      }`}
+    >
       <img
         className={styles.productImg}
         src={require(`../../../../images/${productImg}`)}
         alt="Headphones"
       />
-      <div className={styles.textBox}>
-        <p className={styles.textNewProduct}>
-          {isProductNew === true ? "New Product" : null}
-        </p>
+      <Stack orientation="vertical" spacing="center" className={styles.textBox}>
+        {isProductNew ? <NewProduct color="brand" /> : null}
         <h2 className={styles.productHeader}>{productName}</h2>
-        <p className={styles.content}>{productDescription}</p>
+        <Text
+          color="primary"
+          fontSize="s"
+          lineHeight="s"
+          opacity="m"
+          marginTop="32px"
+        >
+          {productDescription}
+        </Text>
         {mode === "buy" ? (
-          <div>
-            <p className={styles.textPrice}>{displayAsPrice(productPrice)}</p>
-            <div className={styles.container}>
+          <Stack orientation="vertical">
+            <Text
+              color="primary"
+              fontSize="m"
+              fontWeight={700}
+              marginTop="32px"
+              className={styles.textPrice}
+            >
+              {displayAsPrice(productPrice)}
+            </Text>
+            <Stack className={styles.marginTop}>
               <Counter
                 size="big"
                 margin={true}
@@ -81,8 +104,8 @@ export function ProductCard({
               >
                 {buttonText}
               </Button>
-            </div>
-          </div>
+            </Stack>
+          </Stack>
         ) : (
           <Link
             to={`/product/${productName.split(" ").join("-").toLowerCase()}`}
@@ -92,7 +115,7 @@ export function ProductCard({
             </Button>
           </Link>
         )}
-      </div>
-    </div>
+      </Stack>
+    </Stack>
   );
 }

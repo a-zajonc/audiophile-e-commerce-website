@@ -2,12 +2,13 @@ import styles from "./index.module.css";
 import { Link } from "react-router-dom";
 import { Button } from "../../../Components/button/button";
 import { Text } from "../../../Components/Text";
+import { NewProduct } from "../../../Components/NewProduct";
 
 export function Header() {
   return (
     <div className={styles.box}>
       <div className={styles.content}>
-        <h3 className={`${styles.text} ${styles.marginBottom}`}>NEW PRODUCT</h3>
+        <NewProduct color="secondary" />
         <h1 className={`${styles.title} ${styles.marginBottom}`}>
           XX99 Mark II Headphones
         </h1>

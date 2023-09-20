@@ -6,7 +6,6 @@
 
 .contentBox {
   position: absolute;
-  flex-direction: row;
   left: calc((100% - 1110px) / 2);
   width: 1110px;
   height: 560px;
@@ -29,7 +28,7 @@
   bottom: 0px;
 }
 
-.box .text {
+.container {
   position: absolute;
   width: 349px;
   height: 303px;
@@ -38,7 +37,7 @@
   text-align: left;
 }
 
-.box .text .header {
+.header {
   font-weight: 700;
   font-size: var(--font-size-3xl);
   line-height: 58px;
@@ -46,15 +45,4 @@
   text-transform: uppercase;
   color: var(--color-secondary);
   margin: 0;
-}
-
-.box .text .description {
-  font-weight: 500;
-  font-size: var(--font-size-s);
-  line-height: 25px;
-  color: var(--color-secondary);
-  mix-blend-mode: normal;
-  opacity: 0.75;
-  height: 75px;
-  width: 349px;
 }

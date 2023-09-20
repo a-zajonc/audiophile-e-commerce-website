@@ -6,6 +6,7 @@ type Props = {
   orientation?: "horizontal" | "vertical";
   spacing?: string;
   align?: string;
+  marginTop?: string;
   children: ReactNode;
 };
 
@@ -14,8 +15,11 @@ export function Stack({
   orientation,
   spacing,
   align,
+  marginTop,
   children,
 }: Props) {
+  const customStyle = marginTop ? { marginTop } : {};
+
   return (
     <div
       className={`${styles.flex}  ${
@@ -24,6 +28,7 @@ export function Stack({
       ${align && styles[`align-${align}`]}
         ${spacing && styles[`spacing-${spacing}`]}
         ${className}`}
+      style={customStyle}
     >
       {children}
     </div>
