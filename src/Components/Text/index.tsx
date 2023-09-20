@@ -8,6 +8,7 @@ type TextProps = ComponentPropsWithoutRef<"p"> & {
   lineHeight?: string;
   fontWeight?: number;
   opacity?: string;
+  className?: string;
   children?: ReactNode;
 };
 
@@ -20,6 +21,7 @@ export const Text = forwardRef<HTMLParagraphElement, TextProps>(
       lineHeight,
       children,
       opacity,
+      className,
       ...textProps
     }: TextProps,
     ref
@@ -31,7 +33,7 @@ export const Text = forwardRef<HTMLParagraphElement, TextProps>(
       } ${fontWeight && styles[`font-weight-${fontWeight}`]} ${
         lineHeight && styles[`line-height-${lineHeight}`]
       } =
-        ${opacity && styles[`opacity-${opacity}`]} `}
+        ${opacity && styles[`opacity-${opacity}`]}     ${className}`}
       {...textProps}
     >
       {children}
