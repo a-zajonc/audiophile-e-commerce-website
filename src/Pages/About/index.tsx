@@ -1,12 +1,13 @@
 import styles from "./index.module.scss";
 import aboutPicture from "../../images/shared/desktop/image-best-gear.jpg";
 import { Text } from "../../Components/Text";
+import { Stack } from "../../Components/Stack";
 
 export function About() {
   return (
     <div className={styles.box}>
-      <div className={styles.content}>
-        <div className={styles.textBox}>
+      <Stack orientation="horizontal">
+        <Stack orientation="vertical" className={styles.marginRight}>
           <h3 className={styles.header}>
             Bringing you the <mark className={styles.mark}>best</mark> audio
             gear
@@ -25,13 +26,13 @@ export function About() {
             products. Stop by our store to meet some of the fantastic people who
             make Audiophile the best place to buy your portable audio equipment.
           </Text>
-        </div>
+        </Stack>
         <img
           src={aboutPicture}
           alt="Man listening to music"
           className={styles.img}
         />
-      </div>
+      </Stack>
     </div>
   );
 }
