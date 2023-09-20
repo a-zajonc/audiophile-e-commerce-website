@@ -1,4 +1,6 @@
-import styles from "./index.module.css";
+import { Stack } from "../../../Components/Stack";
+import { Text } from "../../../Components/Text";
+import styles from "./index.module.scss";
 
 type FeaturesProps = { descriptionFirst?: string; descriptionSecond?: string };
 
@@ -7,10 +9,14 @@ export function Features({
   descriptionSecond,
 }: FeaturesProps) {
   return (
-    <div className={styles.box}>
+    <Stack orientation="vertical" spacing="between" className={styles.box}>
       <h3 className={styles.header}>Features</h3>
-      <p className={styles.text}>{descriptionFirst}</p>
-      <p className={styles.text}>{descriptionSecond}</p>
-    </div>
+      <Text color="primary" fontSize="s" lineHeight="s" opacity="m">
+        {descriptionFirst}
+      </Text>
+      <Text color="primary" fontSize="s" lineHeight="s" opacity="m">
+        {descriptionSecond}
+      </Text>
+    </Stack>
   );
 }

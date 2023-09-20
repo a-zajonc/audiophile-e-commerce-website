@@ -1,4 +1,6 @@
-import styles from "./index.module.css";
+import styles from "./index.module.scss";
+import { Stack } from "../../../Components/Stack";
+import { Text } from "../../../Components/Text";
 
 type BoxContentProps = {
   insideBox: any;
@@ -6,19 +8,32 @@ type BoxContentProps = {
 
 export function BoxContent({ insideBox }: BoxContentProps) {
   return (
-    <div className={styles.box}>
+    <Stack orientation="vertical" className={styles.box}>
       <h3 className={styles.header}>In the box</h3>
-      <ul className={styles.list}>
-        {insideBox &&
-          insideBox.map((element: any) => {
-            return (
-              <li className={styles.listElement} key={element.name}>
-                <p className={styles.quantityText}>{element.quantity}x</p>
-                <p className={styles.text}>{element.name}</p>
-              </li>
-            );
-          })}
-      </ul>
-    </div>
+      {insideBox &&
+        insideBox.map((element: any) => {
+          return (
+            <Stack
+              orientation="horizontal"
+              align="baseline"
+              className={styles.listElement}
+              key={element.name}
+            >
+              <Text
+                color="brand"
+                fontSize="s"
+                fontWeight={700}
+                lineHeight="s"
+                className={styles.marginRight}
+              >
+                {element.quantity}x
+              </Text>
+              <Text color="primary" fontSize="s" opacity="m" lineHeight="m">
+                {element.name}
+              </Text>
+            </Stack>
+          );
+        })}
+    </Stack>
   );
 }
