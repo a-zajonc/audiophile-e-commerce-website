@@ -1,26 +1,32 @@
 .box {
+  display: flex;
+  flex-direction: row;
   width: 100%;
-  height: 365px;
   background-color: var(--color-footer);
+  padding-inline: 65px;
+  padding-bottom: 75px;
+  min-height: 365px;
 }
 
 .divider {
-  position: relative;
-  top: 0px;
-  left: calc((100% - 1110px) / 2);
   width: 101px;
   height: 4px;
   background-color: var(--color-brand);
 }
-
-.navigation {
+.container {
+  height: 100%;
   display: flex;
   flex-direction: row;
-  position: relative;
-  top: 75px;
-  left: calc((100% - 1110px) / 2);
-  width: 1110px;
-  height: 25px;
+  margin-top: 75px;
+}
+
+.vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+.space {
+  justify-content: space-around;
 }
 
 .categories {
@@ -28,7 +34,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-left: 538px;
   font-weight: 700;
   font-size: var(--font-size-xxs);
   line-height: 25px;
@@ -52,39 +57,17 @@
   width: 143px;
 }
 
-.description {
-  text-align: left;
-  position: relative;
-  left: calc((100% - 1110px) / 2);
-  top: 136px;
+.textContainer {
   height: 100px;
   width: 540px;
-  font-weight: 500;
-  font-size: var(--font-size-s);
-  line-height: 25px;
-  color: var(--color-secondary);
-  mix-blend-mode: normal;
-  opacity: 0.5;
 }
 
 .copyrightBox {
-  position: relative;
-  top: 126px;
-  left: 138px;
   height: 25px;
   width: 540px;
-  font-weight: 700;
-  font-size: var(--font-size-s);
-  line-height: 25px;
-  color: var(--color-secondary);
-  mix-blend-mode: normal;
-  opacity: 0.5;
 }
 
 .socialMediaBox {
-  position: relative;
-  left: 1300px;
-  top: 105px;
   width: 104px;
   height: 24px;
   display: flex;
