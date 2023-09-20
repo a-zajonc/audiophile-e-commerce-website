@@ -15,7 +15,7 @@ export function Header() {
           color="secondary"
           fontSize="s"
           lineHeight="s"
-          opacity={true}
+          opacity="l"
           style={{ marginBottom: "44px", paddingRight: "30px" }}
         >
           Experience natural, lifelike audio and exceptional build quality made

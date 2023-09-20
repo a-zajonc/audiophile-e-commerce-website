@@ -1,3 +1,7 @@
+.text {
+  margin: 0;
+}
+
 .color {
   &-primary-opacity {
     color: var(--color-primary-opacity);
@@ -19,6 +23,15 @@
   }
 }
 
+.font-weight {
+  &-500 {
+    font-weight: 500;
+  }
+  &-700 {
+    font-weight: 700;
+  }
+}
+
 .line-height {
   &-xs {
     line-height: var(--line-height-xs);
@@ -35,5 +48,13 @@
 }
 
 .opacity {
-  opacity: 0.75;
+  &-s {
+    opacity: 0.25;
+  }
+  &-m {
+    opacity: 0.5;
+  }
+  &-l {
+    opacity: 0.75;
+  }
 }
