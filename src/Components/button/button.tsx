@@ -26,7 +26,9 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
       type={type}
       className={`${styles.button}  ${
         colorScheme && styles[`color-scheme-${colorScheme}`]
-      }       ${margin && styles.margin} ${fullWidth && styles.fullWidth}`}
+      }       ${margin && styles.margin} ${
+        fullWidth && styles[`color-scheme-${colorScheme}-fullWidth`]
+      }`}
       {...buttonProps}
     >
       {children}
