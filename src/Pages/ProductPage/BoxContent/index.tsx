@@ -9,7 +9,16 @@ type BoxContentProps = {
 export function BoxContent({ insideBox }: BoxContentProps) {
   return (
     <Stack orientation="vertical" className={styles.box}>
-      <h3 className={styles.header}>In the box</h3>
+      <Text
+        color="primary"
+        fontSize="xxl"
+        fontWeight={700}
+        lineHeight="m"
+        headingLevel={3}
+        className={styles.header}
+      >
+        In the box
+      </Text>
       {insideBox &&
         insideBox.map((element: any) => {
           return (

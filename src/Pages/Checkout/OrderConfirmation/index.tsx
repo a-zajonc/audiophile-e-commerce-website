@@ -20,11 +20,25 @@ export function OrderConfirmation({ handleClick }: any) {
   return (
     <div className={styles.box}>
       <img src={tickIcon} alt="Tick Icon" />
-      <h2 className={styles.header}>THANK YOU FOR YOUR ORDER</h2>
-      <Text color="primary" opacity="m" fontSize="s">
+      <Text
+        color="primary"
+        fontSize="xl"
+        fontWeight={700}
+        lineHeight="m"
+        marginTop="32px"
+        headingLevel={2}
+        className={styles.header}
+      >
+        THANK YOU <br></br>FOR YOUR ORDER
+      </Text>
+      <Text color="primary" opacity="m" fontSize="s" marginTop="24px">
         You will receive an email confirmation shortly.
       </Text>
-      <Stack orientation="horizontal" className={styles.container}>
+      <Stack
+        orientation="horizontal"
+        className={styles.container}
+        marginTop="33px"
+      >
         <ProductsConfirmation basket={basket} />
         <Stack
           orientation="vertical"

@@ -10,11 +10,32 @@ export function Features({
 }: FeaturesProps) {
   return (
     <Stack orientation="vertical" spacing="between" className={styles.box}>
-      <h3 className={styles.header}>Features</h3>
-      <Text color="primary" fontSize="s" lineHeight="s" opacity="m">
+      <Text
+        color="primary"
+        fontSize="xxl"
+        fontWeight={700}
+        lineHeight="m"
+        headingLevel={3}
+        className={styles.header}
+      >
+        Features
+      </Text>
+      <Text
+        color="primary"
+        fontSize="s"
+        lineHeight="s"
+        opacity="m"
+        marginTop="32px"
+      >
         {descriptionFirst}
       </Text>
-      <Text color="primary" fontSize="s" lineHeight="s" opacity="m">
+      <Text
+        color="primary"
+        fontSize="s"
+        lineHeight="s"
+        opacity="m"
+        marginTop="30px"
+      >
         {descriptionSecond}
       </Text>
     </Stack>

@@ -10,6 +10,7 @@ type TextProps = ComponentPropsWithoutRef<"p"> & {
   opacity?: string;
   className?: string;
   marginTop?: string;
+  headingLevel?: number;
   children?: ReactNode;
 };
 
@@ -24,14 +25,20 @@ export const Text = forwardRef<HTMLParagraphElement, TextProps>(
       opacity,
       className,
       marginTop,
+      headingLevel,
       ...textProps
     }: TextProps,
     ref
   ) => {
     const customStyle = marginTop ? { marginTop } : {};
 
+    const Element =
+      headingLevel && headingLevel >= 1 && headingLevel <= 6
+        ? (`h${headingLevel}` as "h1" | "h2" | "h3" | "h4" | "h5" | "h6")
+        : "p";
+
     return (
-      <p
+      <Element
         ref={ref}
         className={`${styles.text} ${color && styles[`color-${color}`]} ${
           fontSize && styles[`font-size-${fontSize}`]
@@ -45,7 +52,7 @@ export const Text = forwardRef<HTMLParagraphElement, TextProps>(
         {...textProps}
       >
         {children}
-      </p>
+      </Element>
     );
   }
 );

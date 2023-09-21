@@ -3,6 +3,9 @@ import { OtherProductCard } from "./OtherProductCard";
 import { useLocation } from "react-router-dom";
 import data from "../../../data.json";
 import { removeTypeFromName } from "../../../Components/functions/removeTypeFromName";
+import { Text } from "../../../Components/Text";
+import { Stack } from "../../../Components/Stack";
+import { FadeIn } from "../../../Components/Animations";
 
 function getProducts(data: any, productName: string) {
   const productCategories = Object.values(data.products);
@@ -30,18 +33,29 @@ export function OtherProducts() {
 
   return (
     <div className={styles.box}>
-      <h3 className={styles.header}>You may also like</h3>
-      <div className={styles.productCardBox}>
+      <Text
+        color="primary"
+        fontSize="xxl"
+        fontWeight={700}
+        lineHeight="m"
+        headingLevel={3}
+        className={styles.header}
+      >
+        You may also like
+      </Text>
+      <Stack orientation="horizontal" spacing="between" marginTop="64px">
         {currentData.map((product: any) => {
           return (
-            <OtherProductCard
-              img={require(`../../../images/${product.img}`)}
-              name={removeTypeFromName(product.name)}
-              key={product.id}
-            />
+            <FadeIn>
+              <OtherProductCard
+                img={require(`../../../images/${product.img}`)}
+                name={removeTypeFromName(product.name)}
+                key={product.id}
+              />
+            </FadeIn>
           );
         })}
-      </div>
+      </Stack>
     </div>
   );
 }

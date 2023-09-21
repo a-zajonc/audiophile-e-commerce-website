@@ -54,7 +54,15 @@ export function CheckoutSummary({ errors, option, order }: any) {
 
   return (
     <div className={styles.box}>
-      <h2 className={styles.header}>Summary</h2>
+      <Text
+        color="primary"
+        fontSize="m"
+        fontWeight={700}
+        headingLevel={2}
+        className={styles.header}
+      >
+        Summary
+      </Text>
       {basket &&
         basket.map((item: any) => {
           return (

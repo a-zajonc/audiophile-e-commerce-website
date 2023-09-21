@@ -1,3 +1,4 @@
+import { Text } from "../../../Components/Text";
 import styles from "./index.module.css";
 
 type Prop = {
@@ -7,7 +8,16 @@ type Prop = {
 export function CategoryHeader({ category }: Prop) {
   return (
     <div className={styles.box}>
-      <h2 className={styles.header}>{category}</h2>
+      <Text
+        color="secondary"
+        fontSize="xxl"
+        fontWeight={700}
+        lineHeight="l"
+        headingLevel={2}
+        className={styles.header}
+      >
+        {category}
+      </Text>
     </div>
   );
 }
