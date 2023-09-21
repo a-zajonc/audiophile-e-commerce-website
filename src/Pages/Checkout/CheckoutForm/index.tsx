@@ -1,4 +1,3 @@
-import * as React from "react";
 import { Input } from "../../../Components/input/input";
 import { RadioInput } from "../../../Components/RadioInput";
 import styles from "./index.module.scss";

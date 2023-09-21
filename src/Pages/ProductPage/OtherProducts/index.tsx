@@ -1,4 +1,4 @@
-import styles from "./index.module.css";
+import styles from "./index.module.scss";
 import { OtherProductCard } from "./OtherProductCard";
 import { useLocation } from "react-router-dom";
 import data from "../../../data.json";
