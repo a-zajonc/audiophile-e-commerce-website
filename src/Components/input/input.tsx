@@ -2,6 +2,7 @@ import styles from "./index.module.scss";
 import type { ComponentPropsWithoutRef } from "react";
 import { forwardRef } from "react";
 import { ErrorMessage } from "@hookform/error-message";
+import { Text } from "../Text";
 
 type Props = ComponentPropsWithoutRef<"input"> & {
   title: string;
@@ -26,7 +27,13 @@ export const Input = forwardRef<HTMLInputElement, Props>(
             name={name}
             errors={errors}
             render={({ message }) => (
-              <p className={styles.errorMessage}>{message}</p>
+              <Text
+                color="error"
+                fontSize="xxs"
+                className={styles.errorMessage}
+              >
+                {message}
+              </Text>
             )}
           />
         ) : null}

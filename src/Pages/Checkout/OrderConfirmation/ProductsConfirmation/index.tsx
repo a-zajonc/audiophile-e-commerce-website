@@ -1,6 +1,7 @@
-import { ProductDisplay } from "./ProductDisplay";
 import styles from "./index.module.scss";
 import * as React from "react";
+import { ProductDisplay } from "./ProductDisplay";
+import { Stack } from "../../../../Components/Stack";
 
 export function ProductsConfirmation({ basket }: any) {
   const [isActive, setIsActive] = React.useState(false);
@@ -9,8 +10,9 @@ export function ProductsConfirmation({ basket }: any) {
   };
 
   return (
-    <div className={styles.box}>
-      <div
+    <Stack orientation="vertical" className={styles.box}>
+      <Stack
+        orientation="vertical"
         className={`${
           isActive === false ? styles.itemsBox : styles.itemsBoxActive
         }`}
@@ -18,7 +20,7 @@ export function ProductsConfirmation({ basket }: any) {
         {basket.map((item: any) => {
           return <ProductDisplay product={item} key={item.name} />;
         })}
-      </div>
+      </Stack>
       <div className={styles.greyBackground}>
         <div className={styles.line} />
       </div>
@@ -31,6 +33,6 @@ export function ProductsConfirmation({ basket }: any) {
               }`}
         </button>
       ) : null}
-    </div>
+    </Stack>
   );
 }

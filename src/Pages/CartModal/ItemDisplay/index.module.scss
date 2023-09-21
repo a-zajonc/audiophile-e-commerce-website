@@ -1,11 +1,12 @@
 .box {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
   margin-bottom: 24px;
   &:last-child {
     margin-bottom: 0px;
   }
+}
+
+.width {
+  width: 100%;
 }
 
 .img {
@@ -17,35 +18,10 @@
   margin-right: 16px;
 }
 
-.containerColumn {
-  display: flex;
-  flex-direction: column;
-}
-
-.containerRow {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .priceText {
   color: var(--color-primary-opacity);
   font-size: var(--font-size-xs);
   font-weight: 700;
   line-height: 25px;
   margin: 0;
-}
-
-.name {
-  color: var(--color-primary);
-  font-size: var(--font-size-xs);
-  font-weight: 700;
-  line-height: 25px;
-  margin: 0;
-}
-
-.margin {
-  margin-right: 30px;
 }

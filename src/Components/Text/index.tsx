@@ -19,7 +19,7 @@ export const Text = forwardRef<HTMLParagraphElement, TextProps>(
       color,
       fontSize,
       fontWeight = 500,
-      lineHeight,
+      lineHeight = "s",
       children,
       opacity,
       className,

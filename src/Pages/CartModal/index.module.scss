@@ -1,10 +1,6 @@
-.container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  &:first-child {
-    margin-bottom: 31px;
-  }
+.cartHeader {
+  letter-spacing: 1.286px;
+  text-transform: uppercase;
 }
 
 .button {
@@ -13,7 +9,6 @@
   text-decoration-thickness: 0.1px;
   background-color: transparent;
   font-size: var(--font-size-s);
-  font-weight: 500;
   line-height: 25px;
   border: none;
   cursor: pointer;
@@ -21,27 +16,4 @@
   &:hover {
     color: var(--color-brand);
   }
-}
-
-.text {
-  color: var(--color-primary-opacity);
-  font-size: var(--font-size-s);
-  font-weight: 500;
-  line-height: 25px;
-}
-
-.price {
-  color: var(--color-primary);
-  font-size: var(--font-size-m);
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.cartHeader {
-  color: var(--color-primary);
-  font-size: var(--font-size-m);
-  font-weight: 700;
-  letter-spacing: 1.286px;
-  text-transform: uppercase;
-  margin: 0px;
 }

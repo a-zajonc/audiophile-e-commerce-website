@@ -1,3 +1,5 @@
+import { Stack } from "../../../../Components/Stack";
+import { Text } from "../../../../Components/Text";
 import styles from "./index.module.scss";
 
 type Props = {
@@ -9,19 +11,30 @@ type Props = {
 
 export function ItemsList({ img, name, price, quantity }: Props) {
   return (
-    <div className={styles.itemBox}>
-      <div className={styles.container}>
+    <Stack
+      orientation="horizontal"
+      spacing="between"
+      align="center"
+      className={styles.box}
+    >
+      <Stack orientation="horizontal">
         <img
           src={require(`../../../../images/cart/${img}`)}
           alt={name}
           className={styles.img}
         />
-        <div className={styles.textContainer}>
-          <p className={styles.itemName}>{name}</p>
-          <p className={styles.itemPrice}>{`$ ${price}`}</p>
-        </div>
-      </div>
-      <p className={styles.itemQuanity}>x{quantity}</p>
-    </div>
+        <Stack orientation="vertical" spacing="evenly">
+          <Text color="primary" fontSize="s" fontWeight={700}>
+            {name}
+          </Text>
+          <Text color="primary" fontSize="xs" opacity="m">
+            {`$ ${Number(price).toLocaleString("en-US")}`}
+          </Text>
+        </Stack>
+      </Stack>
+      <Text color="primary" fontSize="s" opacity="m" fontWeight={700}>
+        x{quantity}
+      </Text>
+    </Stack>
   );
 }
