@@ -1,5 +1,5 @@
 import * as React from "react";
-import styles from "./index.module.css";
+import styles from "./index.module.scss";
 import { Link } from "react-router-dom";
 import logo from "../../images/shared/desktop/logo.svg";
 import { ReactComponent as Cart } from "../../images/shared/desktop/icon-cart.svg";

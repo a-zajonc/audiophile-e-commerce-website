@@ -1,14 +1,14 @@
-import styles from "./index.module.css";
 import { BigProductComponent } from "./BigProductComponent";
 import { MediumProductComponent } from "./MediumProductComponent";
 import { SmallProductComponent } from "./SmallProductComponent";
+import { Stack } from "../../../Components/Stack";
 
 export function ProductComponent() {
   return (
-    <div className={styles.box}>
+    <Stack orientation="vertical">
       <BigProductComponent />
       <MediumProductComponent />
       <SmallProductComponent />
-    </div>
+    </Stack>
   );
 }

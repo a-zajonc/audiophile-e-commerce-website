@@ -79,7 +79,7 @@ export function CheckoutSummary({ errors, option, order }: any) {
         <Stack orientation="vertical" marginTop="30px">
           <Stack orientation="horizontal" spacing="between">
             <Text color="primary" fontSize="s" opacity="m">
-              Total
+              TOTAL
             </Text>
             <Text
               color="primary"

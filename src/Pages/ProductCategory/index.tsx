@@ -1,4 +1,4 @@
-import styles from "./index.module.css";
+import { Stack } from "../../Components/Stack";
 import { Categories } from "../Home/Categories";
 import { CategoryHeader } from "./Header";
 import { ProductPage } from "./ProductPage";
@@ -8,10 +8,10 @@ export function ProductCategory() {
   const { categoryName } = useParams();
 
   return (
-    <div className={styles.box}>
+    <Stack orientation="vertical">
       <CategoryHeader category={categoryName} />
       <ProductPage />
       <Categories />
-    </div>
+    </Stack>
   );
 }

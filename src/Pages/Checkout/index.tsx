@@ -5,6 +5,7 @@ import { CheckoutForm } from "./CheckoutForm";
 import { CheckoutSummary } from "./CheckoutSummary";
 import { useForm } from "react-hook-form";
 import useFormPersist from "react-hook-form-persist";
+import { Stack } from "../../Components/Stack";
 
 export function Checkout() {
   const [order, setOrder] = React.useState("");
@@ -33,7 +34,7 @@ export function Checkout() {
     <div className={styles.box}>
       <GoBackButton />
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className={styles.container}>
+        <Stack orientation="horizontal" spacing="between">
           <CheckoutForm
             errors={errors}
             control={control}
@@ -42,7 +43,7 @@ export function Checkout() {
             setOption={setOption}
           />
           <CheckoutSummary errors={errors} option={option} order={order} />
-        </div>
+        </Stack>
       </form>
     </div>
   );

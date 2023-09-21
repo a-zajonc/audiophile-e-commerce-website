@@ -1,5 +1,5 @@
 import { Text } from "../../../Components/Text";
-import styles from "./index.module.css";
+import styles from "./index.module.scss";
 
 type Prop = {
   category: string | any;
