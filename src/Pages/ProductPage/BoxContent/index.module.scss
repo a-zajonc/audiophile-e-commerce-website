@@ -4,17 +4,15 @@
 }
 
 .header {
-  color: var(--color-primary);
-  font-size: var(--font-size-xxl);
-  font-weight: 700;
-  line-height: 36px;
   letter-spacing: 1.143px;
   text-transform: uppercase;
-  margin: 0 0 32px 0;
 }
 
 .listElement {
   margin-bottom: 8px;
+  &:first-of-type {
+    margin-top: 28px;
+  }
 }
 
 .marginRight {

@@ -38,7 +38,13 @@
     font-size: var(--font-size-l);
   }
   &-xl {
-    font-size: var(--font-size-l);
+    font-size: var(--font-size-xl);
+  }
+  &-xxl {
+    font-size: var(--font-size-xxl);
+  }
+  &-3xl {
+    font-size: var(--font-size-3xl);
   }
 }
 
@@ -63,6 +69,9 @@
   }
   &-l {
     line-height: var(--line-height-l);
+  }
+  &-xl {
+    line-height: var(--line-height-xl);
   }
 }
 

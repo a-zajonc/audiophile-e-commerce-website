@@ -1,6 +1,8 @@
-import styles from "./index.module.css";
+import styles from "./index.module.scss";
 import { Link } from "react-router-dom";
 import { Button } from "../../../../Components/button/button";
+import { Text } from "../../../../Components/Text";
+import { Stack } from "../../../../Components/Stack";
 
 type OtherProductCardProps = {
   img: string;
@@ -9,12 +11,21 @@ type OtherProductCardProps = {
 
 export function OtherProductCard({ img, name }: OtherProductCardProps) {
   return (
-    <div className={styles.box}>
+    <Stack orientation="vertical" align="center" className={styles.box}>
       <img src={img} alt="device" className={styles.img} />
-      <h4 className={styles.header}>{name}</h4>
+      <Text
+        color="primary"
+        fontSize="l"
+        fontWeight={700}
+        marginTop="40px"
+        headingLevel={4}
+        className={styles.header}
+      >
+        {name}
+      </Text>
       <Link to={`/product/${name.toLowerCase().split(" ").join("-")}`}>
         <Button colorScheme="brand">See Product</Button>
       </Link>
-    </div>
+    </Stack>
   );
 }

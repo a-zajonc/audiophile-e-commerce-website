@@ -68,7 +68,17 @@ export function ProductCard({
       />
       <Stack orientation="vertical" spacing="center" className={styles.textBox}>
         {isProductNew ? <NewProduct color="brand" /> : null}
-        <h2 className={styles.productHeader}>{productName}</h2>
+        <Text
+          color="primary"
+          fontSize="xxl"
+          fontWeight={700}
+          lineHeight="l"
+          headingLevel={2}
+          marginTop="16px"
+          className={styles.header}
+        >
+          {productName}
+        </Text>
         <Text
           color="primary"
           fontSize="s"

@@ -3,6 +3,7 @@ import styles from "./index.module.scss";
 import { Button } from "../../../../Components/button/button";
 import { motion } from "framer-motion";
 import { Stack } from "../../../../Components/Stack";
+import { Text } from "../../../../Components/Text";
 
 export function SmallProductComponent() {
   return (
@@ -27,7 +28,16 @@ export function SmallProductComponent() {
             align="flex-start"
             className={styles.text}
           >
-            <h3 className={styles.header}>YX1 EARPHONES</h3>
+            <Text
+              color="primary"
+              fontSize="xl"
+              fontWeight={700}
+              lineHeight="l"
+              headingLevel={3}
+              className={styles.header}
+            >
+              YX1 EARPHONES
+            </Text>
             <Link to="/product/yx1">
               <Button colorScheme="primary">See Product</Button>
             </Link>

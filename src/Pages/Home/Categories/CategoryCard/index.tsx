@@ -28,7 +28,16 @@ export function CategoryCard({ category, img }: CategoryCardProps) {
           className={styles.content}
         >
           <img src={img} alt={category} className={styles.img} />
-          <h3 className={styles.heading}>{category}</h3>
+          <Text
+            color="primary"
+            fontSize="m"
+            fontWeight={700}
+            marginTop="26px"
+            headingLevel={3}
+            className={styles.heading}
+          >
+            {category}
+          </Text>
           <Stack
             orientation="horizontal"
             spacing="around"

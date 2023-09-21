@@ -4,14 +4,8 @@
 }
 
 .header {
-  position: relative;
-  top: 100px;
-  color: #fff;
+  padding-top: 100px;
   text-align: center;
-  font-size: var(--font-size-xxl);
-  font-weight: 700;
-  line-height: 44px;
   letter-spacing: 1.429px;
   text-transform: uppercase;
-  margin: 0px;
 }

@@ -15,7 +15,16 @@ export function BigProductComponent() {
           viewport={{ once: true, amount: 0.5 }}
         />
         <div className={styles.container}>
-          <h3 className={styles.header}>ZX9 SPEAKER</h3>
+          <Text
+            color="secondary"
+            fontSize="3xl"
+            lineHeight="xl"
+            fontWeight={700}
+            headingLevel={3}
+            className={styles.header}
+          >
+            ZX9 SPEAKER
+          </Text>
           <Text
             color="secondary"
             fontSize="s"

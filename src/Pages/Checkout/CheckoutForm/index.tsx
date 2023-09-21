@@ -16,7 +16,17 @@ export function CheckoutForm({
 }: any) {
   return (
     <div className={styles.box}>
-      <h3 className={styles.header}>Checkout</h3>
+      <Text
+        color="primary"
+        fontSize="xl"
+        fontWeight={700}
+        lineHeight="m"
+        headingLevel={3}
+        marginTop="25px"
+        className={styles.header}
+      >
+        Checkout
+      </Text>
       <Text
         color="brand"
         fontSize="xxs"

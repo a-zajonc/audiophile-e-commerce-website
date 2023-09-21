@@ -22,25 +22,9 @@
   letter-spacing: 10px;
 }
 
-.productHeader {
-  width: 350px;
-  color: var(--color-primary);
-  font-size: var(--font-size-xxl);
-  font-weight: 700;
-  line-height: 44px;
+.header {
   letter-spacing: 1.429px;
   text-transform: uppercase;
-  margin: 16px 0 0 0;
-}
-
-.content {
-  width: 445px;
-  color: var(--color-primary);
-  font-size: var(--font-size-s);
-  font-weight: 500;
-  line-height: 25px;
-  opacity: 0.5;
-  margin-top: 32px;
 }
 
 .textPrice {

@@ -7,11 +7,22 @@ export function About() {
   return (
     <div className={styles.box}>
       <Stack orientation="horizontal">
-        <Stack orientation="vertical" className={styles.marginRight}>
-          <h3 className={styles.header}>
+        <Stack
+          orientation="vertical"
+          spacing="center"
+          className={styles.marginRight}
+        >
+          <Text
+            color="primary"
+            fontSize="xxl"
+            lineHeight="l"
+            fontWeight={700}
+            headingLevel={3}
+            className={styles.header}
+          >
             Bringing you the <mark className={styles.mark}>best</mark> audio
             gear
-          </h3>
+          </Text>
           <Text
             color="primary"
             fontSize="s"
