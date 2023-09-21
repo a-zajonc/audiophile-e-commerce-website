@@ -25,6 +25,12 @@
   &-center {
     justify-content: center;
   }
+  &-flexEnd {
+    justify-content: flex-end;
+  }
+  &-flexStart {
+    justify-content: flex-start;
+  }
 }
 .align {
   &-end {

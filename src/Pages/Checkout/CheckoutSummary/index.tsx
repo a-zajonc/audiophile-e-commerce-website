@@ -10,6 +10,8 @@ import {
   useSumPrices,
   useSumWithTax,
 } from "../../../Components/functions/sumPrices";
+import { Stack } from "../../../Components/Stack";
+import { Text } from "../../../Components/Text";
 
 const customStyles = {
   content: {
@@ -65,28 +67,48 @@ export function CheckoutSummary({ errors, option, order }: any) {
             />
           );
         })}
-      <div className={styles.container}>
-        <div className={styles.costsBox}>
-          <div className={styles.textBox}>
-            <p className={styles.text}>Total</p>
-            <p className={styles.price}>{`$ ${total}`}</p>
-          </div>
-          <div className={styles.textBox}>
-            <p className={styles.text}>SHIPPING</p>
-            <p className={styles.price}>
+      <Stack orientation="vertical" className="uppercase">
+        <Stack orientation="vertical" marginTop="30px">
+          <Stack orientation="horizontal" spacing="between">
+            <Text color="primary" fontSize="s" opacity="m">
+              Total
+            </Text>
+            <Text
+              color="primary"
+              fontSize="m"
+              fontWeight={700}
+            >{`$ ${total}`}</Text>
+          </Stack>
+          <Stack orientation="horizontal" spacing="between" marginTop="10px">
+            <Text color="primary" fontSize="s" opacity="m">
+              SHIPPING
+            </Text>
+            <Text color="primary" fontSize="m" fontWeight={700}>
               {basket && basket.length ? "$ 50" : "$ 0"}
-            </p>
-          </div>
-          <div className={styles.textBox}>
-            <p className={styles.text}>VAT (INCLUDED)</p>
-            <p className={styles.price}>{`$ ${useSumWithTax(total, 0.2)}`}</p>
-          </div>
-        </div>
-        <div className={styles.textBox}>
-          <p className={styles.text}>GRAND TOTAL</p>
-          <p className={styles.total}>{`$ ${useSumGrandTotal(total, 50)}`}</p>
-        </div>
-      </div>
+            </Text>
+          </Stack>
+          <Stack orientation="horizontal" spacing="between" marginTop="10px">
+            <Text color="primary" fontSize="s" opacity="m">
+              VAT (INCLUDED)
+            </Text>
+            <Text
+              color="primary"
+              fontSize="m"
+              fontWeight={700}
+            >{`$ ${useSumWithTax(total, 0.2)}`}</Text>
+          </Stack>
+        </Stack>
+        <Stack orientation="horizontal" spacing="between" marginTop="30px">
+          <Text color="primary" fontSize="s" opacity="m">
+            GRAND TOTAL
+          </Text>
+          <Text
+            color="brand"
+            fontWeight={700}
+            fontSize="m"
+          >{`$ ${useSumGrandTotal(total, 50)}`}</Text>
+        </Stack>
+      </Stack>
       <Button
         type="submit"
         colorScheme="brand"

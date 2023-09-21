@@ -21,8 +21,6 @@
 }
 
 .container {
-  display: flex;
-  flex-direction: row;
   width: 100%;
   transition: all linear 0.5s;
   overflow: hidden;
@@ -33,18 +31,4 @@
   width: 30%;
   background-color: var(--color-primary);
   border-radius: 0 var(--border-radius-small) var(--border-radius-small) 0;
-}
-
-.greyText {
-  color: var(--color-primary-opacity);
-  font-size: var(--font-size-s);
-  font-weight: 500;
-  line-height: 25px;
-}
-
-.priceText {
-  color: var(--color-secondary);
-  font-size: var(--font-size-m);
-  font-weight: 700;
-  text-transform: uppercase;
 }

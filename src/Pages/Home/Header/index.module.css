@@ -28,7 +28,7 @@
   color: var(--color-secondary);
   font-weight: 700;
   text-transform: uppercase;
-  margin: 0 0 27px 0;
+  margin: 27px 0 27px 0;
 }
 
 .text {

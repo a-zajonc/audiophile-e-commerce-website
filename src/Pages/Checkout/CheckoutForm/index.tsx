@@ -4,6 +4,8 @@ import { RadioInput } from "../../../Components/RadioInput";
 import styles from "./index.module.scss";
 import cashDelivery from "../../../images/checkout/icon-cash-on-delivery.svg";
 import { Controller } from "react-hook-form";
+import { Text } from "../../../Components/Text";
+import { Stack } from "../../../Components/Stack";
 
 export function CheckoutForm({
   errors,
@@ -15,8 +17,21 @@ export function CheckoutForm({
   return (
     <div className={styles.box}>
       <h3 className={styles.header}>Checkout</h3>
-      <p className={styles.formTitle}>Billing Details</p>
-      <div className={styles.inputsBox}>
+      <Text
+        color="brand"
+        fontSize="xxs"
+        fontWeight={700}
+        marginTop="50px"
+        className={styles.textTransform}
+      >
+        Billing Details
+      </Text>
+      <Stack
+        orientation="horizontal"
+        spacing="between"
+        align="center"
+        marginTop="24px"
+      >
         <Controller
           name="userName"
           control={control}
@@ -40,8 +55,13 @@ export function CheckoutForm({
             <Input title="Email Address" errors={errors} {...field} />
           )}
         />
-      </div>
-      <div className={styles.inputsBox}>
+      </Stack>
+      <Stack
+        orientation="horizontal"
+        align="center"
+        spacing="between"
+        marginTop="24px"
+      >
         <Controller
           name="phone"
           control={control}
@@ -59,8 +79,16 @@ export function CheckoutForm({
             />
           )}
         />
-      </div>
-      <p className={styles.formTitle}>Shipping Details</p>
+      </Stack>
+      <Text
+        color="brand"
+        fontSize="xxs"
+        fontWeight={700}
+        marginTop="50px"
+        className={styles.textTransform}
+      >
+        Shipping Details
+      </Text>
       <Controller
         rules={{
           required: "Fill your address",
@@ -72,7 +100,12 @@ export function CheckoutForm({
           <Input title="Address" {...field} errors={errors} />
         )}
       />
-      <div className={styles.inputsBox}>
+      <Stack
+        orientation="horizontal"
+        align="center"
+        spacing="between"
+        marginTop="24px"
+      >
         <Controller
           rules={{
             required: "Fill your ZIP Code",
@@ -95,8 +128,13 @@ export function CheckoutForm({
             <Input title="City" {...field} errors={errors} />
           )}
         />
-      </div>
-      <div className={styles.inputsBox}>
+      </Stack>
+      <Stack
+        orientation="horizontal"
+        align="center"
+        spacing="between"
+        marginTop="24px"
+      >
         <Controller
           rules={{
             required: "Fill country name",
@@ -113,11 +151,30 @@ export function CheckoutForm({
             />
           )}
         />
-      </div>
-      <p className={styles.formTitle}>Payment details</p>
-      <div className={styles.paymentDetailsBox}>
-        <p className={styles.text}>Payment Method</p>
-        <div className={styles.radioInputBox}>
+      </Stack>
+      <Text
+        color="brand"
+        fontSize="xxs"
+        fontWeight={700}
+        marginTop="50px"
+        className={styles.textTransform}
+      >
+        Payment details
+      </Text>
+      <Stack orientation="horizontal">
+        <Text
+          color="primary"
+          fontSize="xxs"
+          fontWeight={700}
+          className={styles.text}
+        >
+          Payment Method
+        </Text>
+        <Stack
+          orientation="vertical"
+          spacing="around"
+          className={styles.fullWidth}
+        >
           <RadioInput
             {...register("payment", { required: "This is required." })}
             title="e-Money"
@@ -134,10 +191,15 @@ export function CheckoutForm({
             setOption={setOption}
             value="cash"
           />
-        </div>
-      </div>
+        </Stack>
+      </Stack>
       {option.length < 1 ? null : option === "e-Money" ? (
-        <div className={styles.radioInputsBox}>
+        <Stack
+          orientation="horizontal"
+          spacing="between"
+          align="center"
+          marginTop="24px"
+        >
           <Controller
             rules={{
               required: "Enter card name",
@@ -165,20 +227,31 @@ export function CheckoutForm({
               <Input title="e-Money PIN" errors={errors} {...field} />
             )}
           />
-        </div>
+        </Stack>
       ) : (
-        <div className={styles.inputsBox}>
+        <Stack
+          orientation="horizontal"
+          align="center"
+          spacing="between"
+          marginTop="24px"
+          className={styles.marginBottom}
+        >
           <img
             src={cashDelivery}
             alt="Cash on delivery icon"
             className={styles.icon}
           />
-          <p className={styles.details}>
+          <Text
+            color="primary"
+            fontSize="s"
+            opacity="m"
+            className={styles.padding}
+          >
             The ‘Cash on Delivery’ option enables you to pay in cash when our
             delivery courier arrives at your residence. Just make sure your
             address is correct so that your order will not be cancelled.
-          </p>
-        </div>
+          </Text>
+        </Stack>
       )}
     </div>
   );

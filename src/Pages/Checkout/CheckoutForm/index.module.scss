@@ -16,70 +16,31 @@
   text-transform: uppercase;
 }
 
-.formTitle {
-  color: var(--color-brand);
-  font-size: var(--font-size-xxs);
-  font-weight: 700;
-  line-height: 25px;
+.textTransform {
   letter-spacing: 0.929px;
   text-transform: uppercase;
-  margin-top: 54px;
-}
-
-.inputsBox {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 24px;
-}
-
-.radioInputsBox {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-block: 24px 18px;
+  margin-bottom: 30px;
 }
 
 .text {
   width: 100%;
-  color: var(--color-primary);
-  font-size: var(--font-size-xxs);
-  font-weight: 700;
-  letter-spacing: -0.214px;
-  margin-bottom: 9px;
   margin-right: 16px;
 }
 
-.paymentDetailsBox {
-  display: flex;
-  flex-direction: row;
-}
-
-.radioInputBox {
+.fullWidth {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
 }
-
-.details {
-  color: var(--color-primary-opacity);
-  font-size: var(--font-size-s);
-  font-weight: 500;
-  line-height: 25px;
+.padding {
+  padding-right: 30px;
 }
 
 .icon {
+  padding: 10px;
   width: 48px;
   height: 48px;
   margin-right: 32px;
 }
 
-.errorMessage {
-  color: var(--color-error);
-  font-size: var(--font-size-xxs);
-  font-weight: 500;
-  letter-spacing: -0.214px;
+.marginBottom {
+  margin-bottom: 12px;
 }

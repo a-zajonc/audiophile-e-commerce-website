@@ -1,8 +1,5 @@
-.boxHorizontal {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 16px;
+.margin {
+  margin-bottom: 20px;
 }
 
 .itemImg {
@@ -10,38 +7,7 @@
   height: 50px;
 }
 
-.boxHorizontalSpace {
+.width {
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   margin-left: 16px;
-}
-
-.boxVertical {
-  display: flex;
-  flex-direction: column;
-}
-
-.itemName {
-  color: var(--color-primary);
-  font-size: var(--font-size-s);
-  font-weight: 700;
-  line-height: 25px;
-  margin: 0;
-}
-
-.itemPrice {
-  color: var(--color-primary-opacity);
-  font-size: var(--font-size-xs);
-  font-weight: 700;
-  line-height: 25px;
-  margin: 0;
-}
-
-.itemQuantity {
-  color: var(--color-primary-opacity);
-  font-size: var(--font-size-s);
-  font-weight: 700;
-  line-height: 25px;
 }

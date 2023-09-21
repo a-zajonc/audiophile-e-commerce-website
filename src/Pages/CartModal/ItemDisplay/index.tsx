@@ -2,6 +2,8 @@ import * as React from "react";
 import styles from "./index.module.scss";
 import { Counter } from "../../../Components/Counter";
 import { BasketContext } from "../../../context";
+import { Stack } from "../../../Components/Stack";
+import { Text } from "../../../Components/Text";
 
 type Props = {
   name: string;
@@ -29,23 +31,38 @@ export function ItemDisplay({ name, img, price, quantity }: Props) {
   }, [changedQuantity, name, setBasket]);
 
   return (
-    <div className={styles.box}>
+    <Stack orientation="horizontal" className={styles.box}>
       <img
         src={require(`../../../images/cart/${img}`)}
         alt={name}
         className={styles.img}
       />
-      <div className={styles.containerRow}>
-        <div className={styles.containerColumn}>
-          <p className={styles.name}>{name}</p>
-          <p className={styles.priceText}>{price}</p>
-        </div>
+      <Stack
+        orientation="horizontal"
+        align="center"
+        spacing="between"
+        className={styles.width}
+      >
+        <Stack orientation="vertical">
+          <Text color="primary" fontSize="xs" fontWeight={700}>
+            {name}
+          </Text>
+          <Text
+            color="primary"
+            fontSize="xs"
+            fontWeight={700}
+            opacity="m"
+            className={styles.priceText}
+          >
+            {`$ ${Number(price).toLocaleString("en-US")}`}
+          </Text>
+        </Stack>
         <Counter
           size="small"
           quantity={changedQuantity}
           setQuantity={setChangedQuantity}
         />
-      </div>
-    </div>
+      </Stack>
+    </Stack>
   );
 }
