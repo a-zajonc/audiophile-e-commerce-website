@@ -49,8 +49,11 @@ export function CheckoutSummary({ errors, option, order }: any) {
   const handleClick = () => {
     setBasket([]);
     closeModal();
-    window.sessionStorage.removeItem("form");
+    window.localStorage.removeItem("form");
+    window.localStorage.removeItem("basket");
   };
+
+  console.log("Before removal: ", window.localStorage.getItem("form"));
 
   return (
     <div className={styles.box}>
