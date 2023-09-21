@@ -27,7 +27,7 @@ export function Checkout() {
   useFormPersist("form", {
     watch,
     setValue,
-    storage: window.sessionStorage,
+    storage: window.localStorage,
   });
 
   return (

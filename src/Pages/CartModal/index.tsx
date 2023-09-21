@@ -12,6 +12,11 @@ export function CartModal({ handleClick }: any) {
   const { basket, setBasket } = React.useContext(BasketContext);
   const total = useSumPrices(basket);
 
+  const handleRemoving = () => {
+    setBasket([]);
+    window.localStorage.removeItem("basket");
+  };
+
   return (
     <Stack orientation="vertical">
       <Stack orientation="horizontal" spacing="between">
@@ -23,7 +28,7 @@ export function CartModal({ handleClick }: any) {
         >
           cart {`(${basket ? basket.length : "0"})`}
         </Text>
-        <button className={styles.button} onClick={() => setBasket([])}>
+        <button className={styles.button} onClick={handleRemoving}>
           Remove all
         </button>
       </Stack>
