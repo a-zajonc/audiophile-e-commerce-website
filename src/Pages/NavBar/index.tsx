@@ -53,7 +53,9 @@ export function NavBar() {
             <div className={styles.category}>Earphones</div>
           </Link>
         </div>
-        <Cart className={styles.cartIcon} onClick={openModal} />
+        <button className={styles.displayNone}>
+          <Cart className={styles.cartIcon} onClick={openModal} />
+        </button>
         <Modal
           isOpen={modalIsOpen}
           style={customStyles}

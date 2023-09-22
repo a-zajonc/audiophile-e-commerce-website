@@ -18,6 +18,7 @@ export function MediumProductComponent() {
             fontSize="xl"
             fontWeight={700}
             lineHeight="l"
+            marginBottom="32px"
             headingLevel={3}
             className={styles.header}
           >

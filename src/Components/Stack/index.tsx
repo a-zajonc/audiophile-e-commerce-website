@@ -1,7 +1,8 @@
-import type { ReactNode } from "react";
 import styles from "./index.module.scss";
+import type { ComponentPropsWithoutRef, ReactNode } from "react";
+import { forwardRef } from "react";
 
-type Props = {
+type Props = ComponentPropsWithoutRef<"div"> & {
   className?: string;
   orientation?: "horizontal" | "vertical";
   spacing?: string;
@@ -10,17 +11,19 @@ type Props = {
   children: ReactNode;
 };
 
-export function Stack({
-  className,
-  orientation,
-  spacing,
-  align,
-  marginTop,
-  children,
-}: Props) {
-  const customStyle = marginTop ? { marginTop } : {};
-
-  return (
+export const Stack = forwardRef<HTMLDivElement, Props>(
+  (
+    {
+      className,
+      orientation,
+      spacing,
+      align,
+      marginTop,
+      children,
+      ...divProps
+    }: Props,
+    ref
+  ) => (
     <div
       className={`${styles.flex}  ${
         orientation && styles[`orientation-${orientation}`]
@@ -28,9 +31,10 @@ export function Stack({
       ${align && styles[`align-${align}`]}
         ${spacing && styles[`spacing-${spacing}`]}
         ${className}`}
-      style={customStyle}
+      style={marginTop ? { marginTop } : {}}
+      {...divProps}
     >
       {children}
     </div>
-  );
-}
+  )
+);

@@ -18,6 +18,7 @@ export function OtherProductCard({ img, name }: OtherProductCardProps) {
         fontSize="l"
         fontWeight={700}
         marginTop="40px"
+        marginBottom="32px"
         headingLevel={4}
         className={styles.header}
       >

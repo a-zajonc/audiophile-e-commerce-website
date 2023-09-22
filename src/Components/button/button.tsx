@@ -4,7 +4,6 @@ import { forwardRef } from "react";
 
 type Props = ComponentPropsWithoutRef<"button"> & {
   colorScheme: "primary" | "secondary" | "brand";
-  margin?: true | false;
   fullWidth?: true | false;
   children?: ReactNode;
 };
@@ -14,7 +13,6 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
     {
       type = "button",
       colorScheme = "primary",
-      margin = true,
       fullWidth = false,
       children,
       ...buttonProps
@@ -26,9 +24,7 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
       type={type}
       className={`${styles.button}  ${
         colorScheme && styles[`color-scheme-${colorScheme}`]
-      }       ${margin && styles.margin} ${
-        fullWidth && styles[`color-scheme-${colorScheme}-fullWidth`]
-      }`}
+      }       ${fullWidth && styles[`color-scheme-${colorScheme}-fullWidth`]}`}
       {...buttonProps}
     >
       {children}
