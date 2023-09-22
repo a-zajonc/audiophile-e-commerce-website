@@ -42,7 +42,12 @@ export function Checkout() {
             option={option}
             setOption={setOption}
           />
-          <CheckoutSummary errors={errors} option={option} order={order} />
+          <CheckoutSummary
+            errors={errors}
+            option={option}
+            order={order}
+            setOrder={setOrder}
+          />
         </Stack>
       </form>
     </div>

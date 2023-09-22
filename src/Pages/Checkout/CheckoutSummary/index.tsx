@@ -27,7 +27,7 @@ const customStyles = {
 };
 Modal.setAppElement("#root");
 
-export function CheckoutSummary({ errors, option, order }: any) {
+export function CheckoutSummary({ errors, option, order, setOrder }: any) {
   const { basket, setBasket } = React.useContext(BasketContext);
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const total = useSumPrices(basket);
@@ -47,13 +47,19 @@ export function CheckoutSummary({ errors, option, order }: any) {
   }
 
   const handleClick = () => {
+    setOrder(basket);
+    if (order) {
+      window.localStorage.removeItem("form");
+    }
+
     setBasket([]);
     closeModal();
-    window.localStorage.removeItem("form");
     window.localStorage.removeItem("basket");
   };
 
-  console.log("Before removal: ", window.localStorage.getItem("form"));
+  if (order) {
+    window.localStorage.removeItem("form");
+  }
 
   return (
     <div className={styles.box}>
