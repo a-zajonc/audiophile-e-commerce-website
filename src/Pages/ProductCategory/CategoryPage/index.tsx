@@ -4,7 +4,7 @@ import data from "../../../data.json";
 import { useParams } from "react-router-dom";
 import { FadeIn } from "../../../Components/Animations";
 
-export function ProductPage() {
+export function CategoryPage() {
   const { categoryName } = useParams();
 
   const dataCategory =

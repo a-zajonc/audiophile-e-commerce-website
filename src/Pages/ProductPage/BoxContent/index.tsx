@@ -26,7 +26,7 @@ export function BoxContent({ insideBox }: BoxContentProps) {
               orientation="horizontal"
               align="baseline"
               className={styles.listElement}
-              key={element.name}
+              key={element.name.toString()}
             >
               <Text
                 color="brand"
