@@ -1,5 +1,5 @@
-import styles from "./index.module.css";
-import { ProductCard } from "../ProductCategory/ProductPage/ProductCard";
+import styles from "./index.module.scss";
+import { ProductCard } from "../ProductCategory/CategoryPage/ProductCard";
 import data from "../../data.json";
 import { Features } from "./Features";
 import { BoxContent } from "./BoxContent";
@@ -8,6 +8,7 @@ import { ProductGallery } from "./ProductGallery";
 import { OtherProducts } from "./OtherProducts";
 import { GoBackButton } from "../GoBackButton";
 import { useLocation } from "react-router-dom";
+import { PageNotFound } from "../PageNotFound";
 
 function findProductByKeyword(keyword: string) {
   const products = Object.values(data.products);
@@ -16,7 +17,10 @@ function findProductByKeyword(keyword: string) {
 
   for (const productCategory of products) {
     for (const product of productCategory) {
-      if (product.name.toLowerCase().includes(keyword.toLowerCase())) {
+      if (
+        product.name &&
+        product.name.toLowerCase().includes(keyword.toLowerCase())
+      ) {
         matchingProducts.push(product);
       }
     }
@@ -30,29 +34,34 @@ export function ProductPage() {
 
   const matchingProducts = findProductByKeyword(pathname);
 
+  if (matchingProducts.length === 0) {
+    return <PageNotFound />;
+  }
+  const product = matchingProducts[0];
+
   return (
     <div>
       <div className={styles.box}>
         <GoBackButton />
         <div>
           <ProductCard
-            productName={matchingProducts[0].name}
-            productDescription={matchingProducts[0].description}
-            isProductNew={matchingProducts[0].new}
-            productImg={matchingProducts[0].img}
-            productCartImg={matchingProducts[0].imgCart}
-            productPrice={matchingProducts[0].price}
+            productName={product.name}
+            productDescription={product.description}
+            isProductNew={product.new}
+            productImg={product.img}
+            productCartImg={product.imgCart}
+            productPrice={product.price}
             mode={"buy"}
           />
           <div className={styles.boxDescription}>
             <Features
-              descriptionFirst={matchingProducts[0].features?.[0]}
-              descriptionSecond={matchingProducts[0].features?.[1]}
+              descriptionFirst={product.features?.[0]}
+              descriptionSecond={product.features?.[1]}
             />
-            <BoxContent insideBox={matchingProducts[0].boxContent} />
+            <BoxContent insideBox={product.boxContent} />
           </div>
         </div>
-        <ProductGallery img={matchingProducts[0].productGallery} />
+        <ProductGallery img={product.productGallery} />
         <OtherProducts />
       </div>
       <Categories />

@@ -45,12 +45,12 @@ export function OtherProducts() {
       </Text>
       <Stack orientation="horizontal" spacing="between" marginTop="64px">
         {currentData.map((product: any) => {
+          console.log(product);
           return (
-            <FadeIn>
+            <FadeIn key={product.id.toString()}>
               <OtherProductCard
                 img={require(`../../../images/${product.img}`)}
                 name={removeTypeFromName(product.name)}
-                key={product.id}
               />
             </FadeIn>
           );
