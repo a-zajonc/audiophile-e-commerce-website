@@ -85,6 +85,7 @@ export function ProductCard({
           lineHeight="s"
           opacity="m"
           marginTop="32px"
+          marginBottom="32px"
         >
           {productDescription}
         </Text>
@@ -108,7 +109,6 @@ export function ProductCard({
               />
               <Button
                 colorScheme="brand"
-                margin={false}
                 onClick={handleAddToCartClick}
                 disabled={buttonText === "Added!"}
               >
@@ -120,9 +120,7 @@ export function ProductCard({
           <Link
             to={`/product/${productName.split(" ").join("-").toLowerCase()}`}
           >
-            <Button colorScheme="brand" margin={true}>
-              See Product
-            </Button>
+            <Button colorScheme="brand">See Product</Button>
           </Link>
         )}
       </Stack>

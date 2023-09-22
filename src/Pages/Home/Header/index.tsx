@@ -27,6 +27,7 @@ export function Header() {
           lineHeight="s"
           opacity="l"
           marginTop="47px"
+          marginBottom="32px"
         >
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.

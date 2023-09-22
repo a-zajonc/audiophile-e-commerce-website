@@ -31,6 +31,7 @@ export function BigProductComponent() {
             lineHeight="s"
             opacity="l"
             marginTop="24px"
+            marginBottom="40px"
           >
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.

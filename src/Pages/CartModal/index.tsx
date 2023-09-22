@@ -60,6 +60,7 @@ export function CartModal({ handleClick }: any) {
           color="primary"
           fontSize="m"
           fontWeight={700}
+          marginBottom="32px"
         >{`$ ${total}`}</Text>
       </Stack>
       <Link to="/checkout">

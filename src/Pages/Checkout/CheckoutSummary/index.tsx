@@ -122,6 +122,7 @@ export function CheckoutSummary({ errors, option, order, setOrder }: any) {
           <Text
             color="brand"
             fontWeight={700}
+            marginBottom="32px"
             fontSize="m"
           >{`$ ${useSumGrandTotal(total, 50)}`}</Text>
         </Stack>
