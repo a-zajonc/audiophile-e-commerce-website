@@ -25,3 +25,32 @@
   line-height: 25px;
   margin: 0;
 }
+
+.divider {
+  width: 1px;
+  height: 20px;
+  background-color: var(--color-secondary);
+  opacity: 0.25;
+}
+
+.deleteBox {
+  border-radius: var(--border-radius-small);
+  height: 50px;
+  padding: 10px;
+  text-align: center;
+  background-color: var(--color-error);
+}
+.button {
+  transition: all 0.2s ease-in;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: var(--color-secondary);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  font-weight: 700;
+  opacity: 0.75;
+}
+.button:hover {
+  opacity: 1;
+}

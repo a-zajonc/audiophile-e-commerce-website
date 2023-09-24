@@ -5,6 +5,7 @@ import cashDelivery from "../../../images/checkout/icon-cash-on-delivery.svg";
 import { Controller } from "react-hook-form";
 import { Text } from "../../../Components/Text";
 import { Stack } from "../../../Components/Stack";
+import { motion } from "framer-motion";
 
 export function CheckoutForm({
   errors,
@@ -203,64 +204,78 @@ export function CheckoutForm({
         </Stack>
       </Stack>
       {option.length < 1 ? null : option === "e-Money" ? (
-        <Stack
-          orientation="horizontal"
-          spacing="between"
-          align="center"
-          marginTop="24px"
+        <motion.div
+          key="e-Money"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
         >
-          <Controller
-            rules={{
-              required: "Enter card name",
-            }}
-            name="cardNumber"
-            control={control}
-            defaultValue=""
-            render={({ field }) => (
-              <Input
-                title="e-Money Number"
-                type="number"
-                errors={errors}
-                {...field}
-              />
-            )}
-          />
-          <Controller
-            rules={{
-              required: "Enter PIN number",
-            }}
-            name="pinNumber"
-            control={control}
-            defaultValue=""
-            render={({ field }) => (
-              <Input title="e-Money PIN" errors={errors} {...field} />
-            )}
-          />
-        </Stack>
-      ) : (
-        <Stack
-          orientation="horizontal"
-          align="center"
-          spacing="between"
-          marginTop="24px"
-          className={styles.marginBottom}
-        >
-          <img
-            src={cashDelivery}
-            alt="Cash on delivery icon"
-            className={styles.icon}
-          />
-          <Text
-            color="primary"
-            fontSize="s"
-            opacity="m"
-            className={styles.padding}
+          <Stack
+            orientation="horizontal"
+            spacing="between"
+            align="center"
+            marginTop="24px"
           >
-            The ‘Cash on Delivery’ option enables you to pay in cash when our
-            delivery courier arrives at your residence. Just make sure your
-            address is correct so that your order will not be cancelled.
-          </Text>
-        </Stack>
+            <Controller
+              rules={{
+                required: "Enter card name",
+              }}
+              name="cardNumber"
+              control={control}
+              defaultValue=""
+              render={({ field }) => (
+                <Input
+                  title="e-Money Number"
+                  type="number"
+                  errors={errors}
+                  {...field}
+                />
+              )}
+            />
+            <Controller
+              rules={{
+                required: "Enter PIN number",
+              }}
+              name="pinNumber"
+              control={control}
+              defaultValue=""
+              render={({ field }) => (
+                <Input title="e-Money PIN" errors={errors} {...field} />
+              )}
+            />
+          </Stack>
+        </motion.div>
+      ) : (
+        <motion.div
+          key="CashOnDelivery"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Stack
+            orientation="horizontal"
+            align="center"
+            spacing="between"
+            marginTop="24px"
+            className={styles.marginBottom}
+          >
+            <img
+              src={cashDelivery}
+              alt="Cash on delivery icon"
+              className={styles.icon}
+            />
+            <Text
+              color="primary"
+              fontSize="s"
+              opacity="m"
+              className={styles.padding}
+            >
+              The ‘Cash on Delivery’ option enables you to pay in cash when our
+              delivery courier arrives at your residence. Just make sure your
+              address is correct so that your order will not be cancelled.
+            </Text>
+          </Stack>
+        </motion.div>
       )}
     </div>
   );
