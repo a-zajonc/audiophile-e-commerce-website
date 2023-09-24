@@ -4,6 +4,7 @@ import { Counter } from "../../../Components/Counter";
 import { BasketContext } from "../../../context";
 import { Stack } from "../../../Components/Stack";
 import { Text } from "../../../Components/Text";
+import { motion } from "framer-motion";
 
 type Props = {
   name: string;
@@ -29,6 +30,13 @@ export function ItemDisplay({ name, img, price, quantity }: Props) {
   React.useEffect(() => {
     updateBasket(name, changedQuantity);
   }, [changedQuantity, name, setBasket]);
+
+  const removeItem = (nameToFind: any) => {
+    const updatedBasket = basket.filter(
+      (item: any) => item.name !== nameToFind
+    );
+    setBasket(updatedBasket);
+  };
 
   return (
     <Stack orientation="horizontal" className={styles.box}>
@@ -57,11 +65,52 @@ export function ItemDisplay({ name, img, price, quantity }: Props) {
             {`$ ${Number(price).toLocaleString("en-US")}`}
           </Text>
         </Stack>
-        <Counter
-          size="small"
-          quantity={changedQuantity}
-          setQuantity={setChangedQuantity}
-        />
+        {changedQuantity === 0 ? null : (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Counter
+              size="small"
+              quantity={changedQuantity}
+              setQuantity={setChangedQuantity}
+              mininumQuantity={0}
+            />
+          </motion.div>
+        )}
+        {changedQuantity === 0 ? (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Stack
+              orientation="vertical"
+              spacing="evenly"
+              className={styles.deleteBox}
+            >
+              <Text color="primary" fontSize="xxs">
+                Sure to remove item?
+              </Text>
+              <Stack orientation="horizontal" spacing="between">
+                <button
+                  className={styles.button}
+                  onClick={() => removeItem(name)}
+                >
+                  Remove
+                </button>
+                <div className={styles.divider} />
+                <button
+                  className={styles.button}
+                  onClick={() => setChangedQuantity(1)}
+                >
+                  Cancel
+                </button>
+              </Stack>
+            </Stack>
+          </motion.div>
+        ) : null}
       </Stack>
     </Stack>
   );

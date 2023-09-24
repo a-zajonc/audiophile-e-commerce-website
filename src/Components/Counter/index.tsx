@@ -5,6 +5,7 @@ type Props = {
   size: "big" | "small";
   margin?: boolean;
   quantity: number;
+  mininumQuantity?: number;
   setQuantity?: any;
 };
 
@@ -13,6 +14,7 @@ export function Counter({
   margin = false,
   quantity = 1,
   setQuantity,
+  mininumQuantity = 1,
 }: Props) {
   const [counter, setCounter] = React.useState(quantity);
 
@@ -36,7 +38,7 @@ export function Counter({
       <button
         className={styles.mathSign}
         onClick={() => handleClick("minus")}
-        disabled={counter === 1}
+        disabled={counter < mininumQuantity + 1}
       >
         -
       </button>
