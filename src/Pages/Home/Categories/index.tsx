@@ -18,7 +18,7 @@ export function Categories() {
         {categoriesData.map((category) => {
           return (
             <div className={styles.container} key={category.name}>
-              <Link to={`/category/${category.name}`}>
+              <Link to={`/category/${category.name.toLowerCase()}`}>
                 <CategoryCard
                   category={category.name}
                   img={category.img}
