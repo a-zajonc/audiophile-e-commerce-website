@@ -54,12 +54,3 @@
 .button:hover {
   opacity: 1;
 }
-
-.transition-fade {
-  transition: opacity 0.5s ease-in;
-  opacity: 1;
-}
-
-.transition-fade-hide {
-  opacity: 0;
-}
