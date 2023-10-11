@@ -3,6 +3,7 @@ import type { ComponentPropsWithoutRef } from "react";
 import { forwardRef } from "react";
 import { ErrorMessage } from "@hookform/error-message";
 import { Text } from "../Text";
+import clsx from "clsx";
 
 type Props = ComponentPropsWithoutRef<"input"> & {
   title: string;
@@ -16,7 +17,7 @@ export const Input = forwardRef<HTMLInputElement, Props>(
     <div
       className={
         halfWidth === true
-          ? `${styles.box} ${styles.halfwidth}`
+          ? clsx(styles.box, styles.halfwidth)
           : `${styles.box}`
       }
     >
