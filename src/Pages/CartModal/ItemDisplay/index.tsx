@@ -5,6 +5,7 @@ import { BasketContext } from "../../../context";
 import { Stack } from "../../../Components/Stack";
 import { Text } from "../../../Components/Text";
 import { motion } from "framer-motion";
+import clsx from "clsx";
 
 type Props = {
   name: string;
@@ -62,7 +63,7 @@ export function ItemDisplay({ name, img, price, quantity }: Props) {
             opacity="m"
             className={styles.priceText}
           >
-            {`$ ${Number(price).toLocaleString("en-US")}`}
+            {clsx("$", Number(price).toLocaleString("en-US"))}
           </Text>
         </Stack>
         {changedQuantity === 0 ? null : (

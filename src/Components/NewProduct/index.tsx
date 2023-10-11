@@ -1,5 +1,6 @@
 import styles from "./index.module.scss";
 import { Text } from "../Text";
+import clsx from "clsx";
 
 type Props = {
   color: "brand" | "secondary";
@@ -13,7 +14,7 @@ export function NewProduct({ color }: Props) {
       className={
         color === "brand"
           ? styles.text
-          : `${styles.text} ${styles["text-opacity"]}`
+          : clsx(styles.text, styles["text-opacity"])
       }
     >
       New Product

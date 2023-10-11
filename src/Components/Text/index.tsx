@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import styles from "./index.module.scss";
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
 import { forwardRef } from "react";
@@ -50,14 +51,15 @@ export const Text = forwardRef<HTMLParagraphElement, TextProps>(
     return (
       <Element
         ref={ref}
-        className={`${styles.text} ${color && styles[`color-${color}`]} ${
-          fontSize && styles[`font-size-${fontSize}`]
-        } ${fontWeight && styles[`font-weight-${fontWeight}`]} ${
-          lineHeight && styles[`line-height-${lineHeight}`]
-        } =
-        ${opacity && styles[`opacity-${opacity}`]}     ${className}
-    
-       `}
+        className={clsx(
+          styles.text,
+          color && styles[`color-${color}`],
+          fontSize && styles[`font-size-${fontSize}`],
+          fontWeight && styles[`font-weight-${fontWeight}`],
+          lineHeight && styles[`line-height-${lineHeight}`],
+          opacity && styles[`opacity-${opacity}`],
+          className
+        )}
         style={customStyle}
         {...textProps}
       >

@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import styles from "./index.module.scss";
 import * as React from "react";
 
@@ -32,8 +33,11 @@ export function Counter({
 
   return (
     <div
-      className={` ${styles.container} ${size && styles[`size-${size}`]} 
-      ${margin && styles["container-margin"]}`}
+      className={clsx(
+        styles.container,
+        size && styles[`size-${size}`],
+        margin && styles["container-margin"]
+      )}
     >
       <button
         className={styles.mathSign}

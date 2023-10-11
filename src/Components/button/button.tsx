@@ -1,6 +1,7 @@
 import styles from "./index.module.scss";
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
 import { forwardRef } from "react";
+import clsx from "clsx";
 
 type Props = ComponentPropsWithoutRef<"button"> & {
   colorScheme: "primary" | "secondary" | "brand";
@@ -22,9 +23,11 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
     <button
       ref={ref}
       type={type}
-      className={`${styles.button}  ${
-        colorScheme && styles[`color-scheme-${colorScheme}`]
-      }       ${fullWidth && styles[`color-scheme-${colorScheme}-fullWidth`]}`}
+      className={clsx(
+        styles.button,
+        colorScheme && styles[`color-scheme-${colorScheme}`],
+        fullWidth && styles[`color-scheme-${colorScheme}-fullWidth`]
+      )}
       {...buttonProps}
     >
       {children}

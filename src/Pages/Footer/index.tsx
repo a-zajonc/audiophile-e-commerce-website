@@ -6,6 +6,7 @@ import { ReactComponent as FacebookIcon } from "../../images/shared/desktop/icon
 import { Link } from "react-router-dom";
 import { Text } from "../../Components/Text";
 import { Stack } from "../../Components/Stack";
+import clsx from "clsx";
 
 export function Footer() {
   return (
@@ -29,7 +30,7 @@ export function Footer() {
         <Stack
           orientation="vertical"
           align="end"
-          className={`${styles.align} ${styles.halfWidth}`}
+          className={clsx(styles.align, styles.halfWidth)}
         >
           <Stack
             orientation="horizontal"

@@ -1,5 +1,6 @@
 import styles from "./index.module.scss";
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
+import clsx from "clsx";
 import { forwardRef } from "react";
 
 type Props = ComponentPropsWithoutRef<"div"> & {
@@ -25,12 +26,13 @@ export const Stack = forwardRef<HTMLDivElement, Props>(
     ref
   ) => (
     <div
-      className={`${styles.flex}  ${
-        orientation && styles[`orientation-${orientation}`]
-      }
-      ${align && styles[`align-${align}`]}
-        ${spacing && styles[`spacing-${spacing}`]}
-        ${className}`}
+      className={clsx(
+        styles.flex,
+        orientation && styles[`orientation-${orientation}`],
+        align && styles[`align-${align}`],
+        spacing && styles[`spacing-${spacing}`],
+        className
+      )}
       style={marginTop ? { marginTop } : {}}
       {...divProps}
     >
