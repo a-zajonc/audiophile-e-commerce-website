@@ -7,8 +7,13 @@ import { Stack } from "../../../Components/Stack";
 
 export function Header() {
   return (
-    <div className={styles.box}>
-      <Stack orientation="vertical" align="baseline" className={styles.content}>
+    <div className={styles.background}>
+      <Stack
+        orientation="vertical"
+        align="baseline"
+        className={styles.content}
+        gap="35px"
+      >
         <NewProduct color="secondary" />
         <Text
           color="secondary"
@@ -16,19 +21,11 @@ export function Header() {
           fontWeight={700}
           lineHeight="xl"
           headingLevel={1}
-          marginTop="27px"
           className={styles.title}
         >
           XX99 Mark II Headphones
         </Text>
-        <Text
-          color="secondary"
-          fontSize="s"
-          lineHeight="s"
-          opacity="l"
-          marginTop="47px"
-          marginBottom="32px"
-        >
+        <Text color="secondary" fontSize="s" lineHeight="s" opacity="l">
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </Text>

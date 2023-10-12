@@ -32,7 +32,7 @@ export function OtherProducts() {
   const currentData = getRandomProducts(getProducts(data, currentProduct), 3);
 
   return (
-    <div className={styles.box}>
+    <Stack orientation="vertical" className={styles.box} gap="64px">
       <Text
         color="primary"
         fontSize="xxl"
@@ -43,7 +43,7 @@ export function OtherProducts() {
       >
         You may also like
       </Text>
-      <Stack orientation="horizontal" spacing="between" marginTop="64px">
+      <Stack orientation="horizontal" spacing="between">
         {currentData.map((product: any) => {
           return (
             <FadeIn key={product.id.toString()}>
@@ -55,6 +55,6 @@ export function OtherProducts() {
           );
         })}
       </Stack>
-    </div>
+    </Stack>
   );
 }

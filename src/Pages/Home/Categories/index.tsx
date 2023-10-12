@@ -4,6 +4,7 @@ import headphones from "../../../images/shared/desktop/image-category-thumbnail-
 import speakers from "../../../images/shared/desktop/image-category-thumbnail-speakers.png";
 import earphones from "../../../images/shared/desktop/image-category-thumbnail-earphones.png";
 import { Link } from "react-router-dom";
+import { Stack } from "../../../Components/Stack";
 
 const categoriesData = [
   { url: "headphones", name: "Headphones", img: headphones },
@@ -13,22 +14,20 @@ const categoriesData = [
 
 export function Categories() {
   return (
-    <div className={styles.box}>
-      <div className={styles.categoriesBox}>
-        {categoriesData.map((category) => {
-          return (
-            <div className={styles.container} key={category.name}>
-              <Link to={`/category/${category.name.toLowerCase()}`}>
-                <CategoryCard
-                  category={category.name}
-                  img={category.img}
-                  key={category.name}
-                />
-              </Link>
-            </div>
-          );
-        })}
-      </div>
-    </div>
+    <Stack className={styles.box} orientation="horizontal" gap="30px">
+      {categoriesData.map((category) => {
+        return (
+          <div className={styles.container} key={category.name}>
+            <Link to={`/category/${category.name.toLowerCase()}`}>
+              <CategoryCard
+                category={category.name}
+                img={category.img}
+                key={category.name}
+              />
+            </Link>
+          </div>
+        );
+      })}
+    </Stack>
   );
 }

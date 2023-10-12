@@ -10,8 +10,6 @@ type TextProps = ComponentPropsWithoutRef<"p"> & {
   fontWeight?: number;
   opacity?: string;
   className?: string;
-  marginTop?: string;
-  marginBottom?: string;
   headingLevel?: number;
   children?: ReactNode;
 };
@@ -26,23 +24,11 @@ export const Text = forwardRef<HTMLParagraphElement, TextProps>(
       children,
       opacity,
       className,
-      marginTop,
-      marginBottom,
       headingLevel,
       ...textProps
     }: TextProps,
     ref
   ) => {
-    const customStyle: React.CSSProperties = {};
-
-    if (marginTop) {
-      customStyle.marginTop = marginTop;
-    }
-
-    if (marginBottom) {
-      customStyle.marginBottom = marginBottom;
-    }
-
     const Element =
       headingLevel && headingLevel >= 1 && headingLevel <= 6
         ? (`h${headingLevel}` as "h1" | "h2" | "h3" | "h4" | "h5" | "h6")
@@ -60,7 +46,6 @@ export const Text = forwardRef<HTMLParagraphElement, TextProps>(
           opacity && styles[`opacity-${opacity}`],
           className
         )}
-        style={customStyle}
         {...textProps}
       >
         {children}

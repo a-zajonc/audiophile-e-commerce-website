@@ -41,17 +41,13 @@
   font-size: var(--font-size-xxs);
   font-weight: 700;
   letter-spacing: -0.214px;
-  margin-bottom: 9px;
-}
-
-.horizontal {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: baseline;
 }
 
 .errorMessage {
   letter-spacing: -0.214px;
-  margin: 0;
+}
+
+.center {
+  height: 25px;
+  align-items: center;
 }

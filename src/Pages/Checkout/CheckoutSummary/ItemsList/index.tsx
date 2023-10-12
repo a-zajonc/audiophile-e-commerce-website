@@ -11,12 +11,7 @@ type Props = {
 
 export function ItemsList({ img, name, price, quantity }: Props) {
   return (
-    <Stack
-      orientation="horizontal"
-      spacing="between"
-      align="center"
-      className={styles.box}
-    >
+    <Stack orientation="horizontal" spacing="between" align="center">
       <Stack orientation="horizontal">
         <img
           src={require(`../../../../images/cart/${img}`)}

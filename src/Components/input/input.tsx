@@ -3,7 +3,7 @@ import type { ComponentPropsWithoutRef } from "react";
 import { forwardRef } from "react";
 import { ErrorMessage } from "@hookform/error-message";
 import { Text } from "../Text";
-import clsx from "clsx";
+import { Stack } from "../Stack";
 
 type Props = ComponentPropsWithoutRef<"input"> & {
   title: string;
@@ -14,14 +14,19 @@ type Props = ComponentPropsWithoutRef<"input"> & {
 
 export const Input = forwardRef<HTMLInputElement, Props>(
   ({ title, halfWidth = false, name, errors, ...inputProps }: Props, ref) => (
-    <div
+    <Stack
       className={
         halfWidth === true
-          ? clsx(styles.box, styles.halfwidth)
+          ? `${styles.box} ${styles.halfwidth}`
           : `${styles.box}`
       }
+      gap="8px"
     >
-      <div className={styles.horizontal}>
+      <Stack
+        orientation="horizontal"
+        spacing="between"
+        className={styles.center}
+      >
         <label className={styles.title}>{title}</label>
         {errors ? (
           <ErrorMessage
@@ -38,7 +43,7 @@ export const Input = forwardRef<HTMLInputElement, Props>(
             )}
           />
         ) : null}
-      </div>
+      </Stack>
       <input
         ref={ref}
         className={
@@ -48,6 +53,6 @@ export const Input = forwardRef<HTMLInputElement, Props>(
         }
         {...inputProps}
       />
-    </div>
+    </Stack>
   )
 );

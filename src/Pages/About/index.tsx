@@ -10,6 +10,7 @@ export function About() {
         <Stack
           orientation="vertical"
           spacing="center"
+          gap="40px"
           className={styles.marginRight}
         >
           <Text
@@ -23,13 +24,7 @@ export function About() {
             Bringing you the <mark className={styles.mark}>best</mark> audio
             gear
           </Text>
-          <Text
-            color="primary"
-            fontSize="s"
-            lineHeight="s"
-            opacity="m"
-            style={{ marginTop: "32px" }}
-          >
+          <Text color="primary" fontSize="s" lineHeight="s" opacity="m">
             Located at the heart of New York City, Audiophile is the premier
             store for high end headphones, earphones, speakers, and audio
             accessories. We have a large showroom and luxury demonstration rooms

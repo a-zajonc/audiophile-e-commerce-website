@@ -66,7 +66,12 @@ export function ProductCard({
         src={require(`../../../../images/${productImg}`)}
         alt="Headphones"
       />
-      <Stack orientation="vertical" spacing="center" className={styles.textBox}>
+      <Stack
+        orientation="vertical"
+        spacing="center"
+        className={styles.textWidth}
+        gap="32px"
+      >
         {isProductNew ? <NewProduct color="brand" /> : null}
         <Text
           color="primary"
@@ -74,28 +79,19 @@ export function ProductCard({
           fontWeight={700}
           lineHeight="l"
           headingLevel={2}
-          marginTop="16px"
           className={styles.header}
         >
           {productName}
         </Text>
-        <Text
-          color="primary"
-          fontSize="s"
-          lineHeight="s"
-          opacity="m"
-          marginTop="32px"
-          marginBottom="32px"
-        >
+        <Text color="primary" fontSize="s" lineHeight="s" opacity="m">
           {productDescription}
         </Text>
         {mode === "buy" ? (
-          <Stack orientation="vertical">
+          <Stack orientation="vertical" gap="47px">
             <Text
               color="primary"
               fontSize="m"
               fontWeight={700}
-              marginTop="32px"
               className={styles.textPrice}
             >
               {displayAsPrice(productPrice)}

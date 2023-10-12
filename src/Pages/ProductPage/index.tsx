@@ -9,6 +9,7 @@ import { OtherProducts } from "./OtherProducts";
 import { GoBackButton } from "../GoBackButton";
 import { useLocation } from "react-router-dom";
 import { PageNotFound } from "../PageNotFound";
+import { Stack } from "../../Components/Stack";
 
 function findProductByKeyword(keyword: string) {
   const products = Object.values(data.products);
@@ -40,31 +41,29 @@ export function ProductPage() {
   const product = matchingProducts[0];
 
   return (
-    <div>
-      <div className={styles.box}>
-        <GoBackButton />
-        <div>
-          <ProductCard
-            productName={product.name}
-            productDescription={product.description}
-            isProductNew={product.new}
-            productImg={product.img}
-            productCartImg={product.imgCart}
-            productPrice={product.price}
-            mode={"buy"}
+    <Stack orientation="vertical" className={styles.box} gap="56px">
+      <GoBackButton />
+      <Stack orientation="vertical" gap="160px">
+        <ProductCard
+          productName={product.name}
+          productDescription={product.description}
+          isProductNew={product.new}
+          productImg={product.img}
+          productCartImg={product.imgCart}
+          productPrice={product.price}
+          mode={"buy"}
+        />
+        <Stack orientation="horizontal" gap="125px">
+          <Features
+            descriptionFirst={product.features?.[0]}
+            descriptionSecond={product.features?.[1]}
           />
-          <div className={styles.boxDescription}>
-            <Features
-              descriptionFirst={product.features?.[0]}
-              descriptionSecond={product.features?.[1]}
-            />
-            <BoxContent insideBox={product.boxContent} />
-          </div>
-        </div>
+          <BoxContent insideBox={product.boxContent} />
+        </Stack>
         <ProductGallery img={product.productGallery} />
-        <OtherProducts />
-      </div>
+      </Stack>
+      <OtherProducts />
       <Categories />
-    </div>
+    </Stack>
   );
 }

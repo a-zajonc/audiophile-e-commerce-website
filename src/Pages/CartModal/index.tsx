@@ -18,7 +18,7 @@ export function CartModal({ handleClick }: any) {
   };
 
   return (
-    <Stack orientation="vertical">
+    <Stack orientation="vertical" gap="20px">
       <Stack orientation="horizontal" spacing="between">
         <Text
           color="primary"
@@ -32,7 +32,7 @@ export function CartModal({ handleClick }: any) {
           Remove all
         </button>
       </Stack>
-      <Stack orientation="vertical" marginTop="31px">
+      <Stack orientation="vertical">
         {basket
           ? basket.map((item: any) => {
               return (
@@ -47,12 +47,7 @@ export function CartModal({ handleClick }: any) {
             })
           : "Nothing here"}
       </Stack>
-      <Stack
-        orientation="horizontal"
-        spacing="between"
-        align="center"
-        marginTop="31px"
-      >
+      <Stack orientation="horizontal" spacing="between" align="center">
         <Text color="primary" fontSize="s" opacity="m">
           TOTAL
         </Text>
@@ -60,7 +55,6 @@ export function CartModal({ handleClick }: any) {
           color="primary"
           fontSize="m"
           fontWeight={700}
-          marginBottom="32px"
         >{`$ ${total}`}</Text>
       </Stack>
       <Link to="/checkout">

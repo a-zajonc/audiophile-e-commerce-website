@@ -1,0 +1,15 @@
+.box {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.category {
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.category:hover {
+  cursor: pointer;
+  color: var(--color-brand);
+  transition: all 0.2s ease-in;
+}

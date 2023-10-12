@@ -10,7 +10,7 @@ export function ProductCategory() {
   const { categoryName } = useParams();
 
   return (
-    <Stack orientation="vertical">
+    <Stack orientation="vertical" gap="120px">
       {categoryName && Object.keys(data.products).includes(categoryName) ? (
         <>
           <CategoryHeader category={categoryName} />

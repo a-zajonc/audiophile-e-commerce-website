@@ -32,7 +32,6 @@ export function CategoryCard({ category, img }: CategoryCardProps) {
             color="primary"
             fontSize="m"
             fontWeight={700}
-            marginTop="26px"
             headingLevel={3}
             className={styles.heading}
           >

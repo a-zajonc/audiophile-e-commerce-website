@@ -62,7 +62,7 @@ export function CheckoutSummary({ errors, option, order, setOrder }: any) {
   }
 
   return (
-    <div className={styles.box}>
+    <Stack orientation="vertical" gap="24px" className={styles.box}>
       <Text
         color="primary"
         fontSize="m"
@@ -84,8 +84,8 @@ export function CheckoutSummary({ errors, option, order, setOrder }: any) {
             />
           );
         })}
-      <Stack orientation="vertical" className="uppercase">
-        <Stack orientation="vertical" marginTop="30px">
+      <Stack orientation="vertical" className="uppercase" gap="32px">
+        <Stack orientation="vertical" gap="8px">
           <Stack orientation="horizontal" spacing="between">
             <Text color="primary" fontSize="s" opacity="m">
               TOTAL
@@ -96,7 +96,7 @@ export function CheckoutSummary({ errors, option, order, setOrder }: any) {
               fontWeight={700}
             >{`$ ${total}`}</Text>
           </Stack>
-          <Stack orientation="horizontal" spacing="between" marginTop="10px">
+          <Stack orientation="horizontal" spacing="between">
             <Text color="primary" fontSize="s" opacity="m">
               SHIPPING
             </Text>
@@ -104,7 +104,7 @@ export function CheckoutSummary({ errors, option, order, setOrder }: any) {
               {basket && basket.length ? "$ 50" : "$ 0"}
             </Text>
           </Stack>
-          <Stack orientation="horizontal" spacing="between" marginTop="10px">
+          <Stack orientation="horizontal" spacing="between">
             <Text color="primary" fontSize="s" opacity="m">
               VAT (INCLUDED)
             </Text>
@@ -115,14 +115,13 @@ export function CheckoutSummary({ errors, option, order, setOrder }: any) {
             >{`$ ${useSumWithTax(total, 0.2)}`}</Text>
           </Stack>
         </Stack>
-        <Stack orientation="horizontal" spacing="between" marginTop="30px">
+        <Stack orientation="horizontal" spacing="between">
           <Text color="primary" fontSize="s" opacity="m">
             GRAND TOTAL
           </Text>
           <Text
             color="brand"
             fontWeight={700}
-            marginBottom="32px"
             fontSize="m"
           >{`$ ${useSumGrandTotal(total, 50)}`}</Text>
         </Stack>
@@ -142,6 +141,6 @@ export function CheckoutSummary({ errors, option, order, setOrder }: any) {
       <Modal style={customStyles} isOpen={modalIsOpen}>
         <OrderConfirmation handleClick={handleClick} />
       </Modal>
-    </div>
+    </Stack>
   );
 }

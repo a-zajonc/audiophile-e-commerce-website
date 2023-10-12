@@ -20,22 +20,10 @@ export function Features({
       >
         Features
       </Text>
-      <Text
-        color="primary"
-        fontSize="s"
-        lineHeight="s"
-        opacity="m"
-        marginTop="32px"
-      >
+      <Text color="primary" fontSize="s" lineHeight="s" opacity="m">
         {descriptionFirst}
       </Text>
-      <Text
-        color="primary"
-        fontSize="s"
-        lineHeight="s"
-        opacity="m"
-        marginTop="30px"
-      >
+      <Text color="primary" fontSize="s" lineHeight="s" opacity="m">
         {descriptionSecond}
       </Text>
     </Stack>

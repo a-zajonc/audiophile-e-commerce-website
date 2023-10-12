@@ -15,192 +15,179 @@ export function CheckoutForm({
   setOption,
 }: any) {
   return (
-    <div className={styles.box}>
+    <Stack orientation="vertical" className={styles.box} gap="40px">
       <Text
         color="primary"
         fontSize="xl"
         fontWeight={700}
         lineHeight="m"
         headingLevel={3}
-        marginTop="25px"
         className={styles.header}
       >
         Checkout
       </Text>
-      <Text
-        color="brand"
-        fontSize="xxs"
-        fontWeight={700}
-        marginTop="50px"
-        className={styles.textTransform}
-      >
-        Billing Details
-      </Text>
-      <Stack
-        orientation="horizontal"
-        spacing="between"
-        align="center"
-        marginTop="24px"
-      >
-        <Controller
-          name="userName"
-          control={control}
-          defaultValue=""
-          rules={{
-            required: "This is required.",
-          }}
-          render={({ field }) => (
-            <Input title="Name" {...field} errors={errors} />
-          )}
-        />
-        <Controller
-          name="email"
-          control={control}
-          defaultValue=""
-          rules={{
-            pattern: { value: /^\S+@\S+$/i, message: "Wrong format" },
-            required: "This is required.",
-          }}
-          render={({ field }) => (
-            <Input title="Email Address" errors={errors} {...field} />
-          )}
-        />
-      </Stack>
-      <Stack
-        orientation="horizontal"
-        align="center"
-        spacing="between"
-        marginTop="24px"
-      >
-        <Controller
-          name="phone"
-          control={control}
-          defaultValue=""
-          rules={{
-            required: "This is required.",
-          }}
-          render={({ field }) => (
-            <Input
-              title="Phone Number"
-              type="number"
-              halfWidth={true}
-              errors={errors}
-              {...field}
-            />
-          )}
-        />
-      </Stack>
-      <Text
-        color="brand"
-        fontSize="xxs"
-        fontWeight={700}
-        marginTop="50px"
-        className={styles.textTransform}
-      >
-        Shipping Details
-      </Text>
-      <Controller
-        rules={{
-          required: "Fill your address",
-        }}
-        name="address"
-        control={control}
-        defaultValue=""
-        render={({ field }) => (
-          <Input title="Address" {...field} errors={errors} />
-        )}
-      />
-      <Stack
-        orientation="horizontal"
-        align="center"
-        spacing="between"
-        marginTop="24px"
-      >
-        <Controller
-          rules={{
-            required: "Fill your ZIP Code",
-          }}
-          name="zipcode"
-          control={control}
-          defaultValue=""
-          render={({ field }) => (
-            <Input title="ZIP Code" type="number" {...field} errors={errors} />
-          )}
-        />
-        <Controller
-          rules={{
-            required: "Fill city name",
-          }}
-          name="city"
-          control={control}
-          defaultValue=""
-          render={({ field }) => (
-            <Input title="City" {...field} errors={errors} />
-          )}
-        />
-      </Stack>
-      <Stack
-        orientation="horizontal"
-        align="center"
-        spacing="between"
-        marginTop="24px"
-      >
-        <Controller
-          rules={{
-            required: "Fill country name",
-          }}
-          name="country"
-          control={control}
-          defaultValue=""
-          render={({ field }) => (
-            <Input
-              title="Country"
-              halfWidth={true}
-              {...field}
-              errors={errors}
-            />
-          )}
-        />
-      </Stack>
-      <Text
-        color="brand"
-        fontSize="xxs"
-        fontWeight={700}
-        marginTop="50px"
-        className={styles.textTransform}
-      >
-        Payment details
-      </Text>
-      <Stack orientation="horizontal">
+      <Stack orientation="vertical" gap="16px">
         <Text
-          color="primary"
+          color="brand"
           fontSize="xxs"
           fontWeight={700}
-          className={styles.text}
+          className={styles.textTransform}
         >
-          Payment Method
+          Billing Details
         </Text>
-        <Stack
-          orientation="vertical"
-          spacing="around"
-          className={styles.fullWidth}
+        <Stack orientation="horizontal" spacing="between" align="center">
+          <Controller
+            name="userName"
+            control={control}
+            defaultValue=""
+            rules={{
+              required: "This is required.",
+            }}
+            render={({ field }) => (
+              <Input title="Name" {...field} errors={errors} />
+            )}
+          />
+          <Controller
+            name="email"
+            control={control}
+            defaultValue=""
+            rules={{
+              pattern: { value: /^\S+@\S+$/i, message: "Wrong format" },
+              required: "This is required.",
+            }}
+            render={({ field }) => (
+              <Input title="Email Address" errors={errors} {...field} />
+            )}
+          />
+        </Stack>
+        <Stack orientation="horizontal" align="center" spacing="between">
+          <Controller
+            name="phone"
+            control={control}
+            defaultValue=""
+            rules={{
+              required: "This is required.",
+            }}
+            render={({ field }) => (
+              <Input
+                title="Phone Number"
+                type="number"
+                halfWidth={true}
+                errors={errors}
+                {...field}
+              />
+            )}
+          />
+        </Stack>
+      </Stack>
+      <Stack orientation="vertical" gap="16px">
+        <Text
+          color="brand"
+          fontSize="xxs"
+          fontWeight={700}
+          className={styles.textTransform}
         >
-          <RadioInput
-            {...register("payment", { required: "This is required." })}
-            title="e-Money"
-            radioName="payment"
-            setOption={setOption}
-            value="card"
-            checked={!option || option === "e-Money"}
+          Shipping Details
+        </Text>
+        <Controller
+          rules={{
+            required: "Fill your address",
+          }}
+          name="address"
+          control={control}
+          defaultValue=""
+          render={({ field }) => (
+            <Input title="Address" {...field} errors={errors} />
+          )}
+        />
+        <Stack orientation="horizontal" align="center" spacing="between">
+          <Controller
+            rules={{
+              required: "Fill your ZIP Code",
+            }}
+            name="zipcode"
+            control={control}
+            defaultValue=""
+            render={({ field }) => (
+              <Input
+                title="ZIP Code"
+                type="number"
+                {...field}
+                errors={errors}
+              />
+            )}
           />
+          <Controller
+            rules={{
+              required: "Fill city name",
+            }}
+            name="city"
+            control={control}
+            defaultValue=""
+            render={({ field }) => (
+              <Input title="City" {...field} errors={errors} />
+            )}
+          />
+        </Stack>
+        <Stack orientation="horizontal" align="center" spacing="between">
+          <Controller
+            rules={{
+              required: "Fill country name",
+            }}
+            name="country"
+            control={control}
+            defaultValue=""
+            render={({ field }) => (
+              <Input
+                title="Country"
+                halfWidth={true}
+                {...field}
+                errors={errors}
+              />
+            )}
+          />
+        </Stack>
+      </Stack>
+      <Stack orientation="vertical" gap="16px">
+        <Text
+          color="brand"
+          fontSize="xxs"
+          fontWeight={700}
+          className={styles.textTransform}
+        >
+          Payment details
+        </Text>
+        <Stack orientation="horizontal">
+          <Text
+            color="primary"
+            fontSize="xxs"
+            fontWeight={700}
+            className={styles.text}
+          >
+            Payment Method
+          </Text>
+          <Stack
+            orientation="vertical"
+            spacing="around"
+            className={styles.fullWidth}
+          >
+            <RadioInput
+              {...register("payment", { required: "This is required." })}
+              title="e-Money"
+              radioName="payment"
+              setOption={setOption}
+              value="card"
+              checked={!option || option === "e-Money"}
+            />
 
-          <RadioInput
-            {...register("payment", { required: "This is required." })}
-            title="Cash on Delivery"
-            radioName="payment"
-            setOption={setOption}
-            value="cash"
-          />
+            <RadioInput
+              {...register("payment", { required: "This is required." })}
+              title="Cash on Delivery"
+              radioName="payment"
+              setOption={setOption}
+              value="cash"
+            />
+          </Stack>
         </Stack>
       </Stack>
       {option.length < 1 ? null : option === "e-Money" ? (
@@ -210,12 +197,7 @@ export function CheckoutForm({
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <Stack
-            orientation="horizontal"
-            spacing="between"
-            align="center"
-            marginTop="24px"
-          >
+          <Stack orientation="horizontal" spacing="between" align="center">
             <Controller
               rules={{
                 required: "Enter card name",
@@ -252,13 +234,7 @@ export function CheckoutForm({
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <Stack
-            orientation="horizontal"
-            align="center"
-            spacing="between"
-            marginTop="24px"
-            className={styles.marginBottom}
-          >
+          <Stack orientation="horizontal" align="center" spacing="between">
             <img
               src={cashDelivery}
               alt="Cash on delivery icon"
@@ -277,6 +253,6 @@ export function CheckoutForm({
           </Stack>
         </motion.div>
       )}
-    </div>
+    </Stack>
   );
 }
