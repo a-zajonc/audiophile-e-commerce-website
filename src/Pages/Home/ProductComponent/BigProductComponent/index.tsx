@@ -3,10 +3,11 @@ import { Button } from "../../../../Components/button/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Text } from "../../../../Components/Text";
+import { Stack } from "../../../../Components/Stack";
 
 export function BigProductComponent() {
   return (
-    <div className={styles.box}>
+    <Stack className={styles.box}>
       <div className={styles.contentBox}>
         <motion.div
           whileInView={{ x: 90 }}
@@ -14,7 +15,7 @@ export function BigProductComponent() {
           transition={{ ease: "easeOut", duration: 2 }}
           viewport={{ once: true, amount: 0.5 }}
         />
-        <div className={styles.container}>
+        <Stack orientation="vertical" className={styles.container} gap="24px">
           <Text
             color="secondary"
             fontSize="3xl"
@@ -25,22 +26,15 @@ export function BigProductComponent() {
           >
             ZX9 SPEAKER
           </Text>
-          <Text
-            color="secondary"
-            fontSize="s"
-            lineHeight="s"
-            opacity="l"
-            marginTop="24px"
-            marginBottom="40px"
-          >
+          <Text color="secondary" fontSize="s" lineHeight="s" opacity="l">
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.
           </Text>
           <Link to="product/zx9">
             <Button colorScheme="secondary">See Product</Button>
           </Link>
-        </div>
+        </Stack>
       </div>
-    </div>
+    </Stack>
   );
 }

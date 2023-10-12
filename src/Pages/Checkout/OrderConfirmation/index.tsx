@@ -18,27 +18,22 @@ export function OrderConfirmation({ handleClick }: any) {
   const grandTotal = useSumGrandTotal(total, 50);
 
   return (
-    <div className={styles.box}>
-      <img src={tickIcon} alt="Tick Icon" />
+    <Stack orientation="vertical" className={styles.box} gap="20px">
+      <img src={tickIcon} alt="Tick Icon" className={styles.icon} />
       <Text
         color="primary"
         fontSize="xl"
         fontWeight={700}
         lineHeight="m"
-        marginTop="32px"
         headingLevel={2}
         className={styles.header}
       >
         THANK YOU <br></br>FOR YOUR ORDER
       </Text>
-      <Text color="primary" opacity="m" fontSize="s" marginTop="24px">
+      <Text color="primary" opacity="m" fontSize="s">
         You will receive an email confirmation shortly.
       </Text>
-      <Stack
-        orientation="horizontal"
-        className={styles.container}
-        marginTop="33px"
-      >
+      <Stack orientation="horizontal" className={styles.container}>
         <ProductsConfirmation basket={basket} />
         <Stack
           orientation="vertical"
@@ -52,7 +47,6 @@ export function OrderConfirmation({ handleClick }: any) {
             color="secondary"
             fontSize="m"
             fontWeight={700}
-            marginTop="8px"
           >{`$ ${grandTotal}`}</Text>
         </Stack>
       </Stack>
@@ -61,6 +55,6 @@ export function OrderConfirmation({ handleClick }: any) {
           BACK TO HOME
         </Button>
       </Link>
-    </div>
+    </Stack>
   );
 }

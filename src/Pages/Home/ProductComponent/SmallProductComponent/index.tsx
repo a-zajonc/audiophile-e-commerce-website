@@ -27,13 +27,13 @@ export function SmallProductComponent() {
             orientation="vertical"
             align="flex-start"
             className={styles.text}
+            gap="32px"
           >
             <Text
               color="primary"
               fontSize="xl"
               fontWeight={700}
               lineHeight="l"
-              marginBottom="32px"
               headingLevel={3}
               className={styles.header}
             >

@@ -7,49 +7,37 @@ import { Link } from "react-router-dom";
 import { Text } from "../../Components/Text";
 import { Stack } from "../../Components/Stack";
 import clsx from "clsx";
+import { SiteNavigation } from "../NavBar/SiteNavigation";
 
 export function Footer() {
   return (
     <Stack orientation="horizontal" className={styles.box}>
       <div className={styles.divider} />
-      <Stack orientation="horizontal" className={styles.container}>
-        <Stack orientation="vertical" className={styles.marginRight}>
+      <Stack
+        orientation="horizontal"
+        spacing="between"
+        className={styles.container}
+      >
+        <Stack orientation="vertical" gap="20px">
           <img src={logo} alt="Shop Logo" className={styles.logo} />
-          <div className={styles.textContainer}>
-            <Text color="secondary" fontSize="s" lineHeight="s" opacity="m">
-              Audiophile is an all in one stop to fulfill your audio needs.
-              We're a small team of music lovers and sound specialists who are
-              devoted to helping you get the most out of personal audio. Come
-              and visit our demo facility - we’re open 7 days a week.
-            </Text>
-          </div>
+          <Text
+            color="secondary"
+            fontSize="s"
+            lineHeight="s"
+            opacity="l"
+            className={styles.textWidth}
+          >
+            Audiophile is an all in one stop to fulfill your audio needs. We're
+            a small team of music lovers and sound specialists who are devoted
+            to helping you get the most out of personal audio. Come and visit
+            our demo facility - we’re open 7 days a week.
+          </Text>
           <Text fontSize="s" color="secondary" opacity="m" fontWeight={700}>
             Copyright 2021. All Rights Reserved
           </Text>
         </Stack>
-        <Stack
-          orientation="vertical"
-          align="end"
-          className={clsx(styles.align, styles.halfWidth)}
-        >
-          <Stack
-            orientation="horizontal"
-            spacing="between"
-            className={styles.categories}
-          >
-            <Link to="/">
-              <div className={styles.category}>Home</div>
-            </Link>
-            <Link to="/category/headphones">
-              <div className={styles.category}>Headphones</div>
-            </Link>
-            <Link to="/category/speakers">
-              <div className={styles.category}>Speakers</div>
-            </Link>
-            <Link to="/category/earphones">
-              <div className={styles.category}>Earphones</div>
-            </Link>
-          </Stack>
+        <Stack orientation="vertical" align="end" gap="150px">
+          <SiteNavigation />
           <Stack orientation="horizontal">
             <FacebookIcon className={styles.icon} />
             <TwitterIcon className={styles.icon} />

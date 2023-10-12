@@ -3,6 +3,7 @@ import { ProductCard } from "./ProductCard";
 import data from "../../../data.json";
 import { useParams } from "react-router-dom";
 import { FadeIn } from "../../../Components/Animations";
+import { Stack } from "../../../Components/Stack";
 
 export function CategoryPage() {
   const { categoryName } = useParams();
@@ -15,10 +16,9 @@ export function CategoryPage() {
       : data.products.earphones;
 
   return (
-    <div className={styles.box}>
+    <Stack orientation="vertical" className={styles.box} gap="180px">
       {dataCategory.map((product: any, index: number) => {
         const isReversed = index % 2 === 1;
-
         return (
           <FadeIn key={product.name}>
             <ProductCard
@@ -32,6 +32,6 @@ export function CategoryPage() {
           </FadeIn>
         );
       })}
-    </div>
+    </Stack>
   );
 }

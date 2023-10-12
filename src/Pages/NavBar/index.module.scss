@@ -1,56 +1,21 @@
-.boxHome {
-  background-image: url(../../images/home/desktop/image-hero.jpg);
-  background-position: right 0px;
-  background-size: cover;
+.box {
   color: var(--color-secondary);
   height: 95px;
   width: 100%;
   background-color: var(--color-primary);
-}
-
-.boxProduct {
-  color: var(--color-secondary);
-  height: 95px;
-  width: 100%;
-  background-color: var(--color-primary);
+  justify-content: space-between;
 }
 
 .content {
-  position: relative;
   top: 32px;
-  left: calc((100% - 1110px) / 2);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 28px;
   width: 1110px;
+  margin-top: 35px;
+  margin-left: calc((100% - 1110px) / 2);
 }
 
 .logo {
   width: 143px;
   height: 25px;
-}
-
-.categories {
-  text-transform: uppercase;
-  display: flex;
-  flex-direction: row;
-  width: 429px;
-  justify-content: space-between;
-  font-weight: 700;
-  font-size: var(--font-size-xxs);
-  line-height: 25px;
-  letter-spacing: 2px;
-  transition: all 0.2s ease-out;
-  cursor: pointer;
-}
-
-.category {
-  transition: all 0.2s ease-in;
-}
-.category:hover {
-  color: var(--color-brand);
-  transition: all 0.2s ease-in;
 }
 
 .cartIcon {
@@ -67,11 +32,9 @@
 }
 
 .divider {
-  position: relative;
   width: 1110px;
   height: 1px;
-  left: calc((100% - 1110px) / 2);
-  top: 66px;
+  margin-left: calc((100% - 1110px) / 2);
   background: var(--color-secondary);
   mix-blend-mode: normal;
   opacity: 0.2;

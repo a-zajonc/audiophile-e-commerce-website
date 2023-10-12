@@ -11,14 +11,17 @@ type OtherProductCardProps = {
 
 export function OtherProductCard({ img, name }: OtherProductCardProps) {
   return (
-    <Stack orientation="vertical" align="center" className={styles.box}>
+    <Stack
+      orientation="vertical"
+      align="center"
+      className={styles.box}
+      gap="38px"
+    >
       <img src={img} alt="device" className={styles.img} />
       <Text
         color="primary"
         fontSize="l"
         fontWeight={700}
-        marginTop="40px"
-        marginBottom="32px"
         headingLevel={4}
         className={styles.header}
       >

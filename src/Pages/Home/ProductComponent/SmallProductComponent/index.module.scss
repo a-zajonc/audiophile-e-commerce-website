@@ -1,14 +1,10 @@
 .box {
-  margin-top: 48px;
   height: 320px;
-  width: 100%;
 }
 
 .content {
   position: absolute;
   left: calc((100% - 1110px) / 2);
-  width: 1110px;
-  height: 320px;
 }
 
 .img {

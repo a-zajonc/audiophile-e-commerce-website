@@ -1,6 +1,5 @@
 .box {
   width: 1110px;
-  margin-bottom: 160px;
   &-reversed {
     flex-direction: row-reverse;
   }
@@ -14,7 +13,7 @@
   background: var(--color-background);
 }
 
-.textBox {
+.textWidth {
   width: 445px;
 }
 
@@ -29,8 +28,4 @@
 
 .textPrice {
   letter-spacing: 1.286px;
-}
-
-.marginTop {
-  margin-top: 62px;
 }

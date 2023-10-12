@@ -8,7 +8,7 @@ type Props = ComponentPropsWithoutRef<"div"> & {
   orientation?: "horizontal" | "vertical";
   spacing?: string;
   align?: string;
-  marginTop?: string;
+  gap?: string;
   children: ReactNode;
 };
 
@@ -19,7 +19,7 @@ export const Stack = forwardRef<HTMLDivElement, Props>(
       orientation,
       spacing,
       align,
-      marginTop,
+      gap,
       children,
       ...divProps
     }: Props,
@@ -33,7 +33,7 @@ export const Stack = forwardRef<HTMLDivElement, Props>(
         spacing && styles[`spacing-${spacing}`],
         className
       )}
-      style={marginTop ? { marginTop } : {}}
+      style={gap ? { gap } : {}}
       {...divProps}
     >
       {children}

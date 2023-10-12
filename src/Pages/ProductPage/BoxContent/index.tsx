@@ -8,7 +8,7 @@ type BoxContentProps = {
 
 export function BoxContent({ insideBox }: BoxContentProps) {
   return (
-    <Stack orientation="vertical" className={styles.box}>
+    <Stack orientation="vertical" className={styles.box} gap="32px">
       <Text
         color="primary"
         fontSize="xxl"
@@ -19,30 +19,31 @@ export function BoxContent({ insideBox }: BoxContentProps) {
       >
         In the box
       </Text>
-      {insideBox &&
-        insideBox.map((element: any) => {
-          return (
-            <Stack
-              orientation="horizontal"
-              align="baseline"
-              className={styles.listElement}
-              key={element.name.toString()}
-            >
-              <Text
-                color="brand"
-                fontSize="s"
-                fontWeight={700}
-                lineHeight="s"
-                className={styles.marginRight}
+      <Stack orientation="vertical" gap="9px">
+        {insideBox &&
+          insideBox.map((element: any) => {
+            return (
+              <Stack
+                orientation="horizontal"
+                align="baseline"
+                key={element.name.toString()}
+                gap="24px"
               >
-                {element.quantity}x
-              </Text>
-              <Text color="primary" fontSize="s" opacity="m" lineHeight="m">
-                {element.name}
-              </Text>
-            </Stack>
-          );
-        })}
+                <Text
+                  color="brand"
+                  fontSize="s"
+                  fontWeight={700}
+                  lineHeight="s"
+                >
+                  {element.quantity}x
+                </Text>
+                <Text color="primary" fontSize="s" opacity="m" lineHeight="m">
+                  {element.name}
+                </Text>
+              </Stack>
+            );
+          })}
+      </Stack>
     </Stack>
   );
 }
