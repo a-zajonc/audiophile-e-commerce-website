@@ -44,7 +44,7 @@ export function CheckoutForm({
               required: "This is required.",
             }}
             render={({ field }) => (
-              <Input title="Name" {...field} errors={errors} />
+              <Input title="Name" id="username" {...field} errors={errors} />
             )}
           />
           <Controller
@@ -56,7 +56,12 @@ export function CheckoutForm({
               required: "This is required.",
             }}
             render={({ field }) => (
-              <Input title="Email Address" errors={errors} {...field} />
+              <Input
+                title="Email Address"
+                id="email"
+                errors={errors}
+                {...field}
+              />
             )}
           />
         </Stack>
@@ -72,6 +77,7 @@ export function CheckoutForm({
               <Input
                 title="Phone Number"
                 type="number"
+                id="phone"
                 halfWidth={true}
                 errors={errors}
                 {...field}
@@ -97,7 +103,7 @@ export function CheckoutForm({
           control={control}
           defaultValue=""
           render={({ field }) => (
-            <Input title="Address" {...field} errors={errors} />
+            <Input title="Address" id="address" {...field} errors={errors} />
           )}
         />
         <Stack orientation="horizontal" align="center" spacing="between">
@@ -112,6 +118,7 @@ export function CheckoutForm({
               <Input
                 title="ZIP Code"
                 type="number"
+                id="zip code"
                 {...field}
                 errors={errors}
               />
@@ -125,7 +132,7 @@ export function CheckoutForm({
             control={control}
             defaultValue=""
             render={({ field }) => (
-              <Input title="City" {...field} errors={errors} />
+              <Input title="City" id="city" {...field} errors={errors} />
             )}
           />
         </Stack>
@@ -140,6 +147,7 @@ export function CheckoutForm({
             render={({ field }) => (
               <Input
                 title="Country"
+                id="country"
                 halfWidth={true}
                 {...field}
                 errors={errors}
@@ -209,6 +217,7 @@ export function CheckoutForm({
                 <Input
                   title="e-Money Number"
                   type="number"
+                  id="e-money"
                   errors={errors}
                   {...field}
                 />
@@ -222,7 +231,12 @@ export function CheckoutForm({
               control={control}
               defaultValue=""
               render={({ field }) => (
-                <Input title="e-Money PIN" errors={errors} {...field} />
+                <Input
+                  title="e-Money PIN"
+                  id="pin"
+                  errors={errors}
+                  {...field}
+                />
               )}
             />
           </Stack>
