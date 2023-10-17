@@ -7,13 +7,17 @@ import { Stack } from "../Stack";
 
 type Props = ComponentPropsWithoutRef<"input"> & {
   title: string;
+  id: string;
   halfWidth?: false | true;
   name: string;
   errors?: any;
 };
 
 export const Input = forwardRef<HTMLInputElement, Props>(
-  ({ title, halfWidth = false, name, errors, ...inputProps }: Props, ref) => (
+  (
+    { title, halfWidth = false, name, errors, id, ...inputProps }: Props,
+    ref
+  ) => (
     <Stack
       className={
         halfWidth === true
@@ -27,7 +31,9 @@ export const Input = forwardRef<HTMLInputElement, Props>(
         spacing="between"
         className={styles.center}
       >
-        <label className={styles.title}>{title}</label>
+        <label className={styles.title} htmlFor={id}>
+          {title}
+        </label>
         {errors ? (
           <ErrorMessage
             name={name}
@@ -46,6 +52,7 @@ export const Input = forwardRef<HTMLInputElement, Props>(
       </Stack>
       <input
         ref={ref}
+        id={id}
         className={
           errors && Object.keys(errors).includes(name)
             ? styles.inputError
