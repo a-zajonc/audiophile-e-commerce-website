@@ -75,7 +75,10 @@ export function ItemDisplay({ name, img, price, quantity }: Props) {
             <Counter
               size="small"
               quantity={changedQuantity}
-              setQuantity={setChangedQuantity}
+              onQuantityChange={(newQuantity) => {
+                setChangedQuantity(newQuantity);
+                updateBasket(name, newQuantity);
+              }}
               mininumQuantity={0}
             />
           </motion.div>

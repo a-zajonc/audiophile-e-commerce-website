@@ -101,7 +101,7 @@ export function ProductCard({
                 size="big"
                 margin={true}
                 quantity={quantity}
-                setQuantity={setQuantity}
+                onQuantityChange={(newQuantity) => setQuantity(newQuantity)}
               />
               <Button
                 colorScheme="brand"
