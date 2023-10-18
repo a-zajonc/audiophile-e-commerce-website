@@ -7,29 +7,25 @@ type Props = {
   margin?: boolean;
   quantity: number;
   mininumQuantity?: number;
-  setQuantity?: any;
+  onQuantityChange: (newQuantity: number) => void;
 };
 
 export function Counter({
   size = "big",
   margin = false,
   quantity = 1,
-  setQuantity,
   mininumQuantity = 1,
+  onQuantityChange,
 }: Props) {
   const [counter, setCounter] = React.useState(quantity);
 
   function handleClick(mathSign: string) {
-    return mathSign === "minus"
-      ? setCounter(counter - 1)
-      : setCounter(counter + 1);
-  }
-
-  React.useEffect(() => {
-    if (setQuantity) {
-      setQuantity(counter);
+    const newCounter = mathSign === "minus" ? counter - 1 : counter + 1;
+    if (newCounter >= mininumQuantity) {
+      setCounter(newCounter);
+      onQuantityChange(newCounter);
     }
-  }, [counter, setQuantity]);
+  }
 
   return (
     <div
@@ -42,7 +38,7 @@ export function Counter({
       <button
         className={styles.mathSign}
         onClick={() => handleClick("minus")}
-        disabled={counter < mininumQuantity + 1}
+        disabled={counter <= mininumQuantity}
       >
         -
       </button>
