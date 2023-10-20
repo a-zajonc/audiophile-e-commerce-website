@@ -4,8 +4,11 @@ import { Button } from "../../../Components/button/button";
 import { Text } from "../../../Components/Text";
 import { NewProduct } from "../../../Components/NewProduct";
 import { Stack } from "../../../Components/Stack";
+import { useMedia } from "../../../context/mediaContext";
 
 export function Header() {
+  const { isTablet, isMobile } = useMedia();
+
   return (
     <div className={styles.background}>
       <Stack

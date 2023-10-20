@@ -6,9 +6,14 @@
   &-horizontal {
     flex-direction: row;
   }
-
   &-vertical {
     flex-direction: column;
+  }
+  &-horizontal-reverse {
+    flex-direction: row-reverse;
+  }
+  &-vertical-reverse {
+    flex-direction: column-reverse;
   }
 }
 

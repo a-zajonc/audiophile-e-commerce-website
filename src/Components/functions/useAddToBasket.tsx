@@ -1,5 +1,5 @@
 import * as React from "react";
-import { BasketContext } from "../../context";
+import { BasketContext } from "../../context/basketContext";
 
 export function useAddToBasket() {
   const { basket, setBasket } = React.useContext(BasketContext);

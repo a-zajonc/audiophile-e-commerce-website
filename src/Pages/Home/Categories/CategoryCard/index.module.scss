@@ -1,9 +1,8 @@
 .background {
-  position: relative;
   background: var(--color-background);
   height: 204px;
   width: 350px;
-  top: 80px;
+  margin-top: 80px;
   border-radius: var(--border-radius-small);
   transition: all 0.2s ease-in;
   &:hover {

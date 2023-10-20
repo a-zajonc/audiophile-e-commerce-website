@@ -3,7 +3,7 @@ import styles from "./index.module.scss";
 import { Button } from "../../Components/button/button";
 import { Link } from "react-router-dom";
 import { ItemDisplay } from "./ItemDisplay";
-import { BasketContext } from "../../context";
+import { BasketContext } from "../../context/basketContext";
 import { useSumPrices } from "../../Components/functions/sumPrices";
 import { Stack } from "../../Components/Stack";
 import { Text } from "../../Components/Text";

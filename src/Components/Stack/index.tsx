@@ -5,7 +5,11 @@ import { forwardRef } from "react";
 
 type Props = ComponentPropsWithoutRef<"div"> & {
   className?: string;
-  orientation?: "horizontal" | "vertical";
+  orientation?:
+    | "horizontal"
+    | "vertical"
+    | "horizontal-reverse"
+    | "vertical-reverse";
   spacing?: string;
   align?: string;
   gap?: string;

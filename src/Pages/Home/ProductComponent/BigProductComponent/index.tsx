@@ -4,13 +4,21 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Text } from "../../../../Components/Text";
 import { Stack } from "../../../../Components/Stack";
+import { useMedia } from "../../../../context/mediaContext";
 
 export function BigProductComponent() {
+  const isTablet = useMedia();
+
   return (
     <Stack className={styles.box}>
-      <div className={styles.contentBox}>
+      <Stack
+        orientation={isTablet ? "vertical" : "horizontal"}
+        className={styles.contentBox}
+        align="end"
+        spacing="between"
+      >
         <motion.div
-          whileInView={{ x: 90 }}
+          whileInView={{ x: 120 }}
           className={styles.img}
           transition={{ ease: "easeOut", duration: 2 }}
           viewport={{ once: true, amount: 0.5 }}
@@ -30,11 +38,13 @@ export function BigProductComponent() {
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.
           </Text>
-          <Link to="product/zx9">
-            <Button colorScheme="secondary">See Product</Button>
+          <Link to="product/zx9" className={styles.fitcontent}>
+            <Button colorScheme="secondary" tabIndex={-1}>
+              See Product
+            </Button>
           </Link>
         </Stack>
-      </div>
+      </Stack>
     </Stack>
   );
 }
