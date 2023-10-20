@@ -4,7 +4,7 @@ import { OrderConfirmation } from "../OrderConfirmation";
 import { ItemsList } from "./ItemsList";
 import styles from "./index.module.scss";
 import Modal from "react-modal";
-import { BasketContext } from "../../../context";
+import { BasketContext } from "../../../context/basketContext";
 import {
   useSumGrandTotal,
   useSumPrices,

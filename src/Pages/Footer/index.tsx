@@ -6,7 +6,7 @@ import { ReactComponent as FacebookIcon } from "../../images/shared/desktop/icon
 import { Link } from "react-router-dom";
 import { Text } from "../../Components/Text";
 import { Stack } from "../../Components/Stack";
-import clsx from "clsx";
+
 import { SiteNavigation } from "../NavBar/SiteNavigation";
 
 export function Footer() {

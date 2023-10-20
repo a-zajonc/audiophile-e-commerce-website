@@ -6,8 +6,9 @@ import { ReactComponent as Cart } from "../../images/shared/desktop/icon-cart.sv
 import Modal from "react-modal";
 import { CartModal } from "../CartModal";
 import { Stack } from "../../Components/Stack";
-import { Text } from "../../Components/Text";
 import { SiteNavigation } from "./SiteNavigation";
+import { useMedia } from "../../context/mediaContext";
+import { HamburgerNavigation } from "./HamburgerNavigation";
 
 const customStyles = {
   content: {
@@ -27,6 +28,7 @@ Modal.setAppElement(document.getElementById("root") as HTMLElement);
 
 export function NavBar() {
   const [modalIsOpen, setIsOpen] = React.useState(false);
+  const { isTablet, isMobile, isDesktop } = useMedia();
 
   function openModal() {
     setIsOpen(true);
@@ -37,16 +39,17 @@ export function NavBar() {
   }
 
   return (
-    <Stack orientation="vertical" className={styles.box}>
+    <Stack orientation="vertical" className={styles.box} spacing="between">
       <Stack
         orientation="horizontal"
         spacing="between"
         className={styles.content}
       >
+        {!isDesktop ? <HamburgerNavigation /> : null}
         <Link to="/">
           <img src={logo} alt="Shop Logo" className={styles.logo} />
         </Link>
-        <SiteNavigation />
+        {isDesktop ? <SiteNavigation /> : null}
         <button className={styles.displayNone}>
           <Cart className={styles.cartIcon} onClick={openModal} />
         </button>

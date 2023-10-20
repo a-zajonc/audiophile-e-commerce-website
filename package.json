@@ -19,6 +19,7 @@
     "react-hook-form": "^7.46.1",
     "react-hook-form-persist": "^3.0.0",
     "react-modal": "^3.16.1",
+    "react-responsive": "^9.0.2",
     "react-router-dom": "^6.12.1",
     "react-scripts": "5.0.1",
     "sass": "^1.66.1",

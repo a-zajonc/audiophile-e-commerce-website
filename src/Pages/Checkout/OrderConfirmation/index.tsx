@@ -6,7 +6,7 @@ import {
   useSumGrandTotal,
   useSumPrices,
 } from "../../../Components/functions/sumPrices";
-import { BasketContext } from "../../../context";
+import { BasketContext } from "../../../context/basketContext";
 import { ProductsConfirmation } from "./ProductsConfirmation";
 import { Link } from "react-router-dom";
 import { Text } from "../../../Components/Text";

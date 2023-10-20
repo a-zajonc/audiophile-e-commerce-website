@@ -1,7 +1,7 @@
 import * as React from "react";
 import styles from "./index.module.scss";
 import { Counter } from "../../../Components/Counter";
-import { BasketContext } from "../../../context";
+import { BasketContext } from "../../../context/basketContext";
 import { Stack } from "../../../Components/Stack";
 import { Text } from "../../../Components/Text";
 import { motion } from "framer-motion";

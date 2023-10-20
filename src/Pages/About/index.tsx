@@ -1,17 +1,24 @@
 import styles from "./index.module.scss";
-import aboutPicture from "../../images/shared/desktop/image-best-gear.jpg";
+import aboutPictureDesktop from "../../images/shared/desktop/image-best-gear.jpg";
+import aboutPictureTablet from "../../images/shared/tablet/image-best-gear.jpg";
 import { Text } from "../../Components/Text";
 import { Stack } from "../../Components/Stack";
+import { useMedia } from "../../context/mediaContext";
 
 export function About() {
+  const isTablet = useMedia();
+
   return (
     <div className={styles.box}>
-      <Stack orientation="horizontal">
+      <Stack
+        orientation={isTablet ? "vertical-reverse" : "horizontal"}
+        gap="100px"
+      >
         <Stack
           orientation="vertical"
           spacing="center"
           gap="40px"
-          className={styles.marginRight}
+          className={styles.padding}
         >
           <Text
             color="primary"
@@ -21,8 +28,9 @@ export function About() {
             headingLevel={3}
             className={styles.header}
           >
-            Bringing you the <mark className={styles.mark}>best</mark> audio
-            gear
+            Bringing you the <mark className={styles.mark}>best</mark>
+            {isTablet ? <br></br> : null}
+            audio gear
           </Text>
           <Text color="primary" fontSize="s" lineHeight="s" opacity="m">
             Located at the heart of New York City, Audiophile is the premier
@@ -34,7 +42,7 @@ export function About() {
           </Text>
         </Stack>
         <img
-          src={aboutPicture}
+          src={isTablet ? aboutPictureTablet : aboutPictureDesktop}
           alt="Man listening to music"
           className={styles.img}
         />

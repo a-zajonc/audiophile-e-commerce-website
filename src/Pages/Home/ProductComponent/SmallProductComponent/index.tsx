@@ -8,7 +8,7 @@ import { Text } from "../../../../Components/Text";
 export function SmallProductComponent() {
   return (
     <div className={styles.box}>
-      <Stack orientation="horizontal" className={styles.content}>
+      <Stack orientation="horizontal">
         <motion.div
           viewport={{ once: true }}
           whileInView={{ x: 0 }}
@@ -40,7 +40,9 @@ export function SmallProductComponent() {
               YX1 EARPHONES
             </Text>
             <Link to="/product/yx1">
-              <Button colorScheme="primary">See Product</Button>
+              <Button colorScheme="primary" tabIndex={-1}>
+                See Product
+              </Button>
             </Link>
           </Stack>
         </motion.div>

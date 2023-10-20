@@ -10,7 +10,7 @@ import {
   Checkout,
 } from "./Pages";
 import "./globals.scss";
-import { BasketContext } from "./context";
+import { BasketContext } from "./context/basketContext";
 import { PageNotFound } from "./Pages/PageNotFound";
 import { Categories } from "./Pages/Home/Categories";
 
