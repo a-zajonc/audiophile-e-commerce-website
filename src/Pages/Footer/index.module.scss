@@ -6,7 +6,6 @@
 .container {
   padding-inline: 280px;
   margin-top: 50px;
-  width: 100%;
 }
 
 .divider {
@@ -17,45 +16,22 @@
   background-color: var(--color-brand);
 }
 
-.categories {
-  max-width: 430px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-
-  cursor: pointer;
-  margin-bottom: 120px;
-}
-
-.category {
-  transition: all 0.2s ease-in;
-}
-
-.category:hover {
-  color: var(--color-brand);
-  transition: all 0.2s ease-in;
-}
-
 .logo {
   height: 25px;
   width: 143px;
-  margin-bottom: 55px;
 }
 
 .textWidth {
-  width: 540px;
+  max-width: 540px;
 }
 
-.icon {
-  fill: var(--color-secondary);
-  transition: all 0.2s ease-in;
-  margin-right: 16px;
-  &:last-child {
-    margin-right: 0px;
+.fullWidth {
+  width: 100%;
+}
+
+@media (max-width: 1050px) {
+  .container {
+    padding-inline: 65px;
+    padding-bottom: 65px;
   }
-}
-
-.icon:hover {
-  cursor: pointer;
-  fill: var(--color-brand);
 }
