@@ -1,0 +1,13 @@
+.icon {
+  fill: var(--color-secondary);
+  transition: all 0.2s ease-in;
+  margin-right: 16px;
+  &:last-child {
+    margin-right: 0px;
+  }
+}
+
+.icon:hover {
+  cursor: pointer;
+  fill: var(--color-brand);
+}

@@ -12,16 +12,18 @@ export function SmallProductComponent() {
         <motion.div
           viewport={{ once: true }}
           whileInView={{ x: 0 }}
+          animate={{ rotate: 360 }}
           className={styles.img}
-          initial={{ x: -800 }}
-          transition={{ duration: 2 }}
+          // initial={{ x: -800 }}
+          // transition={{ duration: 2 }}
         />
         <motion.div
           viewport={{ once: true }}
           whileInView={{ x: 0 }}
           className={styles.container}
-          initial={{ x: 800 }}
-          transition={{ duration: 2 }}
+          animate={{ rotate: 360 }}
+          // initial={{ x: 800 }}
+          // transition={{ duration: 2 }}
         >
           <Stack
             orientation="vertical"
