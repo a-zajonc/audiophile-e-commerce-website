@@ -14,18 +14,16 @@ const categoriesData = [
 
 export function Categories() {
   return (
-    <Stack className={styles.box} orientation="horizontal" gap="30px">
+    <Stack className={styles.box} orientation="horizontal" spacing="between">
       {categoriesData.map((category) => {
         return (
-          <div className={styles.container} key={category.name}>
-            <Link to={`/category/${category.name.toLowerCase()}`}>
-              <CategoryCard
-                category={category.name}
-                img={category.img}
-                key={category.name}
-              />
-            </Link>
-          </div>
+          <Link to={`/category/${category.name.toLowerCase()}`}>
+            <CategoryCard
+              category={category.name}
+              img={category.img}
+              key={category.name}
+            />
+          </Link>
         );
       })}
     </Stack>

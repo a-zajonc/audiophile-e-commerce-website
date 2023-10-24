@@ -4,11 +4,14 @@ import { Button } from "../../../../Components/button/button";
 import { motion } from "framer-motion";
 import { Stack } from "../../../../Components/Stack";
 import { Text } from "../../../../Components/Text";
+import { useMedia } from "../../../../context/mediaContext";
 
 export function SmallProductComponent() {
+  const { isTablet } = useMedia();
+
   return (
     <div className={styles.box}>
-      <Stack orientation="horizontal">
+      <Stack orientation="horizontal" gap={isTablet ? "10px" : "40px"}>
         <motion.div
           viewport={{ once: true }}
           whileInView={{ x: 0 }}

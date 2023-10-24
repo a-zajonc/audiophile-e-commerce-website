@@ -38,3 +38,10 @@
   width: 5px;
   margin-left: 10px;
 }
+
+@media (max-width: 1160px) {
+  .background {
+    width: 223px;
+    height: 165px;
+  }
+}

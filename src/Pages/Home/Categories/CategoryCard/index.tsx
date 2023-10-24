@@ -4,6 +4,7 @@ import arrow from "../../../../images/shared/desktop/icon-arrow-right.svg";
 import { motion } from "framer-motion";
 import { Stack } from "../../../../Components/Stack";
 import { Text } from "../../../../Components/Text";
+import { useMedia } from "../../../../context/mediaContext";
 
 type CategoryCardProps = {
   category: string;
@@ -12,11 +13,16 @@ type CategoryCardProps = {
 
 export function CategoryCard({ category, img }: CategoryCardProps) {
   const [isHovered, setIsHovered] = React.useState(false);
+  const { isDesktop } = useMedia();
 
   return (
     <motion.div
-      whileHover={{ y: "-30px" }}
-      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+      whileHover={{ y: isDesktop ? "-30px" : "0" }}
+      transition={{
+        type: isDesktop ? "spring" : null,
+        stiffness: isDesktop ? 400 : 0,
+        damping: isDesktop ? 10 : 0,
+      }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

@@ -4,13 +4,13 @@
 }
 
 .container {
-  padding-inline: 280px;
+  padding-inline: 15%;
   margin-top: 50px;
 }
 
 .divider {
   position: absolute;
-  left: 280px;
+  left: 15%;
   width: 101px;
   height: 4px;
   background-color: var(--color-brand);
@@ -31,7 +31,7 @@
 
 @media (max-width: 1050px) {
   .container {
-    padding-inline: 65px;
-    padding-bottom: 65px;
+    margin-bottom: 5%;
+    padding-inline: 5%;
   }
 }

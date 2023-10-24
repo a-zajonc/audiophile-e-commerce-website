@@ -1,5 +1,5 @@
 .box {
-  padding-inline: 280px;
+  padding-inline: 15%;
   padding-block: 150px;
 }
 
@@ -9,7 +9,7 @@
 }
 
 .img {
-  max-width: 540px;
+  width: 540px;
   height: 588px;
   border-radius: var(--border-radius-small);
 }
@@ -19,17 +19,22 @@
   color: var(--color-brand);
 }
 
+.textBox {
+  width: 43%;
+}
+
 @media (max-width: 1050px) {
   .box {
-    margin: 0;
-    margin-inline: calc((100% - 900px) / 2);
+    padding-inline: 5%;
+    padding-block: 100px;
     text-align: center;
   }
   .img {
-    max-width: 100vh;
-    max-height: 350px;
+    width: 100%;
+    height: auto;
   }
-  .padding {
-    padding-inline: 70px;
+  .textBox {
+    align-self: center;
+    width: 80%;
   }
 }
