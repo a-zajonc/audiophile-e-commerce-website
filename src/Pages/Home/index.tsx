@@ -8,7 +8,7 @@ export function Home() {
   return (
     <Stack orientation="vertical">
       <Header />
-      <Stack orientation="vertical" className={styles.box}>
+      <Stack orientation="vertical">
         <Categories />
         <ProductComponent />
       </Stack>

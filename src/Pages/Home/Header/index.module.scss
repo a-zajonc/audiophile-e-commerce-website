@@ -9,7 +9,7 @@
 .content {
   text-align: left;
   position: relative;
-  margin-left: 15%;
+  left: 15%;
   top: 161px;
   width: 378px;
 }
@@ -17,4 +17,21 @@
 .title {
   letter-spacing: 2px;
   text-transform: uppercase;
+}
+
+@media (max-width: 1050px) {
+  .background {
+    height: 729px;
+    background-image: url(../../../images/home/tablet/image-header.jpg);
+    background-position: 0px -100px;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+  }
+  .content {
+    left: 0;
+    top: 0;
+    text-align: center;
+    align-items: center;
+  }
 }

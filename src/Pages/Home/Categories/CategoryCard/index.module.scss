@@ -1,7 +1,6 @@
 .background {
   background: var(--color-background);
-  height: 204px;
-  width: 350px;
+  padding-inline: 40px;
   margin-top: 80px;
   border-radius: var(--border-radius-small);
   transition: all 0.2s ease-in;
@@ -40,8 +39,11 @@
 }
 
 @media (max-width: 1160px) {
-  .background {
-    width: 223px;
-    height: 165px;
+  .img {
+    width: 120px;
+    height: auto;
+  }
+  .content {
+    top: -40px;
   }
 }
