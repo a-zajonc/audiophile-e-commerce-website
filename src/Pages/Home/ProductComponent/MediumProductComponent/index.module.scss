@@ -1,20 +1,34 @@
 .box {
-  width: 100%;
-  height: 320px;
+  padding-inline: 15%;
 }
 
 .content {
-  height: 100%;
+  height: 320px;
   background-image: url(../../../../images/home/desktop/image-speaker-zx7.jpg);
   background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
   border-radius: var(--border-radius-small);
 }
 
 .text {
-  padding: 101px 0 0 95px;
+  padding-block: 99px;
+  padding-left: 99px;
 }
 
 .header {
   letter-spacing: 2px;
   text-transform: uppercase;
+}
+
+@media (max-width: 1250px) {
+  .content {
+    background-image: url(../../../../images/home/tablet/image-speaker-zx7.jpg);
+  }
+}
+
+@media (max-width: 1050px) {
+  .box {
+    padding-inline: 5%;
+  }
 }

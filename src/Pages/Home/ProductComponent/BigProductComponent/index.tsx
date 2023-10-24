@@ -7,21 +7,24 @@ import { Stack } from "../../../../Components/Stack";
 import { useMedia } from "../../../../context/mediaContext";
 
 export function BigProductComponent() {
-  const { isTablet } = useMedia();
+  const { isTablet, isDesktop } = useMedia();
 
   return (
     <Stack className={styles.box}>
       <Stack
-        orientation={isTablet ? "vertical" : "horizontal"}
+        orientation={isDesktop ? "horizontal" : "vertical"}
         className={styles.contentBox}
-        align="end"
-        spacing="between"
+        align={isDesktop ? "end" : "center"}
+        spacing={isDesktop ? "between" : "evenly"}
       >
         <motion.div
-          whileInView={{ x: 120 }}
-          className={styles.img}
-          transition={{ ease: "easeOut", duration: 2 }}
+          whileInView={{ x: isDesktop ? 120 : 0 }}
+          transition={{
+            ease: isDesktop ? "easeOut" : null,
+            duration: isDesktop ? 2 : 0,
+          }}
           viewport={{ once: true, amount: 0.5 }}
+          className={styles.img}
         />
         <Stack orientation="vertical" className={styles.container} gap="24px">
           <Text
