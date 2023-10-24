@@ -14,7 +14,12 @@ const categoriesData = [
 
 export function Categories() {
   return (
-    <Stack className={styles.box} orientation="horizontal" spacing="between">
+    <Stack
+      className={styles.box}
+      orientation="horizontal"
+      spacing="between"
+      gap="10px"
+    >
       {categoriesData.map((category) => {
         return (
           <Link to={`/category/${category.name.toLowerCase()}`}>

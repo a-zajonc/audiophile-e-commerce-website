@@ -10,7 +10,7 @@ export function Header() {
   const { isTablet, isMobile } = useMedia();
 
   return (
-    <div className={styles.background}>
+    <Stack className={styles.background}>
       <Stack
         orientation="vertical"
         align="baseline"
@@ -36,6 +36,6 @@ export function Header() {
           <Button colorScheme="brand">See Product</Button>
         </Link>
       </Stack>
-    </div>
+    </Stack>
   );
 }
