@@ -138,7 +138,7 @@ export function CheckoutSummary({ errors, option, order, setOrder }: any) {
       >
         {option === "Cash on Delivery" ? "CONTINUE" : "CONTINUE & PAY"}
       </Button>
-      <Modal style={customStyles} isOpen={modalIsOpen}>
+      <Modal style={customStyles} isOpen={modalIsOpen} closeTimeoutMS={500}>
         <OrderConfirmation handleClick={handleClick} />
       </Modal>
     </Stack>
