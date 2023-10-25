@@ -57,6 +57,7 @@ export function NavBar() {
           isOpen={modalIsOpen}
           style={customStyles}
           onRequestClose={closeModal}
+          closeTimeoutMS={500}
         >
           <CartModal handleClick={closeModal} />
         </Modal>
