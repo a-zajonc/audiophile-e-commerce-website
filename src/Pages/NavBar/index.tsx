@@ -10,12 +10,26 @@ import { SiteNavigation } from "./SiteNavigation";
 import { useMedia } from "../../context/mediaContext";
 import { HamburgerNavigation } from "./HamburgerNavigation";
 
-const customStyles = {
+const customStylesDektop = {
   content: {
     padding: "31px",
     width: "377px",
     top: "15%",
-    left: "55%",
+    left: "58%",
+    right: "auto",
+    bottom: "auto",
+  },
+  overlay: {
+    background: "rgba(0, 0, 0, 0.4)",
+  },
+};
+
+const customStylesTablet = {
+  content: {
+    padding: "31px",
+    width: "277px",
+    top: "10%",
+    left: "52%",
     right: "auto",
     bottom: "auto",
   },
@@ -55,7 +69,7 @@ export function NavBar() {
         </button>
         <Modal
           isOpen={modalIsOpen}
-          style={customStyles}
+          style={isDesktop ? customStylesDektop : customStylesTablet}
           onRequestClose={closeModal}
           closeTimeoutMS={500}
         >
