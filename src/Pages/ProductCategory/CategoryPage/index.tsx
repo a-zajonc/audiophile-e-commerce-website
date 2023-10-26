@@ -4,9 +4,11 @@ import data from "../../../data.json";
 import { useParams } from "react-router-dom";
 import { FadeIn } from "../../../Components/Animations";
 import { Stack } from "../../../Components/Stack";
+import { useMedia } from "../../../context/mediaContext";
 
 export function CategoryPage() {
   const { categoryName } = useParams();
+  const { isDesktop } = useMedia();
 
   const dataCategory =
     categoryName?.toLowerCase() === "headphones"
@@ -24,7 +26,7 @@ export function CategoryPage() {
             <ProductCard
               productName={product.name}
               productDescription={product.description}
-              productImg={product.img}
+              productImg={isDesktop ? product.img.desktop : product.img.tablet}
               isProductNew={product.new}
               mode={"see"}
               isReversed={isReversed}

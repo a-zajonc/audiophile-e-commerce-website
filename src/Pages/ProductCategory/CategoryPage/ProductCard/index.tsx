@@ -8,6 +8,7 @@ import { removeTypeFromName } from "../../../../Components/functions/removeTypeF
 import { Text } from "../../../../Components/Text";
 import { Stack } from "../../../../Components/Stack";
 import { NewProduct } from "../../../../Components/NewProduct";
+import { useMedia } from "../../../../context/mediaContext";
 
 function displayAsPrice(price: any) {
   const addComma = Number(price).toLocaleString("en-US");
@@ -38,6 +39,7 @@ export function ProductCard({
   const addToBasket = useAddToBasket();
   const [buttonText, setButtonText] = React.useState("Add to cart");
   const [quantity, setQuantity] = React.useState(1);
+  const { isDesktop } = useMedia();
 
   const handleAddToCartClick = () => {
     addToBasket(
@@ -55,11 +57,14 @@ export function ProductCard({
 
   return (
     <Stack
-      orientation="horizontal"
+      orientation={isDesktop ? "horizontal" : "vertical"}
       spacing="between"
-      className={`${styles.box} ${
-        isReversed ? `${styles["box-reversed"]}` : ""
-      }`}
+      gap="20px"
+      className={
+        isDesktop
+          ? `${styles.box} ${isReversed ? `${styles["box-reversed"]}` : ""}`
+          : styles.box
+      }
     >
       <img
         className={styles.productImg}
@@ -69,7 +74,7 @@ export function ProductCard({
       <Stack
         orientation="vertical"
         spacing="center"
-        className={styles.textWidth}
+        className={styles.text}
         gap="32px"
       >
         {isProductNew ? <NewProduct color="brand" /> : null}
