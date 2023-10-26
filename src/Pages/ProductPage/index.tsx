@@ -42,8 +42,6 @@ export function ProductPage() {
   }
   const product = matchingProducts[0];
 
-  console.log(product.img.tablet);
-
   return (
     <Stack orientation="vertical" className={styles.box} gap="56px">
       <GoBackButton />
