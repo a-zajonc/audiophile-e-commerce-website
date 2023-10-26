@@ -10,6 +10,7 @@ import { GoBackButton } from "../GoBackButton";
 import { useLocation } from "react-router-dom";
 import { PageNotFound } from "../PageNotFound";
 import { Stack } from "../../Components/Stack";
+import { useMedia } from "../../context/mediaContext";
 
 function findProductByKeyword(keyword: string) {
   const products = Object.values(data.products);
@@ -32,6 +33,7 @@ function findProductByKeyword(keyword: string) {
 export function ProductPage() {
   let location = useLocation();
   let pathname = location.pathname.split("/")[2].split("-").join(" ");
+  const { isDesktop } = useMedia();
 
   const matchingProducts = findProductByKeyword(pathname);
 
@@ -48,7 +50,7 @@ export function ProductPage() {
           productName={product.name}
           productDescription={product.description}
           isProductNew={product.new}
-          productImg={product.img}
+          productImg={isDesktop ? product.img.desktop : product.img.tablet}
           productCartImg={product.imgCart}
           productPrice={product.price}
           mode={"buy"}

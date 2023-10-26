@@ -1,5 +1,4 @@
 .box {
-  width: 1110px;
   &-reversed {
     flex-direction: row-reverse;
   }
@@ -13,8 +12,8 @@
   background: var(--color-background);
 }
 
-.textWidth {
-  width: 445px;
+.text {
+  padding-inline: 95px;
 }
 
 .textNewProduct {
@@ -28,4 +27,19 @@
 
 .textPrice {
   letter-spacing: 1.286px;
+}
+
+@media (max-width: 1050px) {
+  .productImg {
+    width: 100%;
+    height: auto;
+    padding: 0;
+  }
+  .text {
+    text-align: center;
+    align-items: center;
+  }
+  .header {
+    padding-inline: 80px;
+  }
 }
