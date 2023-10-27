@@ -12,9 +12,9 @@ type MediaProviderProps = {
 };
 
 export const MediaProvider: React.FC<MediaProviderProps> = ({ children }) => {
-  const isDesktop = useMediaQuery({ query: "(min-width: 1050px)" });
+  const isDesktop = useMediaQuery({ query: "(min-width: 1121px)" });
   const isTablet = useMediaQuery({
-    query: "(min-width: 701px) and (max-width: 1050px)",
+    query: "(min-width: 701px) and (max-width: 1120px)",
   });
   const isMobile = useMediaQuery({ query: "(max-width: 700px)" });
 

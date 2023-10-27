@@ -1,5 +1,11 @@
 .box {
   margin-top: 56px;
-  margin-inline: calc((100% - 1100px) / 2);
+  padding-inline: 15%;
   text-align: left;
+}
+
+@media (max-width: 1120px) {
+  .box {
+    padding-inline: 5%;
+  }
 }

@@ -6,6 +6,7 @@ import { removeTypeFromName } from "../../../Components/functions/removeTypeFrom
 import { Text } from "../../../Components/Text";
 import { Stack } from "../../../Components/Stack";
 import { FadeIn } from "../../../Components/Animations";
+import { useMedia } from "../../../context/mediaContext";
 
 function getProducts(data: any, productName: string) {
   const productCategories = Object.values(data.products);
@@ -27,6 +28,7 @@ function getRandomProducts(data: any, count: number) {
 }
 
 export function OtherProducts() {
+  const { isDesktop } = useMedia();
   const location = useLocation();
   const currentProduct = location.pathname.split("/")[2].split("-").join(" ");
   const currentData = getRandomProducts(getProducts(data, currentProduct), 3);
@@ -43,12 +45,16 @@ export function OtherProducts() {
       >
         You may also like
       </Text>
-      <Stack orientation="horizontal" spacing="between">
+      <Stack orientation="horizontal" spacing="between" gap="10px">
         {currentData.map((product: any) => {
           return (
             <FadeIn key={product.id.toString()}>
               <OtherProductCard
-                img={require(`../../../images/${product.img}`)}
+                img={
+                  isDesktop
+                    ? require(`../../../images/${product.img.desktop}`)
+                    : require(`../../../images/${product.img.tablet}`)
+                }
                 name={removeTypeFromName(product.name)}
               />
             </FadeIn>

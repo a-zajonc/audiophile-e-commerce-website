@@ -52,7 +52,9 @@ export function HamburgerNavigation() {
         closeTimeoutMS={500}
         style={customStyles}
       >
-        <Categories />
+        <div className={styles.box}>
+          <Categories />
+        </div>
       </Modal>
     </div>
   );

@@ -9,7 +9,12 @@ export function Features({
   descriptionSecond,
 }: FeaturesProps) {
   return (
-    <Stack orientation="vertical" spacing="between" className={styles.box}>
+    <Stack
+      orientation="vertical"
+      spacing="between"
+      className={styles.box}
+      gap="32px"
+    >
       <Text
         color="primary"
         fontSize="xxl"

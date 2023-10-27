@@ -62,13 +62,11 @@ a {
   --line-height-m: 36px;
   --line-height-l: 44px;
   --line-height-xl: 58px;
-}
 
-.breakpoints {
-  --s: 650px;
-  --m: 760px;
-  --l: 1050px;
-  --xl: 1800px;
+  --breakpoint-s: 650px;
+  --breakpoint-m: 760px;
+  --breakpoint-l: 1120px;
+  --breakpoint-xl: 1800px;
 }
 
 .ReactModalPortal > div {

@@ -9,7 +9,9 @@ export function Home() {
     <Stack orientation="vertical">
       <Header />
       <Stack orientation="vertical">
-        <Categories />
+        <div className={styles.padding}>
+          <Categories />
+        </div>
         <ProductComponent />
       </Stack>
     </Stack>

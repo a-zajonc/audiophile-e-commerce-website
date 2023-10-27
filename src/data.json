@@ -7,7 +7,8 @@
         "description": "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
         "img": {
           "desktop": "product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg",
-          "tablet": "product-xx99-mark-two-headphones/tablet/image-category-page-preview.jpg"
+          "tablet": "product-xx99-mark-two-headphones/tablet/image-category-page-preview.jpg",
+          "imageProduct": "product-xx99-mark-two-headphones/tablet/image-product.jpg"
         },
         "imgCart": "image-xx99-mark-two-headphones.jpg",
         "new": true,
@@ -24,9 +25,16 @@
           { "quantity": "1", "name": "Travel Bag" }
         ],
         "productGallery": {
-          "imgFirst": "product-xx99-mark-two-headphones/desktop/image-gallery-1.jpg",
-          "imgSecond": "product-xx99-mark-two-headphones/desktop/image-gallery-2.jpg",
-          "imgThird": "product-xx99-mark-two-headphones/desktop/image-gallery-3.jpg"
+          "desktop": {
+            "imgFirst": "product-xx99-mark-two-headphones/desktop/image-gallery-1.jpg",
+            "imgSecond": "product-xx99-mark-two-headphones/desktop/image-gallery-2.jpg",
+            "imgThird": "product-xx99-mark-two-headphones/desktop/image-gallery-3.jpg"
+          },
+          "tablet": {
+            "imgFirst": "product-xx99-mark-two-headphones/tablet/image-gallery-1.jpg",
+            "imgSecond": "product-xx99-mark-two-headphones/tablet/image-gallery-2.jpg",
+            "imgThird": "product-xx99-mark-two-headphones/tablet/image-gallery-3.jpg"
+          }
         }
       },
       {
@@ -35,7 +43,8 @@
         "description": "As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.",
         "img": {
           "desktop": "product-xx99-mark-one-headphones/desktop/image-category-page-preview.jpg",
-          "tablet": "product-xx99-mark-one-headphones/tablet/image-category-page-preview.jpg"
+          "tablet": "product-xx99-mark-one-headphones/tablet/image-category-page-preview.jpg",
+          "imageProduct": "product-xx99-mark-one-headphones/tablet/image-product.jpg"
         },
         "imgCart": "image-xx99-mark-one-headphones.jpg",
         "new": false,
@@ -51,9 +60,16 @@
           { "quantity": "1", "name": "3.5mm 5m Audio Cable" }
         ],
         "productGallery": {
-          "imgFirst": "product-xx99-mark-one-headphones/desktop/image-gallery-1.jpg",
-          "imgSecond": "product-xx99-mark-one-headphones/desktop/image-gallery-2.jpg",
-          "imgThird": "product-xx99-mark-one-headphones/desktop/image-gallery-3.jpg"
+          "desktop": {
+            "imgFirst": "product-xx99-mark-one-headphones/desktop/image-gallery-1.jpg",
+            "imgSecond": "product-xx99-mark-one-headphones/desktop/image-gallery-2.jpg",
+            "imgThird": "product-xx99-mark-one-headphones/desktop/image-gallery-3.jpg"
+          },
+          "tablet": {
+            "imgFirst": "product-xx99-mark-one-headphones/tablet/image-gallery-1.jpg",
+            "imgSecond": "product-xx99-mark-one-headphones/tablet/image-gallery-2.jpg",
+            "imgThird": "product-xx99-mark-one-headphones/tablet/image-gallery-3.jpg"
+          }
         }
       },
       {
@@ -62,7 +78,8 @@
         "description": "Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.",
         "img": {
           "desktop": "product-xx59-headphones/desktop/image-category-page-preview.jpg",
-          "tablet": "product-xx59-headphones/tablet/image-category-page-preview.jpg"
+          "tablet": "product-xx59-headphones/tablet/image-category-page-preview.jpg",
+          "imageProduct": "product-xx59-headphones/tablet/image-product.jpg"
         },
         "imgCart": "image-xx59-headphones.jpg",
         "new": false,
@@ -78,9 +95,16 @@
           { "quantity": "1", "name": "3.5mm 5m Audio Cable" }
         ],
         "productGallery": {
-          "imgFirst": "product-xx59-headphones/desktop/image-gallery-1.jpg",
-          "imgSecond": "product-xx59-headphones/desktop/image-gallery-2.jpg",
-          "imgThird": "product-xx59-headphones/desktop/image-gallery-3.jpg"
+          "desktop": {
+            "imgFirst": "product-xx59-headphones/desktop/image-gallery-1.jpg",
+            "imgSecond": "product-xx59-headphones/desktop/image-gallery-2.jpg",
+            "imgThird": "product-xx59-headphones/desktop/image-gallery-3.jpg"
+          },
+          "tablet": {
+            "imgFirst": "product-xx59-headphones/tablet/image-gallery-1.jpg",
+            "imgSecond": "product-xx59-headphones/tablet/image-gallery-2.jpg",
+            "imgThird": "product-xx59-headphones/tablet/image-gallery-3.jpg"
+          }
         }
       }
     ],
@@ -90,8 +114,9 @@
         "name": "ZX9 Speaker",
         "description": "Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
         "img": {
-          "desktop": "product-zx9-speaker/desktop/image-product.jpg",
-          "tablet": "product-zx9-speaker/tablet/image-product.jpg"
+          "desktop": "product-zx9-speaker/desktop/image-category-page-preview.jpg",
+          "tablet": "product-zx9-speaker/tablet/image-category-page-preview.jpg",
+          "imageProduct": "product-zx9-speaker/tablet/image-product.jpg"
         },
         "imgCart": "image-zx9-speaker.jpg",
         "new": true,
@@ -108,9 +133,16 @@
           { "quantity": "1", "name": "10m Optical Cable" }
         ],
         "productGallery": {
-          "imgFirst": "product-zx9-speaker/desktop/image-gallery-1.jpg",
-          "imgSecond": "product-zx9-speaker/desktop/image-gallery-2.jpg",
-          "imgThird": "product-zx9-speaker/desktop/image-gallery-3.jpg"
+          "desktop": {
+            "imgFirst": "product-zx9-speaker/desktop/image-gallery-1.jpg",
+            "imgSecond": "product-zx9-speaker/desktop/image-gallery-2.jpg",
+            "imgThird": "product-zx9-speaker/desktop/image-gallery-3.jpg"
+          },
+          "tablet": {
+            "imgFirst": "product-zx9-speaker/tablet/image-gallery-1.jpg",
+            "imgSecond": "product-zx9-speaker/tablet/image-gallery-2.jpg",
+            "imgThird": "product-zx9-speaker/tablet/image-gallery-3.jpg"
+          }
         }
       },
       {
@@ -119,7 +151,8 @@
         "description": "Stream high quality sound wirelessly with minimal to no loss. The ZX7 speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.",
         "img": {
           "desktop": "product-zx7-speaker/desktop/image-category-page-preview.jpg",
-          "tablet": "product-zx7-speaker/tablet/image-category-page-preview.jpg"
+          "tablet": "product-zx7-speaker/tablet/image-category-page-preview.jpg",
+          "imageProduct": "product-zx7-speaker/tablet/image-product.jpg"
         },
         "imgCart": "image-zx7-speaker.jpg",
         "new": false,
@@ -136,9 +169,16 @@
           { "quantity": "1", "name": "10m Optical Cable" }
         ],
         "productGallery": {
-          "imgFirst": "product-zx7-speaker/desktop/image-gallery-1.jpg",
-          "imgSecond": "product-zx7-speaker/desktop/image-gallery-2.jpg",
-          "imgThird": "product-zx7-speaker/desktop/image-gallery-3.jpg"
+          "desktop": {
+            "imgFirst": "product-zx7-speaker/desktop/image-gallery-1.jpg",
+            "imgSecond": "product-zx7-speaker/desktop/image-gallery-2.jpg",
+            "imgThird": "product-zx7-speaker/desktop/image-gallery-3.jpg"
+          },
+          "tablet": {
+            "imgFirst": "product-zx7-speaker/tablet/image-gallery-1.jpg",
+            "imgSecond": "product-zx7-speaker/tablet/image-gallery-2.jpg",
+            "imgThird": "product-zx7-speaker/tablet/image-gallery-3.jpg"
+          }
         }
       }
     ],
@@ -149,7 +189,8 @@
         "description": "Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.",
         "img": {
           "desktop": "product-yx1-earphones/desktop/image-category-page-preview.jpg",
-          "tablet": "product-yx1-earphones/tablet/image-category-page-preview.jpg"
+          "tablet": "product-yx1-earphones/tablet/image-category-page-preview.jpg",
+          "imageProduct": "product-yx1-earphones/tablet/image-product.jpg"
         },
         "imgCart": "image-yx1-earphones.jpg",
         "new": true,
@@ -166,9 +207,16 @@
           { "quantity": "1", "name": "Travel Pouch" }
         ],
         "productGallery": {
-          "imgFirst": "product-yx1-earphones/desktop/image-gallery-1.jpg",
-          "imgSecond": "product-yx1-earphones/desktop/image-gallery-2.jpg",
-          "imgThird": "product-yx1-earphones/desktop/image-gallery-3.jpg"
+          "desktop": {
+            "imgFirst": "product-yx1-earphones/desktop/image-gallery-1.jpg",
+            "imgSecond": "product-yx1-earphones/desktop/image-gallery-2.jpg",
+            "imgThird": "product-yx1-earphones/desktop/image-gallery-3.jpg"
+          },
+          "tablet": {
+            "imgFirst": "product-yx1-earphones/tablet/image-gallery-1.jpg",
+            "imgSecond": "product-yx1-earphones/tablet/image-gallery-2.jpg",
+            "imgThird": "product-yx1-earphones/tablet/image-gallery-3.jpg"
+          }
         }
       }
     ]

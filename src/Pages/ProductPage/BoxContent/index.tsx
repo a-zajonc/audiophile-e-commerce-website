@@ -1,14 +1,22 @@
 import styles from "./index.module.scss";
 import { Stack } from "../../../Components/Stack";
 import { Text } from "../../../Components/Text";
+import { useMedia } from "../../../context/mediaContext";
 
 type BoxContentProps = {
   insideBox: any;
 };
 
 export function BoxContent({ insideBox }: BoxContentProps) {
+  const { isDesktop } = useMedia();
+
   return (
-    <Stack orientation="vertical" className={styles.box} gap="32px">
+    <Stack
+      orientation={isDesktop ? "vertical" : "horizontal"}
+      className={styles.box}
+      gap="32px"
+      spacing={isDesktop ? "unset" : "between"}
+    >
       <Text
         color="primary"
         fontSize="xxl"
