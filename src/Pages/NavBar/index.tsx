@@ -59,11 +59,23 @@ export function NavBar() {
         spacing="between"
         className={styles.content}
       >
-        {!isDesktop ? <HamburgerNavigation /> : null}
-        <Link to="/">
-          <img src={logo} alt="Shop Logo" className={styles.logo} />
-        </Link>
-        {isDesktop ? <SiteNavigation /> : null}
+        {!isDesktop ? (
+          <Stack gap="42px">
+            <HamburgerNavigation />
+            <Link to="/">
+              <img src={logo} alt="Shop Logo" className={styles.logo} />
+            </Link>
+          </Stack>
+        ) : null}
+
+        {isDesktop ? (
+          <>
+            <Link to="/">
+              <img src={logo} alt="Shop Logo" className={styles.logo} />
+            </Link>
+            <SiteNavigation />
+          </>
+        ) : null}
         <button className={styles.displayNone}>
           <Cart className={styles.cartIcon} onClick={openModal} />
         </button>
