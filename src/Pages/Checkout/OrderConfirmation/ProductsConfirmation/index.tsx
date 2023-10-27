@@ -2,6 +2,7 @@ import styles from "./index.module.scss";
 import * as React from "react";
 import { ProductDisplay } from "./ProductDisplay";
 import { Stack } from "../../../../Components/Stack";
+import { Text } from "../../../../Components/Text";
 
 export function ProductsConfirmation({ basket }: any) {
   const [isActive, setIsActive] = React.useState(false);
@@ -26,11 +27,17 @@ export function ProductsConfirmation({ basket }: any) {
       </div>
       {basket.length > 1 ? (
         <button className={styles.buttonText} onClick={handleClick}>
-          {isActive
-            ? "View less"
-            : `and ${basket.length - 1} other item${
+          {isActive ? (
+            <Text fontSize="xxs" color="brand" fontWeight={700}>
+              View less
+            </Text>
+          ) : (
+            <Text fontSize="xxs" color="brand" fontWeight={700}>
+              {`and ${basket.length - 1} other item ${
                 basket.length > 2 ? "s" : ""
               }`}
+            </Text>
+          )}
         </button>
       ) : null}
     </Stack>
