@@ -30,39 +30,72 @@ function findProductByKeyword(keyword: string) {
   return matchingProducts;
 }
 
+type Product = {
+  name: string;
+  description: string;
+  new: boolean;
+  img: {
+    desktop: string;
+    imageProduct: string;
+    tablet: string;
+  };
+  imgCart: string;
+  price: string;
+};
+
+function getProductImageUrl(
+  product: Product,
+  isDesktop: boolean,
+  mode: string
+) {
+  if (isDesktop) {
+    return product.img.desktop;
+  } else if (!isDesktop && mode === "buy") {
+    return product.img.imageProduct;
+  } else {
+    return product.img.tablet;
+  }
+}
+
 export function ProductPage() {
   let location = useLocation();
   let pathname = location.pathname.split("/")[2].split("-").join(" ");
   const { isDesktop } = useMedia();
-
   const matchingProducts = findProductByKeyword(pathname);
 
   if (matchingProducts.length === 0) {
     return <PageNotFound />;
   }
   const product = matchingProducts[0];
+  const imageUrl = getProductImageUrl(product, isDesktop, "buy");
 
   return (
-    <Stack orientation="vertical" className={styles.box} gap="56px">
+    <Stack orientation="vertical" className={styles.box} gap="120px">
       <GoBackButton />
-      <Stack orientation="vertical" gap="160px">
+      <Stack orientation="vertical" gap="120px">
         <ProductCard
           productName={product.name}
           productDescription={product.description}
           isProductNew={product.new}
-          productImg={isDesktop ? product.img.desktop : product.img.tablet}
+          productImg={imageUrl}
           productCartImg={product.imgCart}
           productPrice={product.price}
           mode={"buy"}
         />
-        <Stack orientation="horizontal" gap="125px">
+        <Stack orientation={isDesktop ? "horizontal" : "vertical"} gap="125px">
           <Features
             descriptionFirst={product.features?.[0]}
             descriptionSecond={product.features?.[1]}
           />
           <BoxContent insideBox={product.boxContent} />
         </Stack>
-        <ProductGallery img={product.productGallery} />
+        <ProductGallery
+          img={
+            isDesktop
+              ? product.productGallery.desktop
+              : product.productGallery.tablet
+          }
+        />
       </Stack>
       <OtherProducts />
       <Categories />

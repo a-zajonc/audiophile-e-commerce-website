@@ -1,3 +1,4 @@
+import styles from "./index.module.scss";
 import { Stack } from "../../Components/Stack";
 import { Categories } from "../Home/Categories";
 import { CategoryHeader } from "./Header";
@@ -15,7 +16,9 @@ export function ProductCategory() {
         <>
           <CategoryHeader category={categoryName} />
           <CategoryPage />
-          <Categories />
+          <div className={styles.box}>
+            <Categories />
+          </div>
         </>
       ) : (
         <PageNotFound />

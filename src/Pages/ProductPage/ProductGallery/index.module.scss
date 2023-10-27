@@ -19,4 +19,23 @@
 .imgThird {
   grid-area: 1 / 2 / 3 / 3;
   border-radius: var(--border-radius-small);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1150px) {
+  .imgFirst {
+    width: 100%;
+    height: auto;
+  }
+  .imgSecond {
+    width: 100%;
+    height: auto;
+  }
+  .imgThird {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }

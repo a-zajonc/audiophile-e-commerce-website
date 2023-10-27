@@ -1,0 +1,10 @@
+.padding {
+  padding-inline: 15%;
+  margin-top: 120px;
+}
+
+@media (max-width: 1120px) {
+  .padding {
+    padding-inline: 5%;
+  }
+}

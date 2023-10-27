@@ -57,7 +57,7 @@ export function ProductCard({
 
   return (
     <Stack
-      orientation={isDesktop ? "horizontal" : "vertical"}
+      orientation={isDesktop || mode === "buy" ? "horizontal" : "vertical"}
       spacing="between"
       gap="20px"
       className={
@@ -67,7 +67,7 @@ export function ProductCard({
       }
     >
       <img
-        className={styles.productImg}
+        className={mode === "buy" ? styles.productImg : styles.img}
         src={require(`../../../../images/${productImg}`)}
         alt="Headphones"
       />
