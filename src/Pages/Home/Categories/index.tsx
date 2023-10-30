@@ -5,6 +5,7 @@ import speakers from "../../../images/shared/desktop/image-category-thumbnail-sp
 import earphones from "../../../images/shared/desktop/image-category-thumbnail-earphones.png";
 import { Link } from "react-router-dom";
 import { Stack } from "../../../Components/Stack";
+import { useMedia } from "../../../context/mediaContext";
 
 const categoriesData = [
   { url: "headphones", name: "Headphones", img: headphones },
@@ -13,10 +14,12 @@ const categoriesData = [
 ];
 
 export function Categories() {
+  const { isMobile } = useMedia();
+
   return (
     <Stack
       className={styles.box}
-      orientation="horizontal"
+      orientation={isMobile ? "vertical" : "horizontal"}
       spacing="between"
       gap="10px"
     >

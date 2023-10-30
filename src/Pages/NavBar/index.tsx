@@ -59,7 +59,15 @@ export function NavBar() {
         spacing="between"
         className={styles.content}
       >
-        {!isDesktop ? (
+        {isMobile ? (
+          <>
+            <HamburgerNavigation />
+            <Link to="/">
+              <img src={logo} alt="Shop Logo" className={styles.logo} />
+            </Link>
+          </>
+        ) : null}
+        {isTablet ? (
           <Stack gap="42px">
             <HamburgerNavigation />
             <Link to="/">
@@ -67,7 +75,6 @@ export function NavBar() {
             </Link>
           </Stack>
         ) : null}
-
         {isDesktop ? (
           <>
             <Link to="/">
