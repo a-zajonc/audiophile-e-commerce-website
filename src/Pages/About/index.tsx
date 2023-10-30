@@ -1,19 +1,38 @@
 import styles from "./index.module.scss";
 import aboutPictureDesktop from "../../images/shared/desktop/image-best-gear.jpg";
 import aboutPictureTablet from "../../images/shared/tablet/image-best-gear.jpg";
+import aboutPictureMobile from "../../images/shared/mobile/image-best-gear.jpg";
 import { Text } from "../../Components/Text";
 import { Stack } from "../../Components/Stack";
 import { useMedia } from "../../context/mediaContext";
 
+function RenderPicture() {
+  const { isTablet, isMobile } = useMedia();
+
+  let pictureSrc;
+
+  if (isMobile) {
+    pictureSrc = aboutPictureMobile;
+  } else if (isTablet) {
+    pictureSrc = aboutPictureTablet;
+  } else {
+    pictureSrc = aboutPictureDesktop;
+  }
+
+  return (
+    <img src={pictureSrc} alt="Man listening to music" className={styles.img} />
+  );
+}
+
 export function About() {
-  const { isTablet } = useMedia();
+  const { isDesktop, isTablet } = useMedia();
 
   return (
     <Stack
-      orientation={isTablet ? "vertical-reverse" : "horizontal"}
+      orientation={!isDesktop ? "vertical-reverse" : "horizontal"}
       spacing="between"
       className={styles.box}
-      gap={isTablet ? "40px" : "0px"}
+      gap={"40px"}
     >
       <Stack
         orientation="vertical"
@@ -42,11 +61,7 @@ export function About() {
           best place to buy your portable audio equipment.
         </Text>
       </Stack>
-      <img
-        src={isTablet ? aboutPictureTablet : aboutPictureDesktop}
-        alt="Man listening to music"
-        className={styles.img}
-      />
+      <RenderPicture />
     </Stack>
   );
 }

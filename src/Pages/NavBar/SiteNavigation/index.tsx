@@ -2,10 +2,18 @@ import { Stack } from "../../../Components/Stack";
 import { Link } from "react-router-dom";
 import { Text } from "../../../Components/Text";
 import styles from "./index.module.scss";
+import { useMedia } from "../../../context/mediaContext";
 
 export function SiteNavigation() {
+  const { isMobile } = useMedia();
+
   return (
-    <Stack orientation="horizontal" gap="34px" className={styles.box}>
+    <Stack
+      orientation={isMobile ? "vertical" : "horizontal"}
+      gap="34px"
+      className={styles.box}
+      align={isMobile ? "center" : "left"}
+    >
       <Link to="/">
         <Text
           fontSize="xxs"

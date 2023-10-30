@@ -8,7 +8,7 @@ import { useMedia } from "../../context/mediaContext";
 import { SocialMedia } from "./SocialMedia";
 
 export function Footer() {
-  const { isDesktop } = useMedia();
+  const { isDesktop, isMobile } = useMedia();
 
   return (
     <Stack orientation="vertical" className={styles.box}>
@@ -18,6 +18,7 @@ export function Footer() {
         spacing="between"
         gap="35px"
         className={styles.container}
+        align={isMobile ? "center" : "left"}
       >
         <Stack
           orientation={isDesktop ? "horizontal" : "vertical"}
@@ -42,7 +43,12 @@ export function Footer() {
           </Text>
           {isDesktop ? <SocialMedia /> : null}
         </Stack>
-        <Stack orientation="horizontal" spacing="between">
+        <Stack
+          orientation={!isMobile ? "horizontal" : "vertical"}
+          spacing="between"
+          align={isMobile ? "center" : "left"}
+          gap={isMobile ? "32px" : "0px"}
+        >
           <Text fontSize="s" color="secondary" opacity="m" fontWeight={700}>
             Copyright 2021. All Rights Reserved
           </Text>
