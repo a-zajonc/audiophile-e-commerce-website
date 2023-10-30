@@ -32,3 +32,12 @@
     padding-inline: 5%;
   }
 }
+
+@media (max-width: 700px) {
+  .content {
+    background-image: url(../../../../images/home/mobile/image-speaker-zx7.jpg);
+  }
+  .text {
+    padding-left: 10%;
+  }
+}

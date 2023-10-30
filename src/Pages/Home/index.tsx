@@ -6,7 +6,7 @@ import { Stack } from "../../Components/Stack";
 
 export function Home() {
   return (
-    <Stack orientation="vertical">
+    <Stack orientation="vertical" className={styles.box}>
       <Header />
       <Stack orientation="vertical">
         <div className={styles.padding}>

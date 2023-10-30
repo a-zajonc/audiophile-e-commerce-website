@@ -7,11 +7,14 @@ import { Text } from "../../../../Components/Text";
 import { useMedia } from "../../../../context/mediaContext";
 
 export function SmallProductComponent() {
-  const { isTablet } = useMedia();
+  const { isTablet, isMobile } = useMedia();
 
   return (
     <div className={styles.box}>
-      <Stack orientation="horizontal" gap={isTablet ? "10px" : "40px"}>
+      <Stack
+        orientation={isMobile ? "vertical" : "horizontal"}
+        gap={isTablet ? "10px" : "40px"}
+      >
         <motion.div
           viewport={{ once: true }}
           whileInView={{ x: 0 }}

@@ -1,16 +1,15 @@
 .background {
   background-image: url(../../../images/home/desktop/image-hero.jpg);
-  background-position: right 0px;
+  background-position: right -90px;
   background-size: cover;
-  width: 100%;
-  height: 830px;
+  height: 729px;
+  background-repeat: no-repeat;
 }
 
 .content {
   text-align: left;
-  position: relative;
-  left: 15%;
-  top: 161px;
+  padding-left: 15%;
+  align-self: center;
   width: 378px;
 }
 
@@ -21,17 +20,43 @@
 
 @media (max-width: 1120px) {
   .background {
-    height: 729px;
+    height: 639px;
     background-image: url(../../../images/home/tablet/image-header.jpg);
-    background-position: 0px -130px;
-    background-repeat: no-repeat;
     justify-content: center;
     align-items: center;
   }
   .content {
-    left: 0;
-    top: 0;
+    padding: 0px;
     text-align: center;
     align-items: center;
+  }
+}
+
+@media (max-width: 630px) {
+  .background {
+    height: 589px;
+    background-image: url(../../../images/home/mobile/image-header.jpg);
+    background-position: 0 -210px;
+  }
+}
+
+@media (max-width: 520px) {
+  .background {
+    background-position: 0 -170px;
+  }
+}
+
+@media (max-width: 480px) {
+  .background {
+    background-position: 0 -100px;
+  }
+  .content {
+    padding-inline: 5%;
+  }
+}
+
+@media (max-width: 430px) {
+  .background {
+    height: 520px;
   }
 }

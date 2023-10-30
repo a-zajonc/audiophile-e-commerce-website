@@ -42,3 +42,18 @@
     background-image: url(../../../../images/home/tablet/image-earphones-yx1.jpg);
   }
 }
+
+@media (max-width: 700px) {
+  .box {
+    height: 100%;
+  }
+  .img {
+    width: 100%;
+  }
+  .container {
+    width: 100%;
+  }
+  .text {
+    padding-inline: 10%;
+  }
+}
