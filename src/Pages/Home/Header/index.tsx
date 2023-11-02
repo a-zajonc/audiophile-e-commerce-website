@@ -15,12 +15,12 @@ export function Header() {
         orientation="vertical"
         align="baseline"
         className={styles.content}
-        gap="35px"
+        gap={isMobile ? "24px" : "35px"}
       >
         <NewProduct color="secondary" />
         <Text
           color="secondary"
-          fontSize="3xl"
+          fontSize={isMobile ? "xxl" : "3xl"}
           fontWeight={700}
           lineHeight="xl"
           headingLevel={1}
