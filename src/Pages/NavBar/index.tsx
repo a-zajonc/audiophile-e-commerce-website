@@ -38,6 +38,33 @@ const customStylesTablet = {
   },
 };
 
+const customStylesMobile = {
+  content: {
+    padding: "31px",
+    width: "100%",
+    top: "10%",
+    left: "0%",
+    right: "0%",
+    bottom: "auto",
+    boxSizing: "border-box",
+  },
+  overlay: {
+    background: "rgba(0, 0, 0, 0.4)",
+  },
+};
+
+function ModalStyle() {
+  const { isDesktop, isMobile } = useMedia();
+  if (isMobile) {
+    return customStylesMobile;
+  }
+  if (isDesktop) {
+    return customStylesDektop;
+  } else {
+    return customStylesTablet;
+  }
+}
+
 Modal.setAppElement(document.getElementById("root") as HTMLElement);
 
 export function NavBar() {
@@ -88,7 +115,7 @@ export function NavBar() {
         </button>
         <Modal
           isOpen={modalIsOpen}
-          style={isDesktop ? customStylesDektop : customStylesTablet}
+          style={ModalStyle()}
           onRequestClose={closeModal}
           closeTimeoutMS={500}
         >

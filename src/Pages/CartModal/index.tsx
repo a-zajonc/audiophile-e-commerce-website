@@ -33,19 +33,23 @@ export function CartModal({ handleClick }: any) {
         </button>
       </Stack>
       <Stack orientation="vertical">
-        {basket
-          ? basket.map((item: any) => {
-              return (
-                <ItemDisplay
-                  name={item.name}
-                  img={item.img}
-                  price={item.price}
-                  quantity={item.quantity}
-                  key={item.name}
-                />
-              );
-            })
-          : "Nothing here"}
+        {basket && basket.length > 0 ? (
+          basket.map((item: any) => {
+            return (
+              <ItemDisplay
+                name={item.name}
+                img={item.img}
+                price={item.price}
+                quantity={item.quantity}
+                key={item.name}
+              />
+            );
+          })
+        ) : (
+          <Text fontSize="s" color="primary" opacity="m">
+            Cart is empty
+          </Text>
+        )}
       </Stack>
       <Stack orientation="horizontal" spacing="between" align="center">
         <Text color="primary" fontSize="s" opacity="m">

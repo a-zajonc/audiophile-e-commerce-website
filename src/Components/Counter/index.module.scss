@@ -37,3 +37,12 @@
     height: 32px;
   }
 }
+
+@media (max-width: 700px) {
+  .size {
+    &-small {
+      width: 96px;
+      height: 42px;
+    }
+  }
+}
