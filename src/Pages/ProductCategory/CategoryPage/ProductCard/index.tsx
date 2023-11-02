@@ -39,7 +39,7 @@ export function ProductCard({
   const addToBasket = useAddToBasket();
   const [buttonText, setButtonText] = React.useState("Add to cart");
   const [quantity, setQuantity] = React.useState(1);
-  const { isDesktop } = useMedia();
+  const { isDesktop, isMobile } = useMedia();
 
   const handleAddToCartClick = () => {
     addToBasket(
@@ -80,7 +80,7 @@ export function ProductCard({
         {isProductNew ? <NewProduct color="brand" /> : null}
         <Text
           color="primary"
-          fontSize="xxl"
+          fontSize={isMobile ? "xl" : "xxl"}
           fontWeight={700}
           lineHeight="l"
           headingLevel={2}
