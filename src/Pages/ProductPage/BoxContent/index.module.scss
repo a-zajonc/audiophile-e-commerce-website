@@ -7,3 +7,9 @@
   letter-spacing: 1.143px;
   text-transform: uppercase;
 }
+
+@media (max-width: 700px) {
+  .box {
+    width: 100%;
+  }
+}

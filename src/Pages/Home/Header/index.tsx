@@ -7,7 +7,7 @@ import { Stack } from "../../../Components/Stack";
 import { useMedia } from "../../../context/mediaContext";
 
 export function Header() {
-  const { isTablet, isMobile } = useMedia();
+  const { isMobile } = useMedia();
 
   return (
     <Stack className={styles.background}>
