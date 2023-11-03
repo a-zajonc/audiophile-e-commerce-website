@@ -12,6 +12,37 @@ import { PageNotFound } from "../PageNotFound";
 import { Stack } from "../../Components/Stack";
 import { useMedia } from "../../context/mediaContext";
 
+type Product = {
+  name: string;
+  description: string;
+  new: boolean;
+  img: {
+    desktop: string;
+    imageProduct: string;
+    tablet: string;
+    mobile: string;
+  };
+  imgCart: string;
+  price: string;
+};
+
+function getProductImageUrl(
+  product: Product,
+  isDesktop: boolean,
+  isTablet: boolean,
+  mode: string
+) {
+  if (isDesktop) {
+    return product.img.desktop;
+  } else if (!isDesktop && mode === "buy") {
+    return product.img.imageProduct;
+  } else if (isTablet) {
+    return product.img.tablet;
+  } else {
+    return product.img.mobile;
+  }
+}
+
 function findProductByKeyword(keyword: string) {
   const products = Object.values(data.products);
 
@@ -30,47 +61,24 @@ function findProductByKeyword(keyword: string) {
   return matchingProducts;
 }
 
-type Product = {
-  name: string;
-  description: string;
-  new: boolean;
-  img: {
-    desktop: string;
-    imageProduct: string;
-    tablet: string;
-  };
-  imgCart: string;
-  price: string;
-};
-
-function getProductImageUrl(
-  product: Product,
-  isDesktop: boolean,
-  mode: string
-) {
-  if (isDesktop) {
-    return product.img.desktop;
-  } else if (!isDesktop && mode === "buy") {
-    return product.img.imageProduct;
-  } else {
-    return product.img.tablet;
-  }
-}
-
 export function ProductPage() {
   let location = useLocation();
   let pathname = location.pathname.split("/")[2].split("-").join(" ");
-  const { isDesktop } = useMedia();
+  const { isDesktop, isTablet, isMobile } = useMedia();
   const matchingProducts = findProductByKeyword(pathname);
 
   if (matchingProducts.length === 0) {
     return <PageNotFound />;
   }
   const product = matchingProducts[0];
-  const imageUrl = getProductImageUrl(product, isDesktop, "buy");
+  const imageUrl = getProductImageUrl(product, isDesktop, isTablet, "buy");
 
   return (
-    <Stack orientation="vertical" className={styles.box} gap="120px">
+    <Stack
+      orientation="vertical"
+      className={styles.box}
+      gap={isMobile ? "70px" : "120px"}
+    >
       <GoBackButton />
       <Stack orientation="vertical" gap="120px">
         <ProductCard
@@ -91,7 +99,9 @@ export function ProductPage() {
         </Stack>
         <ProductGallery
           img={
-            isDesktop
+            isMobile
+              ? product.productGallery.mobile
+              : isDesktop
               ? product.productGallery.desktop
               : product.productGallery.tablet
           }

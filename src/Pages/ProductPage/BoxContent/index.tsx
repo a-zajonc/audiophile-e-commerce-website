@@ -8,11 +8,11 @@ type BoxContentProps = {
 };
 
 export function BoxContent({ insideBox }: BoxContentProps) {
-  const { isDesktop } = useMedia();
+  const { isTablet, isDesktop } = useMedia();
 
   return (
     <Stack
-      orientation={isDesktop ? "vertical" : "horizontal"}
+      orientation={isTablet ? "horizontal" : "vertical"}
       className={styles.box}
       gap="32px"
       spacing={isDesktop ? "unset" : "between"}

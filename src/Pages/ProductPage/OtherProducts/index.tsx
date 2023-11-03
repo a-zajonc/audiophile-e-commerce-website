@@ -27,8 +27,17 @@ function getRandomProducts(data: any, count: number) {
   }
 }
 
-export function OtherProducts() {
+function RenderPicture(product: any) {
   const { isDesktop } = useMedia();
+  if (isDesktop) {
+    return require(`../../../images/${product.desktop}`);
+  } else {
+    return require(`../../../images/${product.tablet}`);
+  }
+}
+
+export function OtherProducts() {
+  const { isMobile } = useMedia();
   const location = useLocation();
   const currentProduct = location.pathname.split("/")[2].split("-").join(" ");
   const currentData = getRandomProducts(getProducts(data, currentProduct), 3);
@@ -45,16 +54,16 @@ export function OtherProducts() {
       >
         You may also like
       </Text>
-      <Stack orientation="horizontal" spacing="between" gap="10px">
+      <Stack
+        orientation={!isMobile ? "horizontal" : "vertical"}
+        spacing="between"
+        gap={isMobile ? "80px" : "0px"}
+      >
         {currentData.map((product: any) => {
           return (
             <FadeIn key={product.id.toString()}>
               <OtherProductCard
-                img={
-                  isDesktop
-                    ? require(`../../../images/${product.img.desktop}`)
-                    : require(`../../../images/${product.img.tablet}`)
-                }
+                img={RenderPicture(product.img)}
                 name={removeTypeFromName(product.name)}
               />
             </FadeIn>

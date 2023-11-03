@@ -57,7 +57,13 @@ export function ProductCard({
 
   return (
     <Stack
-      orientation={isDesktop || mode === "buy" ? "horizontal" : "vertical"}
+      orientation={
+        isMobile
+          ? "vertical"
+          : isDesktop || mode === "buy"
+          ? "horizontal"
+          : "vertical"
+      }
       spacing="between"
       gap="20px"
       className={
