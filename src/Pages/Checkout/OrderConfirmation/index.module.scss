@@ -27,3 +27,13 @@
   background-color: var(--color-primary);
   border-radius: 0 var(--border-radius-small) var(--border-radius-small) 0;
 }
+
+@media (max-width: 700px) {
+  .box {
+    padding: 10px;
+  }
+  .totalBox {
+    width: auto;
+    border-radius: 0 0 var(--border-radius-small) var(--border-radius-small);
+  }
+}

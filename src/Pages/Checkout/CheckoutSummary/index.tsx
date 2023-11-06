@@ -12,6 +12,7 @@ import {
 } from "../../../Components/functions/sumPrices";
 import { Stack } from "../../../Components/Stack";
 import { Text } from "../../../Components/Text";
+import { useMedia } from "../../../context/mediaContext";
 
 const customStyles = {
   content: {
@@ -25,12 +26,26 @@ const customStyles = {
   },
   overlay: { background: "rgba(0, 0, 0, 0.4)" },
 };
+
+const customStylesMobile = {
+  content: {
+    width: "70%",
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    transform: "translate(-50%, -50%)",
+  },
+  overlay: { background: "rgba(0, 0, 0, 0.4)" },
+};
+
 Modal.setAppElement("#root");
 
 export function CheckoutSummary({ errors, option, order, setOrder }: any) {
   const { basket, setBasket } = React.useContext(BasketContext);
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const total = useSumPrices(basket);
+  const { isMobile } = useMedia();
 
   React.useEffect(() => {
     if (order) {
@@ -51,12 +66,10 @@ export function CheckoutSummary({ errors, option, order, setOrder }: any) {
     if (order) {
       window.localStorage.removeItem("form");
     }
-
     setBasket([]);
     closeModal();
     window.localStorage.removeItem("basket");
   };
-
   if (order) {
     window.localStorage.removeItem("form");
   }
@@ -138,7 +151,11 @@ export function CheckoutSummary({ errors, option, order, setOrder }: any) {
       >
         {option === "Cash on Delivery" ? "CONTINUE" : "CONTINUE & PAY"}
       </Button>
-      <Modal style={customStyles} isOpen={modalIsOpen} closeTimeoutMS={500}>
+      <Modal
+        style={isMobile ? customStylesMobile : customStyles}
+        isOpen={modalIsOpen}
+        closeTimeoutMS={500}
+      >
         <OrderConfirmation handleClick={handleClick} />
       </Modal>
     </Stack>
