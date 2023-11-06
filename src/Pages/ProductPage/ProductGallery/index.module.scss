@@ -1,6 +1,6 @@
 .imgBox {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1.5fr;
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 30px;
   grid-row-gap: 30px;
@@ -9,11 +9,13 @@
 .imgFirst {
   grid-area: 1 / 1 / 2 / 2;
   border-radius: var(--border-radius-small);
+  width: 100%;
   height: 100%;
 }
 .imgSecond {
   grid-area: 2 / 1 / 3 / 2;
   border-radius: var(--border-radius-small);
+  width: 100%;
   height: 100%;
 }
 .imgThird {
@@ -22,22 +24,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-@media (max-width: 1150px) {
-  .imgFirst {
-    width: 100%;
-    height: auto;
-  }
-  .imgSecond {
-    width: 100%;
-    height: auto;
-  }
-  .imgThird {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
 }
 
 @media (max-width: 700px) {

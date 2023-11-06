@@ -43,7 +43,7 @@ export function OtherProducts() {
   const currentData = getRandomProducts(getProducts(data, currentProduct), 3);
 
   return (
-    <Stack orientation="vertical" className={styles.box} gap="64px">
+    <Stack orientation="vertical" gap="64px">
       <Text
         color="primary"
         fontSize="xxl"
@@ -57,7 +57,6 @@ export function OtherProducts() {
       <Stack
         orientation={!isMobile ? "horizontal" : "vertical"}
         spacing="between"
-        gap={isMobile ? "80px" : "0px"}
       >
         {currentData.map((product: any) => {
           return (

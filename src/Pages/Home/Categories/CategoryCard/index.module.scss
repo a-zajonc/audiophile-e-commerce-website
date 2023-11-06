@@ -1,6 +1,5 @@
 .background {
   background: var(--color-background);
-  padding-inline: 40px;
   margin-top: 80px;
   border-radius: var(--border-radius-small);
   transition: all 0.2s ease-in;
@@ -41,7 +40,8 @@
 @media (max-width: 1160px) {
   .img {
     width: 120px;
-    height: auto;
+    height: 160px;
+    object-fit: cover;
   }
   .content {
     top: -40px;
