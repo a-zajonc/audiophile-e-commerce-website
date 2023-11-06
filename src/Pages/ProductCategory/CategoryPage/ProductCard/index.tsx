@@ -65,7 +65,7 @@ export function ProductCard({
           : "vertical"
       }
       spacing="between"
-      gap="20px"
+      gap="30px"
       className={
         isDesktop
           ? `${styles.box} ${isReversed ? `${styles["box-reversed"]}` : ""}`

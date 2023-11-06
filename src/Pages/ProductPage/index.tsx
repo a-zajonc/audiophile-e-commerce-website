@@ -74,41 +74,42 @@ export function ProductPage() {
   const imageUrl = getProductImageUrl(product, isDesktop, isTablet, "buy");
 
   return (
-    <Stack
-      orientation="vertical"
-      className={styles.box}
-      gap={isMobile ? "70px" : "120px"}
-    >
+    <Stack orientation="vertical" className={styles.box} gap="70px">
       <GoBackButton />
-      <Stack orientation="vertical" gap="120px">
-        <ProductCard
-          productName={product.name}
-          productDescription={product.description}
-          isProductNew={product.new}
-          productImg={imageUrl}
-          productCartImg={product.imgCart}
-          productPrice={product.price}
-          mode={"buy"}
-        />
-        <Stack orientation={isDesktop ? "horizontal" : "vertical"} gap="125px">
-          <Features
-            descriptionFirst={product.features?.[0]}
-            descriptionSecond={product.features?.[1]}
+      <Stack orientation="vertical" gap={isMobile ? "70px" : "120px"}>
+        <Stack orientation="vertical" gap="120px">
+          <ProductCard
+            productName={product.name}
+            productDescription={product.description}
+            isProductNew={product.new}
+            productImg={imageUrl}
+            productCartImg={product.imgCart}
+            productPrice={product.price}
+            mode={"buy"}
           />
-          <BoxContent insideBox={product.boxContent} />
+          <Stack
+            orientation={isDesktop ? "horizontal" : "vertical"}
+            gap="125px"
+          >
+            <Features
+              descriptionFirst={product.features?.[0]}
+              descriptionSecond={product.features?.[1]}
+            />
+            <BoxContent insideBox={product.boxContent} />
+          </Stack>
+          <ProductGallery
+            img={
+              isMobile
+                ? product.productGallery.mobile
+                : isDesktop
+                ? product.productGallery.desktop
+                : product.productGallery.tablet
+            }
+          />
         </Stack>
-        <ProductGallery
-          img={
-            isMobile
-              ? product.productGallery.mobile
-              : isDesktop
-              ? product.productGallery.desktop
-              : product.productGallery.tablet
-          }
-        />
+        <OtherProducts />
+        <Categories />
       </Stack>
-      <OtherProducts />
-      <Categories />
     </Stack>
   );
 }

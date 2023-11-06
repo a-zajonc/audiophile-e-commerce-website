@@ -19,7 +19,7 @@ export function CategoryCard({ category, img }: CategoryCardProps) {
     <motion.div
       whileHover={{ y: isDesktop ? "-30px" : "0" }}
       transition={{
-        type: isDesktop ? "spring" : null,
+        type: isDesktop ? "spring" : "none",
         stiffness: isDesktop ? 400 : 0,
         damping: isDesktop ? 10 : 0,
       }}

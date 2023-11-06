@@ -32,7 +32,7 @@ export function Checkout() {
   });
 
   return (
-    <div className={styles.box}>
+    <Stack orientation="vertical" className={styles.box} gap="70px">
       <GoBackButton />
       <form onSubmit={handleSubmit(onSubmit)}>
         <Stack
@@ -55,6 +55,6 @@ export function Checkout() {
           />
         </Stack>
       </form>
-    </div>
+    </Stack>
   );
 }

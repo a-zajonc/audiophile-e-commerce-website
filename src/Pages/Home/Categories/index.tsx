@@ -21,7 +21,7 @@ export function Categories() {
       className={styles.box}
       orientation={isMobile ? "vertical" : "horizontal"}
       spacing="between"
-      gap="10px"
+      gap="30px"
     >
       {categoriesData.map((category) => {
         return (
