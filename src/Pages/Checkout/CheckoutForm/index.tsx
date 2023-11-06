@@ -1,3 +1,4 @@
+import * as React from "react";
 import { Input } from "../../../Components/input/input";
 import { RadioInput } from "../../../Components/RadioInput";
 import styles from "./index.module.scss";
@@ -14,8 +15,15 @@ export function CheckoutForm({
   register,
   option,
   setOption,
+  clearErrors,
 }: any) {
   const { isMobile } = useMedia();
+
+  React.useEffect(() => {
+    if (option === "Cash on Delivery") {
+      clearErrors(["pin", "e-money"]);
+    }
+  }, [option, clearErrors]);
 
   return (
     <Stack orientation="vertical" className={styles.box} gap="40px">
@@ -227,7 +235,7 @@ export function CheckoutForm({
               rules={{
                 required: "Enter card name",
               }}
-              name="cardNumber"
+              name="e-money"
               control={control}
               defaultValue=""
               render={({ field }) => (
@@ -244,7 +252,7 @@ export function CheckoutForm({
               rules={{
                 required: "Enter PIN number",
               }}
-              name="pinNumber"
+              name="pin"
               control={control}
               defaultValue=""
               render={({ field }) => (

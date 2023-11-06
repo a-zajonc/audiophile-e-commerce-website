@@ -19,6 +19,7 @@ export function Checkout() {
     watch,
     setValue,
     handleSubmit,
+    clearErrors,
     formState: { errors },
   } = useForm();
   const onSubmit = (data: any) => {
@@ -46,6 +47,7 @@ export function Checkout() {
             register={register}
             option={option}
             setOption={setOption}
+            clearErrors={clearErrors}
           />
           <CheckoutSummary
             errors={errors}
