@@ -41,3 +41,10 @@
     color: var(--color-brand);
   }
 }
+
+@media (max-width: 700px) {
+  .box {
+    width: auto;
+    border-radius: var(--border-radius-small) var(--border-radius-small) 0 0;
+  }
+}

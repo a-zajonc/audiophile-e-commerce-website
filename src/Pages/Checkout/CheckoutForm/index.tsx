@@ -6,6 +6,7 @@ import { Controller } from "react-hook-form";
 import { Text } from "../../../Components/Text";
 import { Stack } from "../../../Components/Stack";
 import { motion } from "framer-motion";
+import { useMedia } from "../../../context/mediaContext";
 
 export function CheckoutForm({
   errors,
@@ -14,6 +15,8 @@ export function CheckoutForm({
   option,
   setOption,
 }: any) {
+  const { isMobile } = useMedia();
+
   return (
     <Stack orientation="vertical" className={styles.box} gap="40px">
       <Text
@@ -35,7 +38,12 @@ export function CheckoutForm({
         >
           Billing Details
         </Text>
-        <Stack orientation="horizontal" spacing="between" align="center">
+        <Stack
+          orientation={isMobile ? "vertical" : "horizontal"}
+          spacing="between"
+          align={isMobile ? "normal" : "center"}
+          gap={isMobile ? "16px" : "0px"}
+        >
           <Controller
             name="userName"
             control={control}
@@ -78,7 +86,7 @@ export function CheckoutForm({
                 title="Phone Number"
                 type="number"
                 id="phone"
-                halfWidth={true}
+                halfWidth={isMobile ? false : true}
                 errors={errors}
                 {...field}
               />
@@ -106,7 +114,12 @@ export function CheckoutForm({
             <Input title="Address" id="address" {...field} errors={errors} />
           )}
         />
-        <Stack orientation="horizontal" align="center" spacing="between">
+        <Stack
+          orientation={isMobile ? "vertical" : "horizontal"}
+          align={isMobile ? "normal" : "center"}
+          spacing="between"
+          gap={isMobile ? "16px" : "0px"}
+        >
           <Controller
             rules={{
               required: "Fill your ZIP Code",
@@ -148,7 +161,7 @@ export function CheckoutForm({
               <Input
                 title="Country"
                 id="country"
-                halfWidth={true}
+                halfWidth={isMobile ? false : true}
                 {...field}
                 errors={errors}
               />
@@ -165,7 +178,7 @@ export function CheckoutForm({
         >
           Payment details
         </Text>
-        <Stack orientation="horizontal">
+        <Stack orientation={isMobile ? "vertical" : "horizontal"} gap="16px">
           <Text
             color="primary"
             fontSize="xxs"
@@ -187,7 +200,6 @@ export function CheckoutForm({
               value="card"
               checked={!option || option === "e-Money"}
             />
-
             <RadioInput
               {...register("payment", { required: "This is required." })}
               title="Cash on Delivery"
@@ -205,7 +217,12 @@ export function CheckoutForm({
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <Stack orientation="horizontal" spacing="between" align="center">
+          <Stack
+            orientation={isMobile ? "vertical" : "horizontal"}
+            spacing="between"
+            align={isMobile ? "normal" : "center"}
+            gap={isMobile ? "16px" : "0px"}
+          >
             <Controller
               rules={{
                 required: "Enter card name",

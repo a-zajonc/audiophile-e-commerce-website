@@ -11,18 +11,20 @@ import { ProductsConfirmation } from "./ProductsConfirmation";
 import { Link } from "react-router-dom";
 import { Text } from "../../../Components/Text";
 import { Stack } from "../../../Components/Stack";
+import { useMedia } from "../../../context/mediaContext";
 
 export function OrderConfirmation({ handleClick }: any) {
   const { basket } = React.useContext(BasketContext);
   const total = useSumPrices(basket);
   const grandTotal = useSumGrandTotal(total, 50);
+  const { isMobile } = useMedia();
 
   return (
     <Stack orientation="vertical" className={styles.box} gap="20px">
       <img src={tickIcon} alt="Tick Icon" className={styles.icon} />
       <Text
         color="primary"
-        fontSize="xl"
+        fontSize={isMobile ? "l" : "xl"}
         fontWeight={700}
         lineHeight="m"
         headingLevel={2}
@@ -33,7 +35,10 @@ export function OrderConfirmation({ handleClick }: any) {
       <Text color="primary" opacity="m" fontSize="s">
         You will receive an email confirmation shortly.
       </Text>
-      <Stack orientation="horizontal" className={styles.container}>
+      <Stack
+        orientation={isMobile ? "vertical" : "horizontal"}
+        className={styles.container}
+      >
         <ProductsConfirmation basket={basket} />
         <Stack
           orientation="vertical"
