@@ -25,12 +25,11 @@ export function Categories() {
     >
       {categoriesData.map((category) => {
         return (
-          <Link to={`/category/${category.name.toLowerCase()}`}>
-            <CategoryCard
-              category={category.name}
-              img={category.img}
-              key={category.name}
-            />
+          <Link
+            to={`/category/${category.name.toLowerCase()}`}
+            key={category.name}
+          >
+            <CategoryCard category={category.name} img={category.img} />
           </Link>
         );
       })}
