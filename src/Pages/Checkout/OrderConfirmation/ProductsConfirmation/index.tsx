@@ -26,7 +26,11 @@ export function ProductsConfirmation({ basket }: any) {
         <div className={styles.line} />
       </div>
       {basket.length > 1 ? (
-        <button className={styles.buttonText} onClick={handleClick}>
+        <button
+          className={styles.buttonText}
+          onClick={handleClick}
+          aria-label="Open or Close"
+        >
           {isActive ? (
             <Text fontSize="xxs" color="brand" fontWeight={700}>
               View less

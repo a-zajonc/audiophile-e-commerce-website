@@ -41,8 +41,8 @@ export function BigProductComponent() {
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.
           </Text>
-          <Link to="product/zx9" className={styles.fitcontent}>
-            <Button colorScheme="secondary" tabIndex={-1}>
+          <Link to="product/zx9" tabIndex={-1}>
+            <Button colorScheme="secondary" aria-label="See Product">
               See Product
             </Button>
           </Link>

@@ -110,7 +110,7 @@ export function NavBar() {
             <SiteNavigation />
           </>
         ) : null}
-        <button className={styles.displayNone}>
+        <button className={styles.displayNone} aria-label="Cart">
           <Cart className={styles.cartIcon} onClick={openModal} />
         </button>
         <Modal

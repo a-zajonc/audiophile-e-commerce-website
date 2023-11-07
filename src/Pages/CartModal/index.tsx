@@ -18,7 +18,7 @@ export function CartModal({ handleClick }: any) {
   };
 
   return (
-    <Stack orientation="vertical" gap="20px">
+    <Stack orientation="vertical" gap="20px" className={styles.box}>
       <Stack orientation="horizontal" spacing="between">
         <Text
           color="primary"
@@ -28,7 +28,11 @@ export function CartModal({ handleClick }: any) {
         >
           cart {`(${basket ? basket.length : "0"})`}
         </Text>
-        <button className={styles.button} onClick={handleRemoving}>
+        <button
+          className={styles.button}
+          onClick={handleRemoving}
+          aria-label="Remove all"
+        >
           Remove all
         </button>
       </Stack>
@@ -61,8 +65,13 @@ export function CartModal({ handleClick }: any) {
           fontWeight={700}
         >{`$ ${total}`}</Text>
       </Stack>
-      <Link to="/checkout">
-        <Button fullWidth={true} colorScheme="brand" onClick={handleClick}>
+      <Link to="/checkout" tabIndex={-1}>
+        <Button
+          fullWidth={true}
+          colorScheme="brand"
+          onClick={handleClick}
+          aria-label="Checkout"
+        >
           checkout
         </Button>
       </Link>

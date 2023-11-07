@@ -24,8 +24,8 @@ export function MediumProductComponent() {
           >
             ZX7 SPEAKER
           </Text>
-          <Link to="product/zx7">
-            <Button colorScheme="primary" tabIndex={-1}>
+          <Link to="product/zx7" tabIndex={-1}>
+            <Button colorScheme="primary" aria-label="See Product">
               See Product
             </Button>
           </Link>

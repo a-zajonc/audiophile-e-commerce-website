@@ -39,11 +39,16 @@ export function Counter({
         className={styles.mathSign}
         onClick={() => handleClick("minus")}
         disabled={counter <= mininumQuantity}
+        aria-label="Less"
       >
         -
       </button>
       <p>{counter !== 1 ? counter : quantity}</p>
-      <button className={styles.mathSign} onClick={() => handleClick("plus")}>
+      <button
+        className={styles.mathSign}
+        onClick={() => handleClick("plus")}
+        aria-label="More"
+      >
         +
       </button>
     </div>
