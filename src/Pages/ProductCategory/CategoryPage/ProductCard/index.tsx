@@ -75,7 +75,7 @@ export function ProductCard({
       <img
         className={mode === "buy" ? styles.productImg : styles.img}
         src={require(`../../../../images/${productImg}`)}
-        alt="Headphones"
+        alt="Product"
       />
       <Stack
         orientation="vertical"
