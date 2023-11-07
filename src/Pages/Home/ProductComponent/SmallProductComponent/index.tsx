@@ -1,13 +1,16 @@
+import * as React from "react";
 import { Link } from "react-router-dom";
 import styles from "./index.module.scss";
 import { Button } from "../../../../Components/button/button";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { Stack } from "../../../../Components/Stack";
 import { Text } from "../../../../Components/Text";
 import { useMedia } from "../../../../context/mediaContext";
 
 export function SmallProductComponent() {
   const { isTablet, isMobile } = useMedia();
+  const ref = React.useRef(null);
+  const isInView = useInView(ref);
 
   return (
     <div className={styles.box}>
@@ -16,20 +19,29 @@ export function SmallProductComponent() {
         gap={isTablet ? "10px" : "40px"}
       >
         <motion.div
-          viewport={{ once: true }}
-          whileInView={{ x: 0 }}
-          animate={{ rotate: 360 }}
           className={styles.img}
-          // initial={{ x: -800 }}
-          // transition={{ duration: 2 }}
+          ref={ref}
+          initial={{ opacity: 0, filter: "blur(4px)" }}
+          animate={{
+            opacity: isInView ? 1 : 0,
+            filter: isInView ? "blur(0px)" : "blur(4px)",
+          }}
+          transition={{
+            duration: 1,
+            delay: 0.05,
+          }}
         />
         <motion.div
-          viewport={{ once: true }}
-          whileInView={{ x: 0 }}
           className={styles.container}
-          animate={{ rotate: 360 }}
-          // initial={{ x: 800 }}
-          // transition={{ duration: 2 }}
+          initial={{ opacity: 0, filter: "blur(4px)" }}
+          animate={{
+            opacity: isInView ? 1 : 0,
+            filter: isInView ? "blur(0px)" : "blur(4px)",
+          }}
+          transition={{
+            duration: 1,
+            delay: 0.05,
+          }}
         >
           <Stack
             orientation="vertical"

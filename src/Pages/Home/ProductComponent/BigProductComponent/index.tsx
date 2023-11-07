@@ -7,7 +7,7 @@ import { Stack } from "../../../../Components/Stack";
 import { useMedia } from "../../../../context/mediaContext";
 
 export function BigProductComponent() {
-  const { isTablet, isDesktop } = useMedia();
+  const { isDesktop } = useMedia();
 
   return (
     <Stack className={styles.box}>
