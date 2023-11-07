@@ -1,9 +1,7 @@
-.goBackBox {
-  color: var(--color-primary);
-  font-size: var(--font-size-s);
-  font-weight: 500;
-  line-height: 25px;
-  opacity: 0.5;
-  cursor: pointer;
+.button {
   text-align: left;
+  width: fit-content;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }

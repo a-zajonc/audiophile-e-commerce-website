@@ -116,6 +116,7 @@ export function ProductCard({
               />
               <Button
                 colorScheme="brand"
+                aria-label="Add to Cart"
                 onClick={handleAddToCartClick}
                 disabled={buttonText === "Added!"}
               >
@@ -126,8 +127,11 @@ export function ProductCard({
         ) : (
           <Link
             to={`/product/${productName.split(" ").join("-").toLowerCase()}`}
+            tabIndex={-1}
           >
-            <Button colorScheme="brand">See Product</Button>
+            <Button colorScheme="brand" aria-label="See Product">
+              See Product
+            </Button>
           </Link>
         )}
       </Stack>

@@ -101,6 +101,7 @@ export function ItemDisplay({ name, img, price, quantity }: Props) {
                 <button
                   className={styles.button}
                   onClick={() => removeItem(name)}
+                  aria-label="Remove Item"
                 >
                   Remove
                 </button>
@@ -108,6 +109,7 @@ export function ItemDisplay({ name, img, price, quantity }: Props) {
                 <button
                   className={styles.button}
                   onClick={() => setChangedQuantity(1)}
+                  aria-label="Cancel"
                 >
                   Cancel
                 </button>

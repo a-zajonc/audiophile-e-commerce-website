@@ -22,8 +22,13 @@ export function OtherProductCard({ img, name }: OtherProductCardProps) {
       >
         {name}
       </Text>
-      <Link to={`/product/${name.toLowerCase().split(" ").join("-")}`}>
-        <Button colorScheme="brand">See Product</Button>
+      <Link
+        to={`/product/${name.toLowerCase().split(" ").join("-")}`}
+        tabIndex={-1}
+      >
+        <Button colorScheme="brand" aria-label="See Product">
+          See Product
+        </Button>
       </Link>
     </Stack>
   );

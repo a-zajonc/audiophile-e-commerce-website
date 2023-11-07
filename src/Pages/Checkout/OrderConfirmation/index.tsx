@@ -56,7 +56,12 @@ export function OrderConfirmation({ handleClick }: any) {
         </Stack>
       </Stack>
       <Link to="/">
-        <Button colorScheme="brand" fullWidth={true} onClick={handleClick}>
+        <Button
+          colorScheme="brand"
+          fullWidth={true}
+          onClick={handleClick}
+          aria-label="Back Home"
+        >
           BACK TO HOME
         </Button>
       </Link>

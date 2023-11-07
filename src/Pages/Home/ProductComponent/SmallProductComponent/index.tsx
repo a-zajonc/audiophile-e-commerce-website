@@ -59,8 +59,8 @@ export function SmallProductComponent() {
             >
               YX1 EARPHONES
             </Text>
-            <Link to="/product/yx1">
-              <Button colorScheme="primary" tabIndex={-1}>
+            <Link to="/product/yx1" tabIndex={-1}>
+              <Button colorScheme="primary" aria-label="See Product">
                 See Product
               </Button>
             </Link>

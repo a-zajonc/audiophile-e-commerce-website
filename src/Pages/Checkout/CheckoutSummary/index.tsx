@@ -141,6 +141,7 @@ export function CheckoutSummary({ errors, option, order, setOrder }: any) {
       </Stack>
       <Button
         type="submit"
+        aria-label="Submit"
         colorScheme="brand"
         fullWidth={true}
         disabled={

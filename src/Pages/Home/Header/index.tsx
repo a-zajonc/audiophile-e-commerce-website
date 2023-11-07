@@ -32,8 +32,10 @@ export function Header() {
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </Text>
-        <Link to="/product/xx99-mark-ii-headphones">
-          <Button colorScheme="brand">See Product</Button>
+        <Link to="/product/xx99-mark-ii-headphones" tabIndex={-1}>
+          <Button colorScheme="brand" aria-label="See Product">
+            See Product
+          </Button>
         </Link>
       </Stack>
     </Stack>
