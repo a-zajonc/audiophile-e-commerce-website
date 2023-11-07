@@ -35,6 +35,14 @@
   text-transform: uppercase;
 }
 
+@media (max-width: 1350px) {
+  .img {
+    background-image: url(../../../../images/home/tablet/image-speaker-zx9.png);
+    width: 300px;
+    margin-left: 10%;
+  }
+}
+
 @media (max-width: 1120px) {
   .box {
     padding-inline: 5%;
@@ -44,6 +52,7 @@
     background-position: center;
     height: 237px;
     width: 250px;
+    margin: 0;
   }
   .contentBox {
     height: 720px;
@@ -52,5 +61,6 @@
     padding: 0;
     height: 50%;
     text-align: center;
+    align-items: center;
   }
 }

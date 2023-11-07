@@ -5,9 +5,11 @@ import { motion } from "framer-motion";
 import { Text } from "../../../../Components/Text";
 import { Stack } from "../../../../Components/Stack";
 import { useMedia } from "../../../../context/mediaContext";
+import useScreenSize from "../../../../Components/useScreenSize";
 
 export function BigProductComponent() {
   const { isDesktop } = useMedia();
+  const screenSize = useScreenSize();
 
   return (
     <Stack className={styles.box}>
@@ -18,7 +20,7 @@ export function BigProductComponent() {
         spacing={isDesktop ? "between" : "evenly"}
       >
         <motion.div
-          whileInView={{ x: isDesktop ? 120 : 0 }}
+          whileInView={{ x: screenSize.width > 1355 ? 120 : 0 }}
           transition={{
             ease: isDesktop ? "easeOut" : null,
             duration: isDesktop ? 2 : 0,
